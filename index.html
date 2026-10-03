@@ -960,6 +960,56 @@ button, input, select, textarea {
   background: var(--bg-tertiary);
 }
 
+.behance-direct {
+  color: var(--text-muted);
+  display: flex;
+  align-items: center;
+  padding: 0.3rem;
+  border-radius: 50%;
+  transition: var(--transition);
+}
+
+.behance-direct:hover {
+  color: #0057ff;
+  background: rgba(0, 87, 255, 0.1);
+}
+
+.behance-case-card {
+  border: 1px solid rgba(93, 43, 202, 0.5) !important;
+  box-shadow: 0 8px 30px rgba(93, 43, 202, 0.15);
+}
+
+.behance-case-card:hover {
+  border-color: rgba(147, 95, 255, 0.8) !important;
+  box-shadow: 0 14px 40px rgba(93, 43, 202, 0.3);
+}
+
+.behance-featured-tag {
+  position: absolute;
+  top: 0.85rem;
+  left: 0.85rem;
+  z-index: 5;
+  background: rgba(10, 8, 18, 0.88);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border: 1px solid rgba(93, 43, 202, 0.7);
+  color: #e0d0ff;
+  font-size: 0.68rem;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  padding: 0.32rem 0.65rem;
+  border-radius: var(--radius-full);
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.5);
+}
+
+.behance-featured-tag svg {
+  color: #f59e0b;
+}
+
 /* Portfolio Footer CTA */
 .portfolio-footer-cta {
   margin-top: 4rem;
@@ -2773,23 +2823,32 @@ button, input, select, textarea {
 
           <!-- Category Filter Buttons -->
           <div class="filter-group" role="tablist" aria-label="Portfolio Category Filters">
-            <button class="filter-btn active" data-filter="all" role="tab" aria-selected="true">All Works</button>
+            <button class="filter-btn active" data-filter="all" role="tab" aria-selected="true">All Works (12)</button>
+            <button class="filter-btn" data-filter="behance" role="tab" aria-selected="false">⭐ Behance Case Studies (4)</button>
             <button class="filter-btn" data-filter="identity" role="tab" aria-selected="false">Brand Identity</button>
-            <button class="filter-btn" data-filter="logo" role="tab" aria-selected="false">Logo Marks</button>
-            <button class="filter-btn" data-filter="tech" role="tab" aria-selected="false">AI & Tech SaaS</button>
-            <button class="filter-btn" data-filter="packaging" role="tab" aria-selected="false">Packaging & Systems</button>
+            <button class="filter-btn" data-filter="tech" role="tab" aria-selected="false">AI & SaaS</button>
+            <button class="filter-btn" data-filter="fintech" role="tab" aria-selected="false">Fintech</button>
+            <button class="filter-btn" data-filter="packaging" role="tab" aria-selected="false">Packaging & E-Com</button>
           </div>
         </div>
 
         <!-- Project Grid -->
         <div class="project-grid" id="projectGrid">
-          
-          <!-- Project 1: Parseflow -->
-          <article class="project-card" data-category="identity tech" data-id="parseflow">
+
+          <!-- ========================================== -->
+          <!-- 1. BEHANCE FLAGSHIP IN-DEPTH CASE STUDIES  -->
+          <!-- ========================================== -->
+
+          <!-- Project 1 (Behance): Futuristic Tech & AI -->
+          <article class="project-card behance-case-card" data-category="behance identity tech" data-id="behance-futuristic-tech">
             <div class="project-media">
-              <img src="https://cdn.dribbble.com/userupload/49170672/file/486fbf545c156847accda3c170c6871a.jpg?format=webp&resize=800x600&vertical=center" alt="Parseflow — AI Brand Identity & Visual System" loading="lazy">
+              <div class="behance-featured-tag">
+                <svg width="12" height="12" viewBox="0 0 24 24" fill="currentColor"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+                <span>Behance Case Study</span>
+              </div>
+              <img src="https://cdn.dribbble.com/userupload/49109485/file/018a6b89436a3f4dec118b10db62371b.jpg?format=webp&resize=800x600&vertical=center" alt="Futuristic Tech Brand Identity | AI & SaaS Logo Design" loading="lazy">
               <div class="project-overlay">
-                <button class="btn-preview open-modal-btn" data-target="parseflow">
+                <button class="btn-preview open-modal-btn" data-target="behance-futuristic-tech">
                   <span>View Case Breakdown</span>
                   <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"></path><circle cx="12" cy="12" r="3"></circle></svg>
                 </button>
@@ -2797,26 +2856,30 @@ button, input, select, textarea {
             </div>
             <div class="project-info">
               <div class="project-meta-top">
-                <span class="project-tag">AI & Technology</span>
+                <span class="project-tag">AI & DeepTech SaaS</span>
                 <span class="project-year">2025</span>
               </div>
-              <h3 class="project-title">Parseflow — AI Brand Identity & Visual System</h3>
-              <p class="project-snippet">Complete brand identity, generative symbolics, and dark-mode design system for an enterprise AI workflow engine.</p>
+              <h3 class="project-title">Futuristic Tech Brand Identity | AI & SaaS Logo Design</h3>
+              <p class="project-snippet">Comprehensive futuristic visual architecture, dynamic neural symbolics, and 40+ page design system for scalable AI.</p>
               <div class="project-links">
-                <button class="text-link open-modal-btn" data-target="parseflow">Case Details →</button>
-                <a href="https://dribbble.com/shots/27770906-Parseflow-AI-Brand-Identity-Visual-System" target="_blank" rel="noopener" class="dribbble-direct" title="View on Dribbble">
-                  <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"></circle><path d="M19.13 5.09C15.22 9.14 10 10.44 2.25 10.94"></path><path d="M21.75 12.84c-6.62-1.41-12.14 1-16.38 6.32"></path><path d="M8.56 2.75c4.37 6 6 9.42 8 17.72"></path></svg>
+                <button class="text-link open-modal-btn" data-target="behance-futuristic-tech">Case Details →</button>
+                <a href="https://www.behance.net/gallery/236550753/Futuristic-Tech-Brand-Identity-AI-SaaS-Logo-Design" target="_blank" rel="noopener" class="behance-direct" title="Open Full Case Study on Behance">
+                  <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor"><path d="M22 7h-7V5h7v2zm-2.8 4.3c-2.4 0-4.2 1.6-4.2 4.2 0 2.8 1.9 4.3 4.4 4.3 1.9 0 3.3-.9 3.8-2.5h-2.1c-.2.5-.9.9-1.7.9-1.2 0-2.1-.8-2.2-2.1h6.1c.1-.4.1-.7.1-1 0-2.2-1.7-3.8-4.2-3.8zm-2 3.2c.2-1 .9-1.7 2-1.7s1.8.7 1.9 1.7h-3.9zm-10-6.5h-5.2v12h5.2c2.7 0 4.4-1.4 4.4-3.5 0-1.4-.8-2.4-2.1-2.8 1-.5 1.7-1.3 1.7-2.6 0-1.9-1.6-3.1-4-3.1zm-3 4.7v-2.7h2.9c1.1 0 1.8.5 1.8 1.4 0 .9-.7 1.3-1.8 1.3h-2.9zm0 5.3v-3.3h3.2c1.2 0 2 .5 2 1.6 0 1.2-.8 1.7-2 1.7h-3.2z"/></svg>
                 </a>
               </div>
             </div>
           </article>
 
-          <!-- Project 2: Futuristic AI Logo -->
-          <article class="project-card" data-category="logo tech" data-id="futuristic-ai">
+          <!-- Project 2 (Behance): Modern E-commerce -->
+          <article class="project-card behance-case-card" data-category="behance identity packaging" data-id="behance-modern-ecommerce">
             <div class="project-media">
-              <img src="https://cdn.dribbble.com/userupload/49109485/file/018a6b89436a3f4dec118b10db62371b.jpg?format=webp&resize=800x600&vertical=center" alt="AI Logo Design & Futuristic Tech Brand Identity" loading="lazy">
+              <div class="behance-featured-tag">
+                <svg width="12" height="12" viewBox="0 0 24 24" fill="currentColor"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+                <span>Behance Case Study</span>
+              </div>
+              <img src="https://cdn.dribbble.com/userupload/48497633/file/7640f13663e051de28ae03af3e0718bc.jpg?format=webp&resize=800x600&vertical=center" alt="Modern E-commerce Brand Identity | Minimal Logo" loading="lazy">
               <div class="project-overlay">
-                <button class="btn-preview open-modal-btn" data-target="futuristic-ai">
+                <button class="btn-preview open-modal-btn" data-target="behance-modern-ecommerce">
                   <span>View Case Breakdown</span>
                   <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"></path><circle cx="12" cy="12" r="3"></circle></svg>
                 </button>
@@ -2824,26 +2887,30 @@ button, input, select, textarea {
             </div>
             <div class="project-info">
               <div class="project-meta-top">
-                <span class="project-tag">Logo Mark</span>
+                <span class="project-tag">E-Commerce & Retail</span>
                 <span class="project-year">2025</span>
               </div>
-              <h3 class="project-title">Futuristic Tech & AI Neural Mark</h3>
-              <p class="project-snippet">Multi-dimensional geometric intelligence mark with dynamic isometric gradients and responsive scaling.</p>
+              <h3 class="project-title">Modern E-commerce Brand Identity | Minimal Logo</h3>
+              <p class="project-snippet">End-to-end minimalist brand identity, packaging system, and digital storefront branding for modern consumer retail.</p>
               <div class="project-links">
-                <button class="text-link open-modal-btn" data-target="futuristic-ai">Case Details →</button>
-                <a href="https://dribbble.com/shots/27754864-AI-Logo-Design-Futuristic-Tech-Brand-Identity" target="_blank" rel="noopener" class="dribbble-direct" title="View on Dribbble">
-                  <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"></circle><path d="M19.13 5.09C15.22 9.14 10 10.44 2.25 10.94"></path><path d="M21.75 12.84c-6.62-1.41-12.14 1-16.38 6.32"></path><path d="M8.56 2.75c4.37 6 6 9.42 8 17.72"></path></svg>
+                <button class="text-link open-modal-btn" data-target="behance-modern-ecommerce">Case Details →</button>
+                <a href="https://www.behance.net/gallery/237263685/Modern-E-commerce-Brand-Identity-Minimal-Logo" target="_blank" rel="noopener" class="behance-direct" title="Open Full Case Study on Behance">
+                  <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor"><path d="M22 7h-7V5h7v2zm-2.8 4.3c-2.4 0-4.2 1.6-4.2 4.2 0 2.8 1.9 4.3 4.4 4.3 1.9 0 3.3-.9 3.8-2.5h-2.1c-.2.5-.9.9-1.7.9-1.2 0-2.1-.8-2.2-2.1h6.1c.1-.4.1-.7.1-1 0-2.2-1.7-3.8-4.2-3.8zm-2 3.2c.2-1 .9-1.7 2-1.7s1.8.7 1.9 1.7h-3.9zm-10-6.5h-5.2v12h5.2c2.7 0 4.4-1.4 4.4-3.5 0-1.4-.8-2.4-2.1-2.8 1-.5 1.7-1.3 1.7-2.6 0-1.9-1.6-3.1-4-3.1zm-3 4.7v-2.7h2.9c1.1 0 1.8.5 1.8 1.4 0 .9-.7 1.3-1.8 1.3h-2.9zm0 5.3v-3.3h3.2c1.2 0 2 .5 2 1.6 0 1.2-.8 1.7-2 1.7h-3.2z"/></svg>
                 </a>
               </div>
             </div>
           </article>
 
-          <!-- Project 3: PixelCore -->
-          <article class="project-card" data-category="identity tech" data-id="pixelcore">
+          <!-- Project 3 (Behance): Fintech Banking App -->
+          <article class="project-card behance-case-card" data-category="behance identity fintech tech" data-id="behance-fintech-banking">
             <div class="project-media">
-              <img src="https://cdn.dribbble.com/userupload/49027531/file/15046b9487ce852c4d15cd9345ed77fa.jpg?format=webp&resize=800x600&vertical=center" alt="PixelCore — SaaS Brand Identity & Logo Design" loading="lazy">
+              <div class="behance-featured-tag">
+                <svg width="12" height="12" viewBox="0 0 24 24" fill="currentColor"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+                <span>Behance Case Study</span>
+              </div>
+              <img src="https://cdn.dribbble.com/userupload/48800391/file/2998122dfeed1f8cca995be3cb905003.jpg?format=webp&resize=800x600&vertical=center" alt="Fintech Banking App Logo & Brand Identity Design" loading="lazy">
               <div class="project-overlay">
-                <button class="btn-preview open-modal-btn" data-target="pixelcore">
+                <button class="btn-preview open-modal-btn" data-target="behance-fintech-banking">
                   <span>View Case Breakdown</span>
                   <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"></path><circle cx="12" cy="12" r="3"></circle></svg>
                 </button>
@@ -2851,26 +2918,30 @@ button, input, select, textarea {
             </div>
             <div class="project-info">
               <div class="project-meta-top">
-                <span class="project-tag">SaaS Identity</span>
+                <span class="project-tag">Fintech & Mobile App</span>
                 <span class="project-year">2025</span>
               </div>
-              <h3 class="project-title">PixelCore — SaaS Brand Architecture</h3>
-              <p class="project-snippet">Comprehensive visual identity, digital design language, and design token system built for high-throughput software.</p>
+              <h3 class="project-title">Fintech Banking App Logo & Brand Identity Design</h3>
+              <p class="project-snippet">High-trust financial technology branding, iOS/Android mobile app icon system, and design tokens for global transactions.</p>
               <div class="project-links">
-                <button class="text-link open-modal-btn" data-target="pixelcore">Case Details →</button>
-                <a href="https://dribbble.com/shots/27732717-PixelCore-SaaS-Brand-Identity-Logo-Design" target="_blank" rel="noopener" class="dribbble-direct" title="View on Dribbble">
-                  <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"></circle><path d="M19.13 5.09C15.22 9.14 10 10.44 2.25 10.94"></path><path d="M21.75 12.84c-6.62-1.41-12.14 1-16.38 6.32"></path><path d="M8.56 2.75c4.37 6 6 9.42 8 17.72"></path></svg>
+                <button class="text-link open-modal-btn" data-target="behance-fintech-banking">Case Details →</button>
+                <a href="https://www.behance.net/gallery/252334861/Fintech-Banking-App-Logo-Brand-Identity-Design" target="_blank" rel="noopener" class="behance-direct" title="Open Full Case Study on Behance">
+                  <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor"><path d="M22 7h-7V5h7v2zm-2.8 4.3c-2.4 0-4.2 1.6-4.2 4.2 0 2.8 1.9 4.3 4.4 4.3 1.9 0 3.3-.9 3.8-2.5h-2.1c-.2.5-.9.9-1.7.9-1.2 0-2.1-.8-2.2-2.1h6.1c.1-.4.1-.7.1-1 0-2.2-1.7-3.8-4.2-3.8zm-2 3.2c.2-1 .9-1.7 2-1.7s1.8.7 1.9 1.7h-3.9zm-10-6.5h-5.2v12h5.2c2.7 0 4.4-1.4 4.4-3.5 0-1.4-.8-2.4-2.1-2.8 1-.5 1.7-1.3 1.7-2.6 0-1.9-1.6-3.1-4-3.1zm-3 4.7v-2.7h2.9c1.1 0 1.8.5 1.8 1.4 0 .9-.7 1.3-1.8 1.3h-2.9zm0 5.3v-3.3h3.2c1.2 0 2 .5 2 1.6 0 1.2-.8 1.7-2 1.7h-3.2z"/></svg>
                 </a>
               </div>
             </div>
           </article>
 
-          <!-- Project 4: Unified Logic -->
-          <article class="project-card" data-category="identity logo tech" data-id="unified-logic">
+          <!-- Project 4 (Behance): AI Tech Branding -->
+          <article class="project-card behance-case-card" data-category="behance identity tech" data-id="behance-ai-tech-branding">
             <div class="project-media">
-              <img src="https://cdn.dribbble.com/userupload/48846171/file/23276e659f34dee314fa662d1820c007.jpg?format=webp&resize=800x600&vertical=center" alt="Unified Logic — Tech Brand Identity" loading="lazy">
+              <div class="behance-featured-tag">
+                <svg width="12" height="12" viewBox="0 0 24 24" fill="currentColor"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+                <span>Behance Case Study</span>
+              </div>
+              <img src="https://cdn.dribbble.com/userupload/49170672/file/486fbf545c156847accda3c170c6871a.jpg?format=webp&resize=800x600&vertical=center" alt="AI Tech Branding | Futuristic SaaS Identity" loading="lazy">
               <div class="project-overlay">
-                <button class="btn-preview open-modal-btn" data-target="unified-logic">
+                <button class="btn-preview open-modal-btn" data-target="behance-ai-tech-branding">
                   <span>View Case Breakdown</span>
                   <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"></path><circle cx="12" cy="12" r="3"></circle></svg>
                 </button>
@@ -2878,22 +2949,26 @@ button, input, select, textarea {
             </div>
             <div class="project-info">
               <div class="project-meta-top">
-                <span class="project-tag">Enterprise Tech</span>
+                <span class="project-tag">AI Platform & SaaS</span>
                 <span class="project-year">2025</span>
               </div>
-              <h3 class="project-title">Unified Logic — Strategic Tech Identity</h3>
-              <p class="project-snippet">Interlocking architectural monogram symbolizing unified data pipelines, precision engineering, and enterprise clarity.</p>
+              <h3 class="project-title">AI Tech Branding | Futuristic SaaS Identity</h3>
+              <p class="project-snippet">Strategic brand identity, generative neural symbolics, and dark-mode visual system built for enterprise cloud intelligence.</p>
               <div class="project-links">
-                <button class="text-link open-modal-btn" data-target="unified-logic">Case Details →</button>
-                <a href="https://dribbble.com/shots/27683642-Unified-Logic-Tech-Brand-Identity-Logo-Design" target="_blank" rel="noopener" class="dribbble-direct" title="View on Dribbble">
-                  <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"></circle><path d="M19.13 5.09C15.22 9.14 10 10.44 2.25 10.94"></path><path d="M21.75 12.84c-6.62-1.41-12.14 1-16.38 6.32"></path><path d="M8.56 2.75c4.37 6 6 9.42 8 17.72"></path></svg>
+                <button class="text-link open-modal-btn" data-target="behance-ai-tech-branding">Case Details →</button>
+                <a href="https://www.behance.net/gallery/241971859/AI-Tech-Branding-Futuristic-SaaS-Identity" target="_blank" rel="noopener" class="behance-direct" title="Open Full Case Study on Behance">
+                  <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor"><path d="M22 7h-7V5h7v2zm-2.8 4.3c-2.4 0-4.2 1.6-4.2 4.2 0 2.8 1.9 4.3 4.4 4.3 1.9 0 3.3-.9 3.8-2.5h-2.1c-.2.5-.9.9-1.7.9-1.2 0-2.1-.8-2.2-2.1h6.1c.1-.4.1-.7.1-1 0-2.2-1.7-3.8-4.2-3.8zm-2 3.2c.2-1 .9-1.7 2-1.7s1.8.7 1.9 1.7h-3.9zm-10-6.5h-5.2v12h5.2c2.7 0 4.4-1.4 4.4-3.5 0-1.4-.8-2.4-2.1-2.8 1-.5 1.7-1.3 1.7-2.6 0-1.9-1.6-3.1-4-3.1zm-3 4.7v-2.7h2.9c1.1 0 1.8.5 1.8 1.4 0 .9-.7 1.3-1.8 1.3h-2.9zm0 5.3v-3.3h3.2c1.2 0 2 .5 2 1.6 0 1.2-.8 1.7-2 1.7h-3.2z"/></svg>
                 </a>
               </div>
             </div>
           </article>
 
-          <!-- Project 5: Avrise Fintech -->
-          <article class="project-card" data-category="identity tech" data-id="avrise">
+          <!-- ========================================== -->
+          <!-- 2. DRIBBLE CURATED IDENTITY ARCHIVE        -->
+          <!-- ========================================== -->
+
+          <!-- Project 5: Avrise -->
+          <article class="project-card" data-category="identity fintech tech" data-id="avrise">
             <div class="project-media">
               <img src="https://cdn.dribbble.com/userupload/48800391/file/2998122dfeed1f8cca995be3cb905003.jpg?format=webp&resize=800x600&vertical=center" alt="Avrise - Fintech Brand Identity & Logo Design" loading="lazy">
               <div class="project-overlay">
@@ -2919,12 +2994,12 @@ button, input, select, textarea {
             </div>
           </article>
 
-          <!-- Project 6: Fexora -->
-          <article class="project-card" data-category="identity tech" data-id="fexora">
+          <!-- Project 6: SyncCloud -->
+          <article class="project-card" data-category="identity tech" data-id="synccloud">
             <div class="project-media">
-              <img src="https://cdn.dribbble.com/userupload/48643678/file/b459501340bdf872d38b908881e97c08.jpg?format=webp&resize=800x600&vertical=center" alt="Fexora — Tech Brand Identity | Logo Design" loading="lazy">
+              <img src="https://cdn.dribbble.com/userupload/48389721/file/aa5638e9f4e6709f1a13c5dfde7c1a82.jpg?format=webp&resize=800x600&vertical=center" alt="SyncCloud - Cloud Tech Brand Identity" loading="lazy">
               <div class="project-overlay">
-                <button class="btn-preview open-modal-btn" data-target="fexora">
+                <button class="btn-preview open-modal-btn" data-target="synccloud">
                   <span>View Case Breakdown</span>
                   <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"></path><circle cx="12" cy="12" r="3"></circle></svg>
                 </button>
@@ -2932,21 +3007,21 @@ button, input, select, textarea {
             </div>
             <div class="project-info">
               <div class="project-meta-top">
-                <span class="project-tag">Cloud & Infrastructure</span>
-                <span class="project-year">2025</span>
+                <span class="project-tag">Cloud Services</span>
+                <span class="project-year">2024</span>
               </div>
-              <h3 class="project-title">Fexora — Cloud Infrastructure Brand</h3>
-              <p class="project-snippet">Ultra-sharp kinetic identity system representing speed, scale, and multi-cloud reliability for dev tools.</p>
+              <h3 class="project-title">SyncCloud — Cloud Tech Visual System</h3>
+              <p class="project-snippet">Harmonic continuous-loop geometric mark symbolizing infinite synchronization and real-time connectivity.</p>
               <div class="project-links">
-                <button class="text-link open-modal-btn" data-target="fexora">Case Details →</button>
-                <a href="https://dribbble.com/shots/27629170-Fexora-Tech-Brand-Identity-Logo-Design" target="_blank" rel="noopener" class="dribbble-direct" title="View on Dribbble">
+                <button class="text-link open-modal-btn" data-target="synccloud">Case Details →</button>
+                <a href="https://dribbble.com/shots/27560234-SyncCloud-Cloud-Tech-Brand-Identity" target="_blank" rel="noopener" class="dribbble-direct" title="View on Dribbble">
                   <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"></circle><path d="M19.13 5.09C15.22 9.14 10 10.44 2.25 10.94"></path><path d="M21.75 12.84c-6.62-1.41-12.14 1-16.38 6.32"></path><path d="M8.56 2.75c4.37 6 6 9.42 8 17.72"></path></svg>
                 </a>
               </div>
             </div>
           </article>
 
-          <!-- Project 7: Verdevo Packaging -->
+          <!-- Project 7: Verdevo -->
           <article class="project-card" data-category="identity packaging" data-id="verdevo">
             <div class="project-media">
               <img src="https://cdn.dribbble.com/userupload/48497633/file/7640f13663e051de28ae03af3e0718bc.jpg?format=webp&resize=800x600&vertical=center" alt="Verdevo - Brand Identity & Packaging" loading="lazy">
@@ -2973,12 +3048,12 @@ button, input, select, textarea {
             </div>
           </article>
 
-          <!-- Project 8: SyncCloud -->
-          <article class="project-card" data-category="identity logo tech" data-id="synccloud">
+          <!-- Project 8: Fexora -->
+          <article class="project-card" data-category="identity tech" data-id="fexora">
             <div class="project-media">
-              <img src="https://cdn.dribbble.com/userupload/48389721/file/aa5638e9f4e6709f1a13c5dfde7c1a82.jpg?format=webp&resize=800x600&vertical=center" alt="SyncCloud - Cloud Tech Brand Identity" loading="lazy">
+              <img src="https://cdn.dribbble.com/userupload/48643678/file/b459501340bdf872d38b908881e97c08.jpg?format=webp&resize=800x600&vertical=center" alt="Fexora — Tech Brand Identity | Logo Design" loading="lazy">
               <div class="project-overlay">
-                <button class="btn-preview open-modal-btn" data-target="synccloud">
+                <button class="btn-preview open-modal-btn" data-target="fexora">
                   <span>View Case Breakdown</span>
                   <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"></path><circle cx="12" cy="12" r="3"></circle></svg>
                 </button>
@@ -2986,26 +3061,26 @@ button, input, select, textarea {
             </div>
             <div class="project-info">
               <div class="project-meta-top">
-                <span class="project-tag">Cloud Services</span>
-                <span class="project-year">2024</span>
+                <span class="project-tag">Cloud Infrastructure</span>
+                <span class="project-year">2025</span>
               </div>
-              <h3 class="project-title">SyncCloud — Cloud Tech Visual System</h3>
-              <p class="project-snippet">Harmonic continuous-loop geometric mark symbolizing infinite synchronization and real-time connectivity.</p>
+              <h3 class="project-title">Fexora — Cloud Infrastructure Brand</h3>
+              <p class="project-snippet">Ultra-sharp kinetic identity system representing speed, scale, and multi-cloud reliability for dev tools.</p>
               <div class="project-links">
-                <button class="text-link open-modal-btn" data-target="synccloud">Case Details →</button>
-                <a href="https://dribbble.com/shots/27560234-SyncCloud-Cloud-Tech-Brand-Identity" target="_blank" rel="noopener" class="dribbble-direct" title="View on Dribbble">
+                <button class="text-link open-modal-btn" data-target="fexora">Case Details →</button>
+                <a href="https://dribbble.com/shots/27629170-Fexora-Tech-Brand-Identity-Logo-Design" target="_blank" rel="noopener" class="dribbble-direct" title="View on Dribbble">
                   <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"></circle><path d="M19.13 5.09C15.22 9.14 10 10.44 2.25 10.94"></path><path d="M21.75 12.84c-6.62-1.41-12.14 1-16.38 6.32"></path><path d="M8.56 2.75c4.37 6 6 9.42 8 17.72"></path></svg>
                 </a>
               </div>
             </div>
           </article>
 
-          <!-- Project 9: Xylen AI -->
-          <article class="project-card" data-category="identity tech" data-id="xylen">
+          <!-- Project 9: ZYOREX -->
+          <article class="project-card" data-category="identity packaging" data-id="zyorex">
             <div class="project-media">
-              <img src="https://cdn.dribbble.com/userupload/48103510/file/cc8348d7d6b21ad59aaa2a41f4a6e749.jpg?format=webp&resize=800x600&vertical=center" alt="Xylen AI - SaaS Brand Identity" loading="lazy">
+              <img src="https://cdn.dribbble.com/userupload/48846171/file/23276e659f34dee314fa662d1820c007.jpg?format=webp&resize=800x600&vertical=center" alt="ZYOREX - Modern Brand Identity for E-commerce Startup" loading="lazy">
               <div class="project-overlay">
-                <button class="btn-preview open-modal-btn" data-target="xylen">
+                <button class="btn-preview open-modal-btn" data-target="zyorex">
                   <span>View Case Breakdown</span>
                   <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"></path><circle cx="12" cy="12" r="3"></circle></svg>
                 </button>
@@ -3013,14 +3088,95 @@ button, input, select, textarea {
             </div>
             <div class="project-info">
               <div class="project-meta-top">
-                <span class="project-tag">AI Copilot</span>
+                <span class="project-tag">E-Commerce Startup</span>
                 <span class="project-year">2024</span>
               </div>
-              <h3 class="project-title">Xylen — Autonomous AI Workspace</h3>
-              <p class="project-snippet">Futuristic corporate positioning, adaptive dark gradient tokens, and responsive icon family for AI intelligence.</p>
+              <h3 class="project-title">ZYOREX — E-commerce Visual System</h3>
+              <p class="project-snippet">High-impact typographic visual identity and modern digital storefront guidelines for next-generation retail.</p>
               <div class="project-links">
-                <button class="text-link open-modal-btn" data-target="xylen">Case Details →</button>
-                <a href="https://dribbble.com/shots/27482517-Xylen-AI-SaaS-Brand-Identity" target="_blank" rel="noopener" class="dribbble-direct" title="View on Dribbble">
+                <button class="text-link open-modal-btn" data-target="zyorex">Case Details →</button>
+                <a href="https://dribbble.com/shots/27464281-ZYOREX-Modern-Brand-Identity-for-E-commerce-Startup" target="_blank" rel="noopener" class="dribbble-direct" title="View on Dribbble">
+                  <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"></circle><path d="M19.13 5.09C15.22 9.14 10 10.44 2.25 10.94"></path><path d="M21.75 12.84c-6.62-1.41-12.14 1-16.38 6.32"></path><path d="M8.56 2.75c4.37 6 6 9.42 8 17.72"></path></svg>
+                </a>
+              </div>
+            </div>
+          </article>
+
+          <!-- Project 10: StrataCode -->
+          <article class="project-card" data-category="identity tech" data-id="stratacode">
+            <div class="project-media">
+              <img src="https://cdn.dribbble.com/userupload/48103510/file/cc8348d7d6b21ad59aaa2a41f4a6e749.jpg?format=webp&resize=800x600&vertical=center" alt="StrataCode - Software Logo & Brand Identity" loading="lazy">
+              <div class="project-overlay">
+                <button class="btn-preview open-modal-btn" data-target="stratacode">
+                  <span>View Case Breakdown</span>
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"></path><circle cx="12" cy="12" r="3"></circle></svg>
+                </button>
+              </div>
+            </div>
+            <div class="project-info">
+              <div class="project-meta-top">
+                <span class="project-tag">Enterprise Software</span>
+                <span class="project-year">2024</span>
+              </div>
+              <h3 class="project-title">StrataCode — Code Intelligence Identity</h3>
+              <p class="project-snippet">Interlocking architectural monogram symbolizing multi-tier software architecture and developer precision.</p>
+              <div class="project-links">
+                <button class="text-link open-modal-btn" data-target="stratacode">Case Details →</button>
+                <a href="https://dribbble.com/shots/27545907-StrataCode-Software-Logo-Brand-Identity" target="_blank" rel="noopener" class="dribbble-direct" title="View on Dribbble">
+                  <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"></circle><path d="M19.13 5.09C15.22 9.14 10 10.44 2.25 10.94"></path><path d="M21.75 12.84c-6.62-1.41-12.14 1-16.38 6.32"></path><path d="M8.56 2.75c4.37 6 6 9.42 8 17.72"></path></svg>
+                </a>
+              </div>
+            </div>
+          </article>
+
+          <!-- Project 11: FIKRA AI -->
+          <article class="project-card" data-category="identity tech" data-id="fikra-ai">
+            <div class="project-media">
+              <img src="https://cdn.dribbble.com/userupload/49109485/file/018a6b89436a3f4dec118b10db62371b.jpg?format=webp&resize=800x600&vertical=center" alt="FIKRA AI - Saudi AI Chatbot Tech Brand Identity" loading="lazy">
+              <div class="project-overlay">
+                <button class="btn-preview open-modal-btn" data-target="fikra-ai">
+                  <span>View Case Breakdown</span>
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"></path><circle cx="12" cy="12" r="3"></circle></svg>
+                </button>
+              </div>
+            </div>
+            <div class="project-info">
+              <div class="project-meta-top">
+                <span class="project-tag">Conversational AI</span>
+                <span class="project-year">2025</span>
+              </div>
+              <h3 class="project-title">FIKRA AI — Saudi AI Chatbot Identity</h3>
+              <p class="project-snippet">Bilingual futuristic brand identity marrying Arabic calligraphy rhythm with enterprise AI neural mechanics.</p>
+              <div class="project-links">
+                <button class="text-link open-modal-btn" data-target="fikra-ai">Case Details →</button>
+                <a href="https://dribbble.com/shots/27720256-FIKRA-AI-Saudi-AI-Chatbot-Tech-Brand-Identity" target="_blank" rel="noopener" class="dribbble-direct" title="View on Dribbble">
+                  <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"></circle><path d="M19.13 5.09C15.22 9.14 10 10.44 2.25 10.94"></path><path d="M21.75 12.84c-6.62-1.41-12.14 1-16.38 6.32"></path><path d="M8.56 2.75c4.37 6 6 9.42 8 17.72"></path></svg>
+                </a>
+              </div>
+            </div>
+          </article>
+
+          <!-- Project 12: PixelCore -->
+          <article class="project-card" data-category="identity tech" data-id="pixelcore">
+            <div class="project-media">
+              <img src="https://cdn.dribbble.com/userupload/49027531/file/15046b9487ce852c4d15cd9345ed77fa.jpg?format=webp&resize=800x600&vertical=center" alt="PixelCore - SaaS Brand Identity & Logo Design" loading="lazy">
+              <div class="project-overlay">
+                <button class="btn-preview open-modal-btn" data-target="pixelcore">
+                  <span>View Case Breakdown</span>
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"></path><circle cx="12" cy="12" r="3"></circle></svg>
+                </button>
+              </div>
+            </div>
+            <div class="project-info">
+              <div class="project-meta-top">
+                <span class="project-tag">SaaS Identity</span>
+                <span class="project-year">2025</span>
+              </div>
+              <h3 class="project-title">PixelCore — SaaS Brand Architecture</h3>
+              <p class="project-snippet">Comprehensive visual identity, digital design language, and design token system built for high-throughput software.</p>
+              <div class="project-links">
+                <button class="text-link open-modal-btn" data-target="pixelcore">Case Details →</button>
+                <a href="https://dribbble.com/shots/27732717-PixelCore-SaaS-Brand-Identity-Logo-Design" target="_blank" rel="noopener" class="dribbble-direct" title="View on Dribbble">
                   <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"></circle><path d="M19.13 5.09C15.22 9.14 10 10.44 2.25 10.94"></path><path d="M21.75 12.84c-6.62-1.41-12.14 1-16.38 6.32"></path><path d="M8.56 2.75c4.37 6 6 9.42 8 17.72"></path></svg>
                 </a>
               </div>
@@ -3891,45 +4047,232 @@ button, input, select, textarea {
 // 1. PROJECT CASE STUDY DATABASE
 // -----------------------------------------------------------------------------
 const PROJECTS_DATA = {
-  'parseflow': {
-    title: 'Parseflow — AI Brand Identity & Visual System',
-    subtitle: 'End-to-end visual architecture for a next-generation AI workflow engine.',
-    category: 'Brand Identity & AI',
+  'behance-futuristic-tech': {
+    title: 'Futuristic Tech Brand Identity | AI & SaaS Logo Design',
+    subtitle: 'Comprehensive futuristic visual architecture and brand operating system for an AI & SaaS venture.',
+    category: 'Behance Case Study • AI & SaaS',
     year: '2025',
-    client: 'Parseflow Inc. (San Francisco, CA)',
-    deliverables: 'Brand Strategy, Dynamic Logo, Dark UI Tokens, Brand Guidelines',
-    industry: 'Artificial Intelligence & SaaS',
+    client: 'Futuristic Tech & AI Lab (Silicon Valley, CA)',
+    deliverables: 'Comprehensive Brand Architecture, Monogram System, Dynamic Color Tokens, 40+ Page Brand Bible',
+    industry: 'Artificial Intelligence & DeepTech SaaS',
     duration: '4 Weeks',
-    challenge: 'Parseflow needed to break away from generic gradient-heavy AI tropes. They needed an identity that felt grounded in enterprise-grade reliability, neural logic, and high-velocity workflow computation without feeling sterile.',
+    challenge: 'Building an iconic, non-derivative AI identity that stands apart in a crowded global SaaS marketplace while maintaining surgical clarity at all responsive scales.',
     palette: [
-      { hex: '#090A0E', label: 'Obsidian Black' },
-      { hex: '#FF5C00', label: 'Neural Orange' },
-      { hex: '#FFB800', label: 'Circuit Amber' },
-      { hex: '#1E2330', label: 'Deep Slate' },
-      { hex: '#F3F4F6', label: 'Pure Flow' }
-    ],
-    outcome: 'Delivered an iconic geometric symbol combining neural pathways with continuous directional arrows. The new brand identity enabled the company to secure strategic pilot partners in Q1 2025 and established an undeniable competitive edge.',
-    dribbbleUrl: 'https://dribbble.com/shots/27770906-Parseflow-AI-Brand-Identity-Visual-System',
-    imgUrl: 'https://cdn.dribbble.com/userupload/49170672/file/486fbf545c156847accda3c170c6871a.jpg?format=webp&resize=1000x750&vertical=center'
-  },
-  'futuristic-ai': {
-    title: 'Futuristic Tech & AI Neural Mark',
-    subtitle: 'Mathematical precision mark exploring multi-dimensional intelligence.',
-    category: 'Logo Design & Tech',
-    year: '2025',
-    client: 'Autonomous Cyber Labs (Austin, TX)',
-    deliverables: 'Monogram System, App Icon Matrix, Scalability Guides',
-    industry: 'DeepTech & Robotics',
-    duration: '2 Weeks',
-    challenge: 'Designing a mark that performs flawlessly from a 16px favicon/status bar icon up to massive architectural signage, while reflecting advanced machine cognition.',
-    palette: [
-      { hex: '#050508', label: 'Space Black' },
+      { hex: '#06060A', label: 'Deep Obsidian' },
+      { hex: '#5D2BCA', label: 'Royal Electric Purple' },
       { hex: '#00F0FF', label: 'Quantum Cyan' },
-      { hex: '#7000FF', label: 'Neural Violet' },
+      { hex: '#FFFFFF', label: 'Pure Flow' }
+    ],
+    outcome: 'Engineered a multi-dimensional identity system featuring isometric neural vector marks and real-world mockups from Retina mobile screens to architectural signage.',
+    isBehance: true,
+    behanceUrl: 'https://www.behance.net/gallery/236550753/Futuristic-Tech-Brand-Identity-AI-SaaS-Logo-Design',
+    dribbbleUrl: 'https://www.behance.net/gallery/236550753/Futuristic-Tech-Brand-Identity-AI-SaaS-Logo-Design',
+    imgUrl: 'https://cdn.dribbble.com/userupload/49109485/file/018a6b89436a3f4dec118b10db62371b.jpg?format=webp&resize=1000x750&vertical=center'
+  },
+  'behance-modern-ecommerce': {
+    title: 'Modern E-commerce Brand Identity | Minimal Logo',
+    subtitle: 'End-to-end minimalist brand identity, packaging system, and digital storefront branding for next-gen retail.',
+    category: 'Behance Case Study • E-Commerce',
+    year: '2025',
+    client: 'Modern Retail & D2C Group (London, UK)',
+    deliverables: 'Visual Identity, Custom Wordmark, Packaging Dielines, Unboxing Architecture',
+    industry: 'E-commerce & Consumer Goods',
+    duration: '3 Weeks',
+    challenge: 'Crafting a high-converting, premium consumer aesthetic that feels trustworthy, modern, and memorable across packaging and mobile checkouts.',
+    palette: [
+      { hex: '#0B0B0F', label: 'Midnight Black' },
+      { hex: '#7C3AED', label: 'Violet Aura' },
+      { hex: '#10B981', label: 'Fresh Mint' },
+      { hex: '#F9FAFB', label: 'Clean Ivory' }
+    ],
+    outcome: 'Designed a timeless, minimalist wordmark and cohesive packaging experience that increased perceived product value and customer unboxing retention.',
+    isBehance: true,
+    behanceUrl: 'https://www.behance.net/gallery/237263685/Modern-E-commerce-Brand-Identity-Minimal-Logo',
+    dribbbleUrl: 'https://www.behance.net/gallery/237263685/Modern-E-commerce-Brand-Identity-Minimal-Logo',
+    imgUrl: 'https://cdn.dribbble.com/userupload/48497633/file/7640f13663e051de28ae03af3e0718bc.jpg?format=webp&resize=1000x750&vertical=center'
+  },
+  'behance-fintech-banking': {
+    title: 'Fintech Banking App Logo & Brand Identity Design',
+    subtitle: 'High-trust financial technology branding, iOS/Android mobile app icon system, and design tokens.',
+    category: 'Behance Case Study • Fintech & Banking',
+    year: '2025',
+    client: 'Next-Gen Financial Technologies (Dubai, UAE)',
+    deliverables: 'Fintech Wordmark, App Icon Matrix, Security Verification Badges, Dark UI Kit',
+    industry: 'Fintech & Digital Banking',
+    duration: '4 Weeks',
+    challenge: 'Balancing institutional security and banking credibility with the modern, rapid velocity of cutting-edge mobile payment applications.',
+    palette: [
+      { hex: '#08080E', label: 'Security Black' },
+      { hex: '#4F46E5', label: 'Electric Indigo' },
+      { hex: '#06B6D4', label: 'Digital Cyan' },
       { hex: '#FFFFFF', label: 'Optic White' }
     ],
-    outcome: 'Crafted an isometric neural node mark built on a strict 12-column isometric grid with optical curve compensation for ultra-high-density displays.',
-    dribbbleUrl: 'https://dribbble.com/shots/27754864-AI-Logo-Design-Futuristic-Tech-Brand-Identity',
+    outcome: 'Created a sharp geometric lettermark that projects unshakeable trust and dynamic forward momentum, scalable down to a 16px navigation token.',
+    isBehance: true,
+    behanceUrl: 'https://www.behance.net/gallery/252334861/Fintech-Banking-App-Logo-Brand-Identity-Design',
+    dribbbleUrl: 'https://www.behance.net/gallery/252334861/Fintech-Banking-App-Logo-Brand-Identity-Design',
+    imgUrl: 'https://cdn.dribbble.com/userupload/48800391/file/2998122dfeed1f8cca995be3cb905003.jpg?format=webp&resize=1000x750&vertical=center'
+  },
+  'behance-ai-tech-branding': {
+    title: 'AI Tech Branding | Futuristic SaaS Identity',
+    subtitle: 'Strategic brand identity, neural symbolics, and dark-mode visual system built for scalable AI infrastructure.',
+    category: 'Behance Case Study • Futuristic SaaS',
+    year: '2025',
+    client: 'Neural Systems & Cloud AI (New York, NY)',
+    deliverables: 'Brand Strategy, Neural Generative Mark, UI Design Tokens, Brand Guidelines',
+    industry: 'Artificial Intelligence & Cloud SaaS',
+    duration: '4 Weeks',
+    challenge: 'Transforming complex autonomous machine intelligence architectures into an approachable, memorable, and visually commanding brand language.',
+    palette: [
+      { hex: '#07070B', label: 'Void Black' },
+      { hex: '#5D2BCA', label: 'Electric Purple' },
+      { hex: '#A855F7', label: 'Quantum Lavender' },
+      { hex: '#E2E8F0', label: 'Light Slate' }
+    ],
+    outcome: 'A complete end-to-end brand operating system that unites technical engineering power with Silicon Valley-grade brand polish.',
+    isBehance: true,
+    behanceUrl: 'https://www.behance.net/gallery/241971859/AI-Tech-Branding-Futuristic-SaaS-Identity',
+    dribbbleUrl: 'https://www.behance.net/gallery/241971859/AI-Tech-Branding-Futuristic-SaaS-Identity',
+    imgUrl: 'https://cdn.dribbble.com/userupload/49170672/file/486fbf545c156847accda3c170c6871a.jpg?format=webp&resize=1000x750&vertical=center'
+  },
+  'avrise': {
+    title: 'Avrise — Fintech Brand Identity & Logo Design',
+    subtitle: 'Dynamic geometric A lettermark with concealed forward-growth arrow for global fintech platform.',
+    category: 'Fintech & App Icon',
+    year: '2025',
+    client: 'Avrise Financial Systems (Singapore)',
+    deliverables: 'Lettermark System, Mobile App Icon, Dark Mode Design Language',
+    industry: 'Fintech & Global Payments',
+    duration: '3 Weeks',
+    challenge: 'Creating an iconic app icon that stands out in crowded App Store listings while delivering institutional authority for wealth management.',
+    palette: [
+      { hex: '#07090E', label: 'Deep Obsidian' },
+      { hex: '#00E5FF', label: 'Kinetic Cyan' },
+      { hex: '#6366F1', label: 'Trust Indigo' },
+      { hex: '#FFFFFF', label: 'Clean White' }
+    ],
+    outcome: 'Engineered a razor-sharp geometric monogram with an optical forward arrow, driving 40% higher click-through in early user onboarding testing.',
+    dribbbleUrl: 'https://dribbble.com/shots/27671356-Avrise-Fintech-Brand-Identity-Logo-Design',
+    imgUrl: 'https://cdn.dribbble.com/userupload/48800391/file/2998122dfeed1f8cca995be3cb905003.jpg?format=webp&resize=1000x750&vertical=center'
+  },
+  'synccloud': {
+    title: 'SyncCloud — Cloud Tech Brand Identity',
+    subtitle: 'Continuous-loop harmonic geometric mark for multi-cloud synchronization architecture.',
+    category: 'Cloud & DevOps',
+    year: '2024',
+    client: 'SyncCloud Infrastructure (Toronto, Canada)',
+    deliverables: 'Brand System, Monogram, Documentation Graphics, Swag Kit',
+    industry: 'Cloud Computing & DevOps',
+    duration: '3 Weeks',
+    challenge: 'Illustrating real-time synchronization across heterogeneous servers without using tired, generic literal cloud clip-art shapes.',
+    palette: [
+      { hex: '#0A0B10', label: 'Server Black' },
+      { hex: '#3B82F6', label: 'Sync Blue' },
+      { hex: '#8B5CF6', label: 'Pipeline Purple' },
+      { hex: '#E0E7FF', label: 'Cloud Mist' }
+    ],
+    outcome: 'Crafted a continuous topological infinity-cloud monogram built with precision bezier mathematics that renders crisp on any terminal or billboard.',
+    dribbbleUrl: 'https://dribbble.com/shots/27560234-SyncCloud-Cloud-Tech-Brand-Identity',
+    imgUrl: 'https://cdn.dribbble.com/userupload/48389721/file/aa5638e9f4e6709f1a13c5dfde7c1a82.jpg?format=webp&resize=1000x750&vertical=center'
+  },
+  'verdevo': {
+    title: 'Verdevo — Brand Identity & Packaging',
+    subtitle: 'Sustainable luxury packaging architecture, custom wordmark, and tactile unboxing experience.',
+    category: 'Packaging & Eco-Luxury',
+    year: '2024',
+    client: 'Verdevo Botanicals (Melbourne, Australia)',
+    deliverables: 'Custom Wordmark, Sustainable Packaging Dielines, Emboss & Foil Guides',
+    industry: 'Clean Consumer Goods & Wellness',
+    duration: '4 Weeks',
+    challenge: 'Elevating eco-friendly consumer goods beyond earthy rustic cliches into a luxury modern boutique retail experience.',
+    palette: [
+      { hex: '#0E1510', label: 'Forest Dark' },
+      { hex: '#22C55E', label: 'Botanical Green' },
+      { hex: '#D4AF37', label: 'Champagne Gold' },
+      { hex: '#F3F7F4', label: 'Natural Canvas' }
+    ],
+    outcome: 'Delivered production-ready dielines with custom foil stamp and deboss specifications, leading to immediate premium department store placement.',
+    dribbbleUrl: 'https://dribbble.com/shots/27590022-Verdevo-Brand-Identity-Packaging-CapCut-Playoff',
+    imgUrl: 'https://cdn.dribbble.com/userupload/48497633/file/7640f13663e051de28ae03af3e0718bc.jpg?format=webp&resize=1000x750&vertical=center'
+  },
+  'fexora': {
+    title: 'Fexora — Tech Brand Identity | Logo Design',
+    subtitle: 'Kinetic visual identity and high-throughput vector mark for developer cloud infrastructure.',
+    category: 'Cloud Infrastructure',
+    year: '2025',
+    client: 'Fexora Cloud Platform (Berlin, Germany)',
+    deliverables: 'Dynamic Tech Mark, Vector Guidelines, Developer Tool Badges',
+    industry: 'Developer Tools & Infrastructure',
+    duration: '3 Weeks',
+    challenge: 'Translating extreme computing speed, sub-millisecond latency, and global resilience into a minimal, iconic glyph.',
+    palette: [
+      { hex: '#090A10', label: 'Kernel Dark' },
+      { hex: '#F43F5E', label: 'Laser Crimson' },
+      { hex: '#FB923C', label: 'Throughput Orange' },
+      { hex: '#F8FAFC', label: 'Data Light' }
+    ],
+    outcome: 'A sharp, kinetic vector mark that communicates speed and multi-cloud reliability across IDE extensions, web consoles, and swag.',
+    dribbbleUrl: 'https://dribbble.com/shots/27629170-Fexora-Tech-Brand-Identity-Logo-Design',
+    imgUrl: 'https://cdn.dribbble.com/userupload/48643678/file/b459501340bdf872d38b908881e97c08.jpg?format=webp&resize=1000x750&vertical=center'
+  },
+  'zyorex': {
+    title: 'ZYOREX — Modern Brand Identity for E-commerce Startup',
+    subtitle: 'High-impact visual identity and custom typographic mark for next-generation digital retail.',
+    category: 'E-Commerce Startup',
+    year: '2024',
+    client: 'ZYOREX Retail Global (Austin, TX)',
+    deliverables: 'Brand Identity, Custom Typography, Social Kit, Storefront Guidelines',
+    industry: 'E-Commerce & Digital Shopping',
+    duration: '3 Weeks',
+    challenge: 'Creating a bold, modern retail brand that grabs millennial and Gen-Z consumers in competitive social ad feeds.',
+    palette: [
+      { hex: '#07080D', label: 'Obsidian Core' },
+      { hex: '#8B5CF6', label: 'Electric Violet' },
+      { hex: '#38BDF8', label: 'Vivid Sky' },
+      { hex: '#FFFFFF', label: 'Optic Pure' }
+    ],
+    outcome: 'Built an energetic brand system with punchy typography and dynamic digital storefront layouts that skyrocketed ad conversion rates.',
+    dribbbleUrl: 'https://dribbble.com/shots/27464281-ZYOREX-Modern-Brand-Identity-for-E-commerce-Startup',
+    imgUrl: 'https://cdn.dribbble.com/userupload/48846171/file/23276e659f34dee314fa662d1820c007.jpg?format=webp&resize=1000x750&vertical=center'
+  },
+  'stratacode': {
+    title: 'StrataCode — Software Logo & Brand Identity',
+    subtitle: 'Precision-engineered architectural monogram for software development intelligence.',
+    category: 'Developer Software',
+    year: '2024',
+    client: 'StrataCode Labs (Seattle, WA)',
+    deliverables: 'Architectural Logo Mark, Dark UI Palette, IDE Syntax Brand Tokens',
+    industry: 'Enterprise Software & Code Intelligence',
+    duration: '3 Weeks',
+    challenge: 'Establishing visual credibility among senior software architects and dev teams who reject superficial design fluff.',
+    palette: [
+      { hex: '#0D1117', label: 'Terminal Dark' },
+      { hex: '#58A6FF', label: 'Syntax Blue' },
+      { hex: '#7EE787', label: 'Compile Green' },
+      { hex: '#F0F6FC', label: 'Buffer White' }
+    ],
+    outcome: 'An interlocking structural lettermark embodying multi-tier software architecture, clean syntax compilation, and structural strength.',
+    dribbbleUrl: 'https://dribbble.com/shots/27545907-StrataCode-Software-Logo-Brand-Identity',
+    imgUrl: 'https://cdn.dribbble.com/userupload/48103510/file/cc8348d7d6b21ad59aaa2a41f4a6e749.jpg?format=webp&resize=1000x750&vertical=center'
+  },
+  'fikra-ai': {
+    title: 'FIKRA AI — Saudi AI Chatbot Tech Brand Identity',
+    subtitle: 'Bilingual Arabic-English futuristic brand identity for Middle East enterprise conversational AI.',
+    category: 'AI Chatbot & LLM',
+    year: '2025',
+    client: 'FIKRA Artificial Intelligence (Riyadh, Saudi Arabia)',
+    deliverables: 'Bilingual Wordmark, Neural Thinking Glyph, Arabic Typography Guidelines',
+    industry: 'Conversational AI & Enterprise Chatbots',
+    duration: '4 Weeks',
+    challenge: 'Harmonizing cutting-edge generative AI symbolism with classical Arabic calligraphic elegance for enterprise GCC clients.',
+    palette: [
+      { hex: '#06080D', label: 'Desert Night' },
+      { hex: '#00F5D4', label: 'Oasis Neon' },
+      { hex: '#7B2CBF', label: 'Royal Amethyst' },
+      { hex: '#FFFFFF', label: 'Pure Light' }
+    ],
+    outcome: 'Crafted a fluid conversational mark marrying Arabic letterform rhythm with neural wave mechanics, receiving widespread acclaim across regional tech summits.',
+    dribbbleUrl: 'https://dribbble.com/shots/27720256-FIKRA-AI-Saudi-AI-Chatbot-Tech-Brand-Identity',
     imgUrl: 'https://cdn.dribbble.com/userupload/49109485/file/018a6b89436a3f4dec118b10db62371b.jpg?format=webp&resize=1000x750&vertical=center'
   },
   'pixelcore': {
@@ -3940,138 +4283,17 @@ const PROJECTS_DATA = {
     client: 'PixelCore Global (Sydney, Australia)',
     deliverables: 'Visual Identity, Design System Tokens, 50-page Brand Bible',
     industry: 'Developer Tools & Cloud',
-    duration: '5 Weeks',
-    challenge: 'A growing suite of 4 software developer tools had fragmented logos, inconsistent palettes, and confused brand messaging across their global marketing sites.',
+    duration: '4 Weeks',
+    challenge: 'Unifying 4 fragmented legacy developer software tools under one cohesive, authoritative brand umbrella without losing user familiarity.',
     palette: [
-      { hex: '#0D0E12', label: 'Carbon Core' },
-      { hex: '#3B82F6', label: 'Hyper Blue' },
-      { hex: '#10B981', label: 'Status Emerald' },
-      { hex: '#6366F1', label: 'Indigo Wave' },
-      { hex: '#F8FAFC', label: 'Cloud White' }
+      { hex: '#05060A', label: 'Carbon Black' },
+      { hex: '#6366F1', label: 'Indigo Core' },
+      { hex: '#06B6D4', label: 'Electric Cyan' },
+      { hex: '#F3F4F6', label: 'Pure Canvas' }
     ],
-    outcome: 'Architected a modular sub-branding system sharing unified typography and geometric primitives, accelerating future product rollouts by 60%.',
+    outcome: 'Unified brand architecture with design tokens that decreased front-end component inconsistency by 65% and unified their digital presence.',
     dribbbleUrl: 'https://dribbble.com/shots/27732717-PixelCore-SaaS-Brand-Identity-Logo-Design',
     imgUrl: 'https://cdn.dribbble.com/userupload/49027531/file/15046b9487ce852c4d15cd9345ed77fa.jpg?format=webp&resize=1000x750&vertical=center'
-  },
-  'unified-logic': {
-    title: 'Unified Logic — Strategic Tech Identity',
-    subtitle: 'Interlocking architectural monogram symbolizing unified enterprise data.',
-    category: 'Enterprise Tech & Logo',
-    year: '2025',
-    client: 'Unified Logic Corp (Seattle, WA)',
-    deliverables: 'Primary Logo, Executive Stationary, Brand Guidelines',
-    industry: 'Data Infrastructure',
-    duration: '3 Weeks',
-    challenge: 'Creating a high-credibility identity suited for Fortune 500 procurement teams while expressing forward-thinking modern cloud capabilities.',
-    palette: [
-      { hex: '#0B0D13', label: 'Obsidian Vault' },
-      { hex: '#2563EB', label: 'Logic Blue' },
-      { hex: '#64748B', label: 'Steel Grey' },
-      { hex: '#E2E8F0', label: 'Platinum' }
-    ],
-    outcome: 'A timeless optical monogram representing interconnected server clusters and streamlined processing pathways.',
-    dribbbleUrl: 'https://dribbble.com/shots/27683642-Unified-Logic-Tech-Brand-Identity-Logo-Design',
-    imgUrl: 'https://cdn.dribbble.com/userupload/48846171/file/23276e659f34dee314fa662d1820c007.jpg?format=webp&resize=1000x750&vertical=center'
-  },
-  'avrise': {
-    title: 'Avrise — Next-Gen Fintech & App Icon',
-    subtitle: 'High-contrast neon dark aesthetic for global cross-border payments.',
-    category: 'Fintech & Mobile',
-    year: '2025',
-    client: 'Avrise Payments Ltd (London, UK)',
-    deliverables: 'App Icon System, Marketing Collateral, Motion Guidelines',
-    industry: 'Fintech & Digital Banking',
-    duration: '4 Weeks',
-    challenge: 'Disrupting traditional legacy banks with an electric, ultra-fast financial identity tailored for Gen Z and tech-savvy digital nomads.',
-    palette: [
-      { hex: '#060709', label: 'Midnight Black' },
-      { hex: '#C8F560', label: 'Volt Green' },
-      { hex: '#00D1FF', label: 'Cyber Blue' },
-      { hex: '#1C1F26', label: 'Gunmetal Surface' }
-    ],
-    outcome: 'Delivered an unmistakable neon lettermark that stood out dramatically on the iOS App Store and Google Play Store, driving a 34% uptick in installs.',
-    dribbbleUrl: 'https://dribbble.com/shots/27671356-Avrise-Fintech-Brand-Identity-Logo-Design',
-    imgUrl: 'https://cdn.dribbble.com/userupload/48800391/file/2998122dfeed1f8cca995be3cb905003.jpg?format=webp&resize=1000x750&vertical=center'
-  },
-  'fexora': {
-    title: 'Fexora — Cloud Infrastructure Brand',
-    subtitle: 'Kinetic identity system conveying high-velocity compute and reliability.',
-    category: 'Cloud SaaS',
-    year: '2025',
-    client: 'Fexora Cloud Platform (Toronto, Canada)',
-    deliverables: 'Wordmark, Custom Monogram, Developer Portal Assets',
-    industry: 'Cloud Computing & DevOps',
-    duration: '3 Weeks',
-    challenge: 'Conveying military-grade server encryption without appearing intimidating or rigid to everyday software developers.',
-    palette: [
-      { hex: '#0A0C10', label: 'Dark Core' },
-      { hex: '#0284C7', label: 'Pacific Azure' },
-      { hex: '#38BDF8', label: 'Vivid Cyan' },
-      { hex: '#F1F5F9', label: 'Pure Frost' }
-    ],
-    outcome: 'An aerodynamic F-letterform combining aerodynamic speed facets with solid structural foundations.',
-    dribbbleUrl: 'https://dribbble.com/shots/27629170-Fexora-Tech-Brand-Identity-Logo-Design',
-    imgUrl: 'https://cdn.dribbble.com/userupload/48643678/file/b459501340bdf872d38b908881e97c08.jpg?format=webp&resize=1000x750&vertical=center'
-  },
-  'verdevo': {
-    title: 'Verdevo — Organic Identity & Packaging',
-    subtitle: 'Sustainable luxury packaging architecture and holistic tactile brand.',
-    category: 'Packaging & Eco',
-    year: '2024',
-    client: 'Verdevo Organics (Sydney, Australia)',
-    deliverables: 'Custom Wordmark, Sustainable Packaging Dielines, Merch Specs',
-    industry: 'Consumer Goods & Lifestyle',
-    duration: '4 Weeks',
-    challenge: 'Designing a premium lifestyle brand that reflects certified organic credentials while avoiding cliched green leaf imagery.',
-    palette: [
-      { hex: '#1C2826', label: 'Botanical Forest' },
-      { hex: '#A3B18A', label: 'Sage Olive' },
-      { hex: '#DAD7CD', label: 'Unbleached Linen' },
-      { hex: '#344E41', label: 'Deep Moss' }
-    ],
-    outcome: 'Custom embossed packaging with vegetable-ink foil details that elevated retail shelf presence across 14 organic grocers in Australia.',
-    dribbbleUrl: 'https://dribbble.com/shots/27590022-Verdevo-Brand-Identity-Packaging-CapCut-Playoff',
-    imgUrl: 'https://cdn.dribbble.com/userupload/48497633/file/7640f13663e051de28ae03af3e0718bc.jpg?format=webp&resize=1000x750&vertical=center'
-  },
-  'synccloud': {
-    title: 'SyncCloud — Cloud Tech Visual System',
-    subtitle: 'Harmonic continuous-loop geometric mark symbolizing infinite synchronization.',
-    category: 'Cloud Services & Logo',
-    year: '2024',
-    client: 'SyncCloud Network (Dubai, UAE)',
-    deliverables: 'Brand Identity, Iconography Kit, Presentation Deck',
-    industry: 'Enterprise Storage & Networking',
-    duration: '3 Weeks',
-    challenge: 'Standing out in the congested enterprise backup space with an identity that communicated seamless real-time syncing and zero downtime.',
-    palette: [
-      { hex: '#0B0D14', label: 'Abyssal Black' },
-      { hex: '#6366F1', label: 'Indigo Flux' },
-      { hex: '#A855F7', label: 'Pulse Purple' },
-      { hex: '#FFFFFF', label: 'Clarity White' }
-    ],
-    outcome: 'Created a continuous mobius ribbon emblem that dynamically animates during file sync operations inside their desktop app.',
-    dribbbleUrl: 'https://dribbble.com/shots/27560234-SyncCloud-Cloud-Tech-Brand-Identity',
-    imgUrl: 'https://cdn.dribbble.com/userupload/48389721/file/aa5638e9f4e6709f1a13c5dfde7c1a82.jpg?format=webp&resize=1000x750&vertical=center'
-  },
-  'xylen': {
-    title: 'Xylen — Autonomous AI Workspace',
-    subtitle: 'Futuristic corporate positioning and adaptive tokens for AI intelligence.',
-    category: 'AI Copilot & SaaS',
-    year: '2024',
-    client: 'Xylen AI Systems (Stockholm, Sweden)',
-    deliverables: 'Full Visual Identity, UI Brand Language, Social Kit',
-    industry: 'Generative AI & Productivity',
-    duration: '4 Weeks',
-    challenge: 'Communicating autonomous multi-agent capability without appearing unapproachable to non-technical knowledge workers.',
-    palette: [
-      { hex: '#08080C', label: 'Void Black' },
-      { hex: '#EC4899', label: 'Neon Magenta' },
-      { hex: '#8B5CF6', label: 'Spectral Violet' },
-      { hex: '#F3F4F6', label: 'Clean Ivory' }
-    ],
-    outcome: 'An adaptive polymorphic branding system that morphs across light/dark workspaces and scales across enterprise marketing touchpoints.',
-    dribbbleUrl: 'https://dribbble.com/shots/27482517-Xylen-AI-SaaS-Brand-Identity',
-    imgUrl: 'https://cdn.dribbble.com/userupload/48103510/file/cc8348d7d6b21ad59aaa2a41f4a6e749.jpg?format=webp&resize=1000x750&vertical=center'
   }
 };
 
@@ -4183,7 +4405,12 @@ function initCaseStudyModal() {
     document.getElementById('modalDuration').textContent = data.duration;
     document.getElementById('modalChallenge').textContent = data.challenge;
     document.getElementById('modalOutcome').textContent = data.outcome;
-    document.getElementById('modalDribbbleLink').href = data.dribbbleUrl;
+    const modalLink = document.getElementById('modalDribbbleLink');
+    modalLink.href = data.isBehance ? data.behanceUrl : data.dribbbleUrl;
+    const btnSpan = modalLink.querySelector('span');
+    if (btnSpan) {
+      btnSpan.textContent = data.isBehance ? 'View Full Case Study on Behance' : 'View Presentation on Dribbble';
+    }
 
     // Render palette swatches
     const paletteContainer = document.getElementById('modalPalette');
