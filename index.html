@@ -1,0 +1,4654 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>MD Al Amin — Brand Specialist & Visual Identity Expert</title>
+  <meta name="description" content="Portfolio of MD Al Amin (alamininovix) — Brand Specialist, Logo Designer, and Visual Identity Expert helping global businesses build modern, minimal, and strategic brand systems.">
+  <link rel="icon" href="https://cdn.dribbble.com/users/19103600/avatars/normal/0f3b4d68faf2ee3c9bc5466f15b3d06d.jpg?1754217194" type="image/jpeg">
+
+  <!-- Google Fonts: Outfit + Plus Jakarta Sans + Space Grotesk -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700;800;900&family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
+
+  <style>
+/* ==========================================================================
+   MD AL AMIN (ALAMININOVIX) — PORTFOLIO DESIGN SYSTEM & STYLESHEET
+   Color Theme: Royal Electric Purple (#5d2bca) & Deep Black Gradient
+   Typography: Outfit (Headings) + Plus Jakarta Sans (Body) + Space Grotesk
+   ========================================================================== */
+
+/* --------------------------------------------------------------------------
+   CSS VARIABLES & DESIGN TOKENS
+   -------------------------------------------------------------------------- */
+:root {
+  /* Dark Theme Palette (Default: #5d2bca & Deep Black Gradient) */
+  --bg-primary: #07060a;
+  --bg-secondary: #0d0a14;
+  --bg-tertiary: #140f21;
+  --bg-surface: rgba(19, 15, 31, 0.75);
+  --bg-glass: rgba(13, 10, 20, 0.75);
+  --bg-input: #110e1c;
+
+  --border-color: rgba(255, 255, 255, 0.08);
+  --border-hover: rgba(255, 255, 255, 0.18);
+  --border-accent: rgba(93, 43, 202, 0.45);
+
+  --text-primary: #f8fafc;
+  --text-secondary: #94a3b8;
+  --text-muted: #64748b;
+  --text-inverse: #ffffff;
+
+  /* Brand Colors: User Specified #5d2bca & Royal Violet Accents */
+  --accent-primary: #5d2bca;       /* Primary Brand Violet */
+  --accent-hover: #723be3;         /* Hover State */
+  --accent-light: #9d6fff;         /* Highlights / Text */
+  --accent-glow: rgba(93, 43, 202, 0.42);
+  --accent-secondary: #8b5cf6;     /* Secondary Electric Purple */
+  --accent-cyan-glow: rgba(139, 92, 246, 0.25);
+
+  /* Elevation Shadows with Purple Ambience */
+  --shadow-sm: 0 2px 8px rgba(0, 0, 0, 0.3);
+  --shadow-md: 0 8px 24px rgba(0, 0, 0, 0.5);
+  --shadow-lg: 0 16px 40px rgba(0, 0, 0, 0.65);
+  --shadow-glow: 0 0 35px var(--accent-glow);
+
+  /* Fonts: Replaced quirky Syne with ultra-clean modern Outfit */
+  --font-heading: 'Outfit', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  --font-body: 'Plus Jakarta Sans', sans-serif;
+  --font-mono: 'Space Grotesk', monospace;
+
+  /* Layout */
+  --container-max: 1240px;
+  --radius-sm: 8px;
+  --radius-md: 14px;
+  --radius-lg: 22px;
+  --radius-full: 9999px;
+  --transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+/* Light Theme Variables */
+[data-theme="light"] {
+  --bg-primary: #fbfbfe;
+  --bg-secondary: #ffffff;
+  --bg-tertiary: #f4f2fa;
+  --bg-surface: rgba(255, 255, 255, 0.85);
+  --bg-glass: rgba(251, 251, 254, 0.85);
+  --bg-input: #f4f2fa;
+
+  --border-color: rgba(0, 0, 0, 0.08);
+  --border-hover: rgba(0, 0, 0, 0.18);
+  --border-accent: rgba(93, 43, 202, 0.4);
+
+  --text-primary: #0f0c1b;
+  --text-secondary: #475569;
+  --text-muted: #8b879e;
+  --text-inverse: #ffffff;
+
+  --accent-primary: #5d2bca;
+  --accent-hover: #4c22a7;
+  --accent-light: #7c3aed;
+  --accent-glow: rgba(93, 43, 202, 0.25);
+  --accent-secondary: #6d28d9;
+
+  --shadow-sm: 0 2px 8px rgba(0, 0, 0, 0.04);
+  --shadow-md: 0 8px 24px rgba(0, 0, 0, 0.06);
+  --shadow-lg: 0 16px 40px rgba(0, 0, 0, 0.08);
+  --shadow-glow: 0 0 35px var(--accent-glow);
+}
+
+/* --------------------------------------------------------------------------
+   BASE & RESET
+   -------------------------------------------------------------------------- */
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+  font-size: 16px;
+  -webkit-text-size-adjust: 100%;
+}
+
+body {
+  font-family: var(--font-body);
+  background-color: var(--bg-primary);
+  background-image: radial-gradient(circle at 50% -5%, rgba(93, 43, 202, 0.22) 0%, transparent 55%);
+  background-attachment: fixed;
+  color: var(--text-primary);
+  line-height: 1.65;
+  overflow-x: hidden;
+  position: relative;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+::-webkit-scrollbar-track {
+  background: var(--bg-primary);
+}
+::-webkit-scrollbar-thumb {
+  background: rgba(93, 43, 202, 0.4);
+  border-radius: var(--radius-full);
+}
+::-webkit-scrollbar-thumb:hover {
+  background: var(--accent-primary);
+}
+
+/* Typography Defaults */
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-heading);
+  color: var(--text-primary);
+  line-height: 1.2;
+  font-weight: 700;
+  letter-spacing: -0.025em;
+}
+
+p {
+  color: var(--text-secondary);
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+  transition: var(--transition);
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+button, input, select, textarea {
+  font-family: inherit;
+  font-size: 1rem;
+}
+
+/* Container */
+.container {
+  width: 100%;
+  max-width: var(--container-max);
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 1.5rem;
+  padding-right: 1.5rem;
+}
+
+/* Utility Helpers */
+.text-center { text-align: center; }
+.mx-auto { margin-left: auto; margin-right: auto; }
+.max-w-xl { max-width: 680px; }
+.mt-6 { margin-top: 1.5rem; }
+
+/* --------------------------------------------------------------------------
+   AMBIENT GLOWS & BACKGROUND GRADIENTS
+   -------------------------------------------------------------------------- */
+.ambient-glow {
+  position: fixed;
+  width: 650px;
+  height: 650px;
+  border-radius: 50%;
+  filter: blur(140px);
+  pointer-events: none;
+  z-index: 0;
+  opacity: 0.22;
+  transition: opacity 0.5s ease;
+}
+
+.glow-top-left {
+  top: -200px;
+  left: -200px;
+  background: radial-gradient(circle, #5d2bca 0%, transparent 70%);
+}
+
+.glow-top-right {
+  top: 15%;
+  right: -250px;
+  background: radial-gradient(circle, #8b5cf6 0%, transparent 70%);
+}
+
+/* --------------------------------------------------------------------------
+   TOP ANNOUNCEMENT / AVAILABILITY BAR
+   -------------------------------------------------------------------------- */
+.top-announcement {
+  background: var(--bg-secondary);
+  border-bottom: 1px solid var(--border-color);
+  font-size: 0.825rem;
+  padding: 0.55rem 0;
+  position: relative;
+  z-index: 10;
+}
+
+.announcement-inner {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+}
+
+.status-indicator {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-weight: 500;
+  color: var(--text-primary);
+}
+
+.status-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background-color: var(--accent-light);
+  box-shadow: 0 0 12px var(--accent-primary);
+  animation: pulse-dot 2s infinite ease-in-out;
+}
+
+@keyframes pulse-dot {
+  0%, 100% { opacity: 1; transform: scale(1); }
+  50% { opacity: 0.4; transform: scale(1.25); }
+}
+
+.announcement-meta {
+  display: flex;
+  align-items: center;
+  gap: 1.25rem;
+  color: var(--text-muted);
+  font-family: var(--font-mono);
+  font-size: 0.78rem;
+}
+
+/* --------------------------------------------------------------------------
+   SITE HEADER & NAVIGATION
+   -------------------------------------------------------------------------- */
+.site-header {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  background: var(--bg-glass);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border-bottom: 1px solid var(--border-color);
+  transition: var(--transition);
+}
+
+.header-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 74px;
+}
+
+/* Brand Logo */
+.brand-logo {
+  display: flex;
+  align-items: center;
+  gap: 0.85rem;
+}
+
+.logo-mark {
+  width: 40px;
+  height: 40px;
+  border-radius: var(--radius-sm);
+  background: linear-gradient(135deg, #5d2bca 0%, #7c3aed 100%);
+  color: #ffffff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: var(--font-heading);
+  font-weight: 800;
+  font-size: 1.3rem;
+  letter-spacing: -0.05em;
+  transition: var(--transition);
+  box-shadow: 0 4px 15px rgba(93, 43, 202, 0.4);
+}
+
+.brand-logo:hover .logo-mark {
+  background: linear-gradient(135deg, #723be3 0%, #9d6fff 100%);
+  transform: rotate(-6deg) scale(1.05);
+}
+
+.logo-text {
+  display: flex;
+  flex-direction: column;
+}
+
+.logo-text .name {
+  font-family: var(--font-heading);
+  font-size: 1.1rem;
+  font-weight: 800;
+  letter-spacing: 0.04em;
+  color: var(--text-primary);
+  line-height: 1.1;
+}
+
+.logo-text .sub {
+  font-family: var(--font-mono);
+  font-size: 0.65rem;
+  font-weight: 600;
+  color: var(--text-muted);
+  letter-spacing: 0.12em;
+}
+
+/* Desktop Nav Links */
+.desktop-nav .nav-links {
+  display: flex;
+  list-style: none;
+  gap: 1.75rem;
+}
+
+.nav-link {
+  font-size: 0.92rem;
+  font-weight: 500;
+  color: var(--text-secondary);
+  position: relative;
+  padding: 0.4rem 0;
+}
+
+.nav-link:hover,
+.nav-link.active {
+  color: var(--text-primary);
+}
+
+.nav-link::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 0;
+  height: 2px;
+  background: linear-gradient(90deg, var(--accent-primary), var(--accent-light));
+  transition: width 0.25s ease;
+}
+
+.nav-link:hover::after,
+.nav-link.active::after {
+  width: 100%;
+}
+
+/* Header Actions */
+.header-actions {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+/* Theme Toggle Button */
+.theme-toggle {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  border: 1px solid var(--border-color);
+  background: var(--bg-secondary);
+  color: var(--text-primary);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: var(--transition);
+}
+
+.theme-toggle:hover {
+  background: var(--bg-tertiary);
+  border-color: var(--border-hover);
+  transform: rotate(20deg);
+}
+
+[data-theme="dark"] .icon-moon { display: none; }
+[data-theme="dark"] .icon-sun { display: block; }
+[data-theme="light"] .icon-sun { display: none; }
+[data-theme="light"] .icon-moon { display: block; }
+
+/* Mobile Menu Button */
+.mobile-menu-btn {
+  display: none;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 32px;
+  height: 22px;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+}
+
+.mobile-menu-btn span {
+  width: 100%;
+  height: 2px;
+  background: var(--text-primary);
+  transition: var(--transition);
+  border-radius: 2px;
+}
+
+.mobile-menu-btn.open span:nth-child(1) {
+  transform: translateY(10px) rotate(45deg);
+}
+.mobile-menu-btn.open span:nth-child(2) {
+  opacity: 0;
+}
+.mobile-menu-btn.open span:nth-child(3) {
+  transform: translateY(-10px) rotate(-45deg);
+}
+
+/* Mobile Drawer */
+.mobile-drawer {
+  display: none;
+  position: absolute;
+  top: 74px;
+  left: 0;
+  width: 100%;
+  background: var(--bg-secondary);
+  border-bottom: 1px solid var(--border-color);
+  padding: 1.5rem 0;
+  box-shadow: var(--shadow-lg);
+}
+
+.mobile-drawer.open {
+  display: block;
+}
+
+.mobile-drawer-content {
+  padding: 0 1.5rem;
+}
+
+.mobile-nav-links {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+  margin-bottom: 1.5rem;
+}
+
+.mobile-nav-link {
+  font-size: 1.15rem;
+  font-weight: 600;
+  color: var(--text-primary);
+  display: block;
+}
+
+.mobile-drawer-footer {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  border-top: 1px solid var(--border-color);
+  padding-top: 1.25rem;
+}
+
+.mobile-socials {
+  display: flex;
+  gap: 1.25rem;
+  font-size: 0.9rem;
+  color: var(--text-secondary);
+}
+
+/* --------------------------------------------------------------------------
+   BUTTONS & BADGES
+   -------------------------------------------------------------------------- */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  font-weight: 600;
+  padding: 0.7rem 1.45rem;
+  border-radius: var(--radius-full);
+  font-size: 0.92rem;
+  cursor: pointer;
+  border: 1px solid transparent;
+  transition: var(--transition);
+  text-decoration: none;
+}
+
+.btn-primary {
+  background: linear-gradient(135deg, #5d2bca 0%, #7c3aed 100%);
+  color: #ffffff;
+  border-color: #5d2bca;
+  box-shadow: 0 4px 20px rgba(93, 43, 202, 0.45);
+}
+
+.btn-primary:hover {
+  background: linear-gradient(135deg, #6c32e0 0%, #8b5cf6 100%);
+  border-color: #7c3aed;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 26px rgba(93, 43, 202, 0.6);
+}
+
+.btn-secondary {
+  background-color: var(--bg-secondary);
+  color: var(--text-primary);
+  border-color: var(--border-color);
+}
+
+.btn-secondary:hover {
+  background-color: var(--bg-tertiary);
+  border-color: var(--border-hover);
+  transform: translateY(-2px);
+}
+
+.btn-lg {
+  padding: 0.9rem 2rem;
+  font-size: 1.02rem;
+}
+
+.btn-block {
+  width: 100%;
+}
+
+.badge-tag {
+  display: inline-flex;
+  align-items: center;
+  padding: 0.4rem 1.1rem;
+  border-radius: var(--radius-full);
+  font-size: 0.8rem;
+  font-weight: 600;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  background: rgba(93, 43, 202, 0.12);
+  border: 1px solid rgba(93, 43, 202, 0.35);
+  color: var(--accent-light);
+}
+
+.section-badge {
+  display: inline-block;
+  font-family: var(--font-mono);
+  font-size: 0.8rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.14em;
+  color: var(--accent-light);
+  margin-bottom: 0.75rem;
+}
+
+.section-title {
+  font-size: clamp(2.1rem, 3.8vw, 3rem);
+  font-weight: 800;
+  margin-bottom: 0.75rem;
+  letter-spacing: -0.03em;
+}
+
+.section-subtitle {
+  font-size: 1.05rem;
+  color: var(--text-secondary);
+  line-height: 1.65;
+}
+
+.gradient-text {
+  background: linear-gradient(135deg, #ffffff 30%, #c4b5fd 70%, #7c3aed 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+/* --------------------------------------------------------------------------
+   HERO SECTION
+   -------------------------------------------------------------------------- */
+.hero-section {
+  padding: 6rem 0 4.5rem;
+  position: relative;
+  z-index: 1;
+}
+
+.hero-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  max-width: 960px;
+}
+
+.hero-badge {
+  margin-bottom: 1.85rem;
+}
+
+.hero-headline {
+  font-family: var(--font-heading);
+  font-size: clamp(2.6rem, 5.5vw, 4.4rem);
+  font-weight: 800;
+  margin-bottom: 1.5rem;
+  line-height: 1.1;
+  letter-spacing: -0.03em;
+}
+
+.hero-description {
+  font-size: clamp(1.05rem, 1.8vw, 1.25rem);
+  color: var(--text-secondary);
+  max-width: 760px;
+  margin-bottom: 2.5rem;
+  line-height: 1.65;
+}
+
+.hero-description strong {
+  color: var(--text-primary);
+  font-weight: 600;
+}
+
+.hero-actions {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin-bottom: 4rem;
+}
+
+.badge-pill {
+  font-size: 0.72rem;
+  background: rgba(93, 43, 202, 0.2);
+  color: var(--accent-light);
+  padding: 0.2rem 0.5rem;
+  border-radius: var(--radius-full);
+  margin-left: 0.4rem;
+  font-weight: 700;
+}
+
+/* Hero Metrics */
+.hero-metrics {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1.5rem;
+  width: 100%;
+  padding-top: 2.25rem;
+  border-top: 1px solid var(--border-color);
+}
+
+.metric-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.3rem;
+}
+
+.metric-num {
+  font-family: var(--font-heading);
+  font-size: 2.4rem;
+  font-weight: 800;
+  color: var(--text-primary);
+  line-height: 1;
+  letter-spacing: -0.02em;
+}
+
+.metric-label {
+  font-size: 0.825rem;
+  color: var(--text-muted);
+  font-weight: 500;
+}
+
+/* --------------------------------------------------------------------------
+   BRAND TICKER MARQUEE
+   -------------------------------------------------------------------------- */
+.brand-ticker-section {
+  border-top: 1px solid var(--border-color);
+  border-bottom: 1px solid var(--border-color);
+  background: var(--bg-secondary);
+  padding: 1.35rem 0;
+  overflow: hidden;
+  position: relative;
+  z-index: 1;
+}
+
+.ticker-wrapper {
+  display: flex;
+  overflow: hidden;
+  user-select: none;
+}
+
+.ticker-track {
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+  white-space: nowrap;
+  animation: ticker-scroll 32s linear infinite;
+}
+
+.ticker-item {
+  font-family: var(--font-heading);
+  font-size: 1.15rem;
+  font-weight: 800;
+  letter-spacing: 0.08em;
+  color: var(--text-muted);
+  transition: color 0.2s ease;
+}
+
+.ticker-item:hover {
+  color: var(--text-primary);
+}
+
+.ticker-dot {
+  color: var(--accent-light);
+  font-size: 1.2rem;
+}
+
+@keyframes ticker-scroll {
+  from { transform: translateX(0); }
+  to { transform: translateX(-50%); }
+}
+
+/* --------------------------------------------------------------------------
+   WORK / PORTFOLIO SECTION
+   -------------------------------------------------------------------------- */
+.work-section {
+  padding: 7rem 0;
+  position: relative;
+  z-index: 1;
+}
+
+/* Base Section Header */
+.section-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  margin-bottom: 3.5rem;
+  flex-wrap: wrap;
+  gap: 1.75rem;
+}
+
+/* Centered Section Header - Fixes Alignment in Services & Process */
+.section-header.text-center {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  justify-content: center;
+  margin-bottom: 3.5rem;
+}
+
+.section-header.text-center .section-title {
+  max-width: 820px;
+}
+
+.section-header.text-center .section-subtitle {
+  max-width: 660px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.section-header-left {
+  max-width: 620px;
+}
+
+/* Filter Group */
+.filter-group {
+  display: flex;
+  gap: 0.5rem;
+  flex-wrap: wrap;
+  background: var(--bg-secondary);
+  padding: 0.35rem;
+  border-radius: var(--radius-full);
+  border: 1px solid var(--border-color);
+}
+
+.filter-btn {
+  background: transparent;
+  border: none;
+  color: var(--text-secondary);
+  padding: 0.45rem 1.1rem;
+  border-radius: var(--radius-full);
+  font-size: 0.85rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: var(--transition);
+}
+
+.filter-btn:hover {
+  color: var(--text-primary);
+}
+
+.filter-btn.active {
+  background: linear-gradient(135deg, #5d2bca 0%, #7c3aed 100%);
+  color: #ffffff;
+  box-shadow: 0 2px 10px rgba(93, 43, 202, 0.4);
+}
+
+/* Project Grid */
+.project-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2rem;
+}
+
+.project-card {
+  background: linear-gradient(180deg, var(--bg-surface) 0%, var(--bg-secondary) 100%);
+  border-radius: var(--radius-md);
+  border: 1px solid var(--border-color);
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  transition: var(--transition);
+}
+
+.project-card:hover {
+  transform: translateY(-6px);
+  border-color: rgba(93, 43, 202, 0.5);
+  box-shadow: 0 12px 35px rgba(93, 43, 202, 0.2);
+}
+
+.project-media {
+  position: relative;
+  aspect-ratio: 4 / 3;
+  overflow: hidden;
+  background: var(--bg-tertiary);
+}
+
+.project-media img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.project-card:hover .project-media img {
+  transform: scale(1.05);
+}
+
+.project-overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(7, 6, 10, 0.7);
+  backdrop-filter: blur(4px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  transition: opacity 0.25s ease;
+}
+
+.project-card:hover .project-overlay {
+  opacity: 1;
+}
+
+.btn-preview {
+  background: linear-gradient(135deg, #5d2bca 0%, #7c3aed 100%);
+  color: #ffffff;
+  border: none;
+  font-weight: 700;
+  font-size: 0.85rem;
+  padding: 0.7rem 1.35rem;
+  border-radius: var(--radius-full);
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  cursor: pointer;
+  box-shadow: 0 4px 18px rgba(93, 43, 202, 0.5);
+  transform: translateY(10px);
+  transition: var(--transition);
+}
+
+.project-card:hover .btn-preview {
+  transform: translateY(0);
+}
+
+.project-info {
+  padding: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+}
+
+.project-meta-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 0.65rem;
+}
+
+.project-tag {
+  font-size: 0.75rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: var(--accent-light);
+}
+
+.project-year {
+  font-family: var(--font-mono);
+  font-size: 0.75rem;
+  color: var(--text-muted);
+}
+
+.project-title {
+  font-size: 1.2rem;
+  margin-bottom: 0.65rem;
+  line-height: 1.3;
+}
+
+.project-snippet {
+  font-size: 0.9rem;
+  color: var(--text-secondary);
+  line-height: 1.5;
+  margin-bottom: 1.25rem;
+  flex-grow: 1;
+}
+
+.project-links {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border-top: 1px solid var(--border-color);
+  padding-top: 1rem;
+}
+
+.text-link {
+  background: none;
+  border: none;
+  color: var(--text-primary);
+  font-weight: 600;
+  font-size: 0.85rem;
+  cursor: pointer;
+  transition: color 0.2s ease;
+  padding: 0;
+}
+
+.text-link:hover {
+  color: var(--accent-light);
+}
+
+.dribbble-direct {
+  color: var(--text-muted);
+  display: flex;
+  align-items: center;
+  padding: 0.3rem;
+  border-radius: 50%;
+  transition: var(--transition);
+}
+
+.dribbble-direct:hover {
+  color: var(--accent-light);
+  background: var(--bg-tertiary);
+}
+
+/* Portfolio Footer CTA */
+.portfolio-footer-cta {
+  margin-top: 4rem;
+  text-align: center;
+  padding: 2.5rem;
+  background: var(--bg-surface);
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-lg);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1.25rem;
+}
+
+.btn-group {
+  display: flex;
+  gap: 1rem;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+/* --------------------------------------------------------------------------
+   CORE CAPABILITIES / STRATEGIC SERVICES SECTION
+   -------------------------------------------------------------------------- */
+.services-section {
+  padding: 7rem 0;
+  background: var(--bg-primary);
+  position: relative;
+  z-index: 1;
+}
+
+.services-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2rem;
+  margin-top: 3.5rem;
+}
+
+.service-card {
+  background: linear-gradient(180deg, var(--bg-surface) 0%, var(--bg-secondary) 100%);
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-lg);
+  padding: 2.5rem 2.25rem;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  transition: var(--transition);
+}
+
+.service-card:hover {
+  border-color: rgba(93, 43, 202, 0.5);
+  transform: translateY(-5px);
+  box-shadow: 0 12px 35px rgba(93, 43, 202, 0.2);
+}
+
+.service-card.featured-service {
+  border-color: rgba(93, 43, 202, 0.5);
+  background: linear-gradient(180deg, rgba(93, 43, 202, 0.12) 0%, var(--bg-secondary) 100%);
+  box-shadow: 0 0 30px rgba(93, 43, 202, 0.15);
+}
+
+.service-badge-pill {
+  position: absolute;
+  top: 1.5rem;
+  right: 1.5rem;
+  font-size: 0.72rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  background: linear-gradient(135deg, #5d2bca 0%, #7c3aed 100%);
+  color: #ffffff;
+  padding: 0.25rem 0.75rem;
+  border-radius: var(--radius-full);
+}
+
+.service-number {
+  font-family: var(--font-mono);
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: var(--accent-light);
+  opacity: 0.6;
+  margin-bottom: 1.25rem;
+}
+
+.service-icon {
+  color: var(--accent-light);
+  margin-bottom: 1.5rem;
+}
+
+.service-title {
+  font-size: 1.35rem;
+  margin-bottom: 0.85rem;
+}
+
+.service-desc {
+  font-size: 0.92rem;
+  line-height: 1.65;
+  margin-bottom: 1.5rem;
+}
+
+.service-list {
+  list-style: none;
+  margin-top: auto;
+  border-top: 1px solid var(--border-color);
+  padding-top: 1.25rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.6rem;
+}
+
+.service-list li {
+  font-size: 0.85rem;
+  color: var(--text-secondary);
+  position: relative;
+  padding-left: 1.25rem;
+}
+
+.service-list li::before {
+  content: '→';
+  position: absolute;
+  left: 0;
+  color: var(--accent-light);
+}
+
+/* --------------------------------------------------------------------------
+   THE 4-STEP PROCESS SECTION (HOW WE WORK)
+   -------------------------------------------------------------------------- */
+.process-section {
+  padding: 7rem 0;
+  background: var(--bg-secondary);
+  border-top: 1px solid var(--border-color);
+  border-bottom: 1px solid var(--border-color);
+  position: relative;
+  z-index: 1;
+}
+
+.process-timeline {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1.75rem;
+  margin-top: 3.5rem;
+  position: relative;
+}
+
+.timeline-step {
+  display: flex;
+  flex-direction: column;
+}
+
+.step-marker {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  margin-bottom: 1.25rem;
+  position: relative;
+}
+
+.step-num {
+  width: 46px;
+  height: 46px;
+  border-radius: var(--radius-sm);
+  background: linear-gradient(135deg, rgba(93, 43, 202, 0.25) 0%, var(--bg-tertiary) 100%);
+  border: 1px solid rgba(93, 43, 202, 0.4);
+  color: var(--accent-light);
+  font-family: var(--font-mono);
+  font-weight: 800;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.15rem;
+  position: relative;
+  z-index: 2;
+  box-shadow: 0 4px 15px rgba(93, 43, 202, 0.2);
+}
+
+.step-card {
+  background: var(--bg-primary);
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-md);
+  padding: 2rem 1.75rem;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  transition: var(--transition);
+}
+
+.step-card:hover {
+  border-color: rgba(93, 43, 202, 0.5);
+  transform: translateY(-4px);
+  box-shadow: 0 10px 30px rgba(93, 43, 202, 0.18);
+}
+
+.step-badge {
+  font-family: var(--font-mono);
+  font-size: 0.72rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  color: var(--accent-light);
+  margin-bottom: 0.65rem;
+}
+
+.step-title {
+  font-size: 1.18rem;
+  margin-bottom: 0.75rem;
+  line-height: 1.3;
+}
+
+.step-desc {
+  font-size: 0.88rem;
+  line-height: 1.6;
+  margin-bottom: 1.25rem;
+}
+
+.step-deliverable {
+  margin-top: auto;
+  border-top: 1px solid var(--border-color);
+  padding-top: 1rem;
+  font-size: 0.8rem;
+  color: var(--text-muted);
+}
+
+.step-deliverable strong {
+  color: var(--text-primary);
+}
+
+/* --------------------------------------------------------------------------
+   INTERACTIVE CALCULATOR SECTION
+   -------------------------------------------------------------------------- */
+.calculator-section {
+  padding: 7rem 0;
+  position: relative;
+  z-index: 1;
+}
+
+.calculator-wrapper {
+  background: var(--bg-secondary);
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-lg);
+  padding: 3.5rem;
+  box-shadow: var(--shadow-lg);
+}
+
+.calculator-body {
+  display: grid;
+  grid-template-columns: 1.5fr 1fr;
+  gap: 3rem;
+  margin-top: 3rem;
+}
+
+.calc-group-title {
+  font-size: 1.1rem;
+  font-weight: 700;
+  margin-bottom: 1.25rem;
+}
+
+.service-checkboxes {
+  display: flex;
+  flex-direction: column;
+  gap: 0.85rem;
+}
+
+.calc-check-card {
+  display: flex;
+  align-items: flex-start;
+  gap: 1rem;
+  background: var(--bg-tertiary);
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-md);
+  padding: 1.25rem;
+  cursor: pointer;
+  transition: var(--transition);
+}
+
+.calc-check-card:hover {
+  border-color: var(--border-hover);
+}
+
+.calc-check-card.active {
+  border-color: var(--accent-primary);
+  background: rgba(93, 43, 202, 0.12);
+}
+
+.calc-check-card input[type="checkbox"] {
+  width: 20px;
+  height: 20px;
+  accent-color: var(--accent-primary);
+  margin-top: 0.15rem;
+  cursor: pointer;
+}
+
+.calc-check-content {
+  flex-grow: 1;
+}
+
+.check-title-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 0.25rem;
+}
+
+.check-title {
+  font-weight: 600;
+  font-size: 0.98rem;
+  color: var(--text-primary);
+}
+
+.check-price {
+  font-family: var(--font-mono);
+  font-weight: 700;
+  color: var(--accent-light);
+  font-size: 0.92rem;
+}
+
+.check-desc {
+  font-size: 0.825rem;
+  color: var(--text-muted);
+  display: block;
+}
+
+/* Pace Options */
+.pace-options {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 0.85rem;
+}
+
+.pace-card {
+  background: var(--bg-tertiary);
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-md);
+  padding: 1.15rem;
+  text-align: center;
+  cursor: pointer;
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+  transition: var(--transition);
+}
+
+.pace-card input {
+  display: none;
+}
+
+.pace-card:hover {
+  border-color: var(--border-hover);
+}
+
+.pace-card.active {
+  border-color: var(--accent-primary);
+  background: rgba(93, 43, 202, 0.12);
+}
+
+.pace-title {
+  font-weight: 700;
+  font-size: 0.9rem;
+  color: var(--text-primary);
+}
+
+.pace-subtitle {
+  font-size: 0.8rem;
+  color: var(--text-secondary);
+}
+
+.pace-discount {
+  font-size: 0.72rem;
+  font-weight: 700;
+  color: var(--accent-light);
+  margin-top: 0.25rem;
+}
+
+/* Summary Panel */
+.calc-summary-panel {
+  position: sticky;
+  top: 100px;
+}
+
+.summary-card {
+  background: var(--bg-primary);
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-lg);
+  padding: 2.25rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  box-shadow: var(--shadow-md);
+}
+
+.summary-badge {
+  font-family: var(--font-mono);
+  font-size: 0.78rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  color: var(--text-muted);
+}
+
+.summary-price-box {
+  display: flex;
+  align-items: baseline;
+  gap: 0.35rem;
+}
+
+.summary-price-box .currency {
+  font-size: 2rem;
+  font-weight: 800;
+  color: var(--accent-light);
+}
+
+.summary-price-box .total-amount {
+  font-family: var(--font-heading);
+  font-size: 3.5rem;
+  font-weight: 800;
+  line-height: 1;
+  color: var(--text-primary);
+}
+
+.summary-price-box .currency-tag {
+  font-family: var(--font-mono);
+  font-size: 0.9rem;
+  color: var(--text-muted);
+  font-weight: 600;
+}
+
+.summary-timeline {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 0.95rem;
+  border-top: 1px solid var(--border-color);
+  border-bottom: 1px solid var(--border-color);
+  padding: 0.85rem 0;
+}
+
+.summary-timeline strong {
+  color: var(--text-primary);
+}
+
+.summary-features {
+  display: flex;
+  flex-direction: column;
+  gap: 0.65rem;
+  font-size: 0.85rem;
+  color: var(--text-secondary);
+}
+
+.summary-note {
+  font-size: 0.75rem;
+  color: var(--text-muted);
+  text-align: center;
+  margin-top: 0.75rem;
+}
+
+/* --------------------------------------------------------------------------
+   ABOUT SECTION
+   -------------------------------------------------------------------------- */
+.about-section {
+  padding: 7rem 0;
+  position: relative;
+  z-index: 1;
+}
+
+.about-grid {
+  display: grid;
+  grid-template-columns: 1fr 1.6fr;
+  gap: 4rem;
+  align-items: start;
+}
+
+.about-image-column {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+.avatar-card {
+  position: relative;
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  border: 1px solid var(--border-color);
+  background: var(--bg-secondary);
+  aspect-ratio: 1 / 1;
+}
+
+.avatar-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.avatar-badge {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: linear-gradient(180deg, transparent 0%, rgba(7, 6, 10, 0.95) 100%);
+  padding: 2rem 1.5rem 1.5rem;
+  display: flex;
+  flex-direction: column;
+}
+
+.avatar-badge-title {
+  font-family: var(--font-heading);
+  font-size: 1.25rem;
+  font-weight: 800;
+  color: #fff;
+}
+
+.avatar-badge-role {
+  font-size: 0.825rem;
+  color: var(--accent-light);
+  font-weight: 600;
+}
+
+.skills-box {
+  background: var(--bg-secondary);
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-md);
+  padding: 1.5rem;
+}
+
+.skills-box-title {
+  font-family: var(--font-mono);
+  font-size: 0.78rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  color: var(--text-muted);
+  margin-bottom: 1rem;
+  display: block;
+}
+
+.skill-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
+.skill-tags .tag {
+  background: var(--bg-tertiary);
+  border: 1px solid var(--border-color);
+  color: var(--text-primary);
+  padding: 0.35rem 0.75rem;
+  border-radius: var(--radius-full);
+  font-size: 0.78rem;
+  font-weight: 500;
+}
+
+/* About Text Column */
+.about-bio {
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+  margin: 1.5rem 0 2.5rem;
+  font-size: 1.05rem;
+  line-height: 1.7;
+}
+
+.about-bio strong {
+  color: var(--text-primary);
+}
+
+.philosophy-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.5rem;
+  border-top: 1px solid var(--border-color);
+  padding-top: 2rem;
+  margin-bottom: 2.5rem;
+}
+
+.philosophy-item {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.philo-icon {
+  font-size: 1.75rem;
+}
+
+.philosophy-item strong {
+  font-size: 0.98rem;
+  color: var(--text-primary);
+}
+
+.philosophy-item p {
+  font-size: 0.825rem;
+  line-height: 1.5;
+}
+
+.about-cta-row {
+  display: flex;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
+/* --------------------------------------------------------------------------
+   TESTIMONIALS SECTION
+   -------------------------------------------------------------------------- */
+.testimonials-section {
+  padding: 7rem 0;
+  background: var(--bg-secondary);
+  border-top: 1px solid var(--border-color);
+  border-bottom: 1px solid var(--border-color);
+  position: relative;
+  z-index: 1;
+}
+
+.testimonials-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2rem;
+  margin-top: 3.5rem;
+}
+
+.testimonial-card {
+  background: var(--bg-primary);
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-lg);
+  padding: 2.25rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+  transition: var(--transition);
+}
+
+.testimonial-card:hover {
+  transform: translateY(-4px);
+  border-color: rgba(93, 43, 202, 0.4);
+}
+
+.stars-row {
+  color: var(--accent-light);
+  font-size: 1.1rem;
+  letter-spacing: 0.1em;
+}
+
+.testimonial-card .quote {
+  font-size: 0.95rem;
+  line-height: 1.6;
+  color: var(--text-primary);
+  font-style: italic;
+  flex-grow: 1;
+}
+
+.author-meta {
+  display: flex;
+  align-items: center;
+  gap: 0.85rem;
+  border-top: 1px solid var(--border-color);
+  padding-top: 1rem;
+}
+
+.author-avatar-ph {
+  width: 42px;
+  height: 42px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, rgba(93, 43, 202, 0.25) 0%, var(--bg-tertiary) 100%);
+  color: var(--accent-light);
+  font-weight: 700;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1rem;
+  border: 1px solid rgba(93, 43, 202, 0.3);
+}
+
+.author-name {
+  display: block;
+  font-size: 0.95rem;
+  color: var(--text-primary);
+}
+
+.author-title {
+  font-size: 0.78rem;
+  color: var(--text-muted);
+}
+
+/* --------------------------------------------------------------------------
+   CONTACT SECTION
+   -------------------------------------------------------------------------- */
+.contact-section {
+  padding: 7rem 0;
+  position: relative;
+  z-index: 1;
+}
+
+.contact-card-wrapper {
+  background: var(--bg-secondary);
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-lg);
+  padding: 4rem;
+  box-shadow: var(--shadow-lg);
+}
+
+.contact-grid {
+  display: grid;
+  grid-template-columns: 1fr 1.2fr;
+  gap: 4rem;
+}
+
+.contact-left {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.contact-title {
+  font-size: clamp(2rem, 3.2vw, 2.75rem);
+  line-height: 1.2;
+}
+
+.contact-subtitle {
+  font-size: 1.05rem;
+  line-height: 1.6;
+  color: var(--text-secondary);
+}
+
+.contact-methods {
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+  margin: 1.5rem 0;
+}
+
+.method-item {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.method-icon {
+  width: 44px;
+  height: 44px;
+  border-radius: var(--radius-sm);
+  background: var(--bg-tertiary);
+  color: var(--accent-light);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid var(--border-color);
+}
+
+.method-label {
+  font-size: 0.78rem;
+  color: var(--text-muted);
+  display: block;
+  font-weight: 500;
+}
+
+.email-copy-row {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.email-text {
+  font-size: 1rem;
+  font-weight: 600;
+  color: var(--text-primary);
+}
+
+.copy-icon-btn {
+  background: transparent;
+  border: none;
+  color: var(--text-muted);
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  padding: 0.2rem;
+  transition: color 0.2s ease;
+}
+
+.copy-icon-btn:hover {
+  color: var(--accent-light);
+}
+
+.contact-social-pills {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+  margin-top: auto;
+}
+
+.social-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  padding: 0.5rem 1rem;
+  border-radius: var(--radius-full);
+  background: var(--bg-tertiary);
+  border: 1px solid var(--border-color);
+  font-size: 0.825rem;
+  font-weight: 600;
+  color: var(--text-primary);
+  transition: var(--transition);
+}
+
+.social-pill:hover {
+  border-color: var(--accent-primary);
+  color: var(--accent-light);
+}
+
+/* Contact Form */
+.contact-form {
+  background: var(--bg-primary);
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-md);
+  padding: 2.25rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+}
+
+.form-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1rem;
+}
+
+.form-field {
+  display: flex;
+  flex-direction: column;
+  gap: 0.45rem;
+}
+
+.form-field label {
+  font-size: 0.825rem;
+  font-weight: 600;
+  color: var(--text-primary);
+}
+
+.form-field input,
+.form-field select,
+.form-field textarea {
+  background: var(--bg-input);
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-sm);
+  padding: 0.75rem 1rem;
+  color: var(--text-primary);
+  outline: none;
+  transition: var(--transition);
+}
+
+.form-field input:focus,
+.form-field select:focus,
+.form-field textarea:focus {
+  border-color: var(--accent-primary);
+  box-shadow: 0 0 0 3px var(--accent-glow);
+}
+
+.form-status {
+  font-size: 0.875rem;
+  text-align: center;
+  min-height: 1.2rem;
+  font-weight: 500;
+}
+
+.form-status.success {
+  color: var(--accent-light);
+}
+
+.form-status.error {
+  color: #ef4444;
+}
+
+/* --------------------------------------------------------------------------
+   SITE FOOTER
+   -------------------------------------------------------------------------- */
+.site-footer {
+  background: var(--bg-secondary);
+  border-top: 1px solid var(--border-color);
+  padding: 4.5rem 0 2.5rem;
+  position: relative;
+  z-index: 1;
+}
+
+.footer-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 2rem;
+  border-bottom: 1px solid var(--border-color);
+  padding-bottom: 2.5rem;
+}
+
+.footer-brand {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.footer-brand-title {
+  font-family: var(--font-heading);
+  font-size: 1.15rem;
+  font-weight: 800;
+  color: var(--text-primary);
+}
+
+.footer-brand-desc {
+  font-size: 0.825rem;
+  color: var(--text-muted);
+}
+
+.footer-links-group {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1.5rem;
+  font-size: 0.9rem;
+  font-weight: 500;
+  color: var(--text-secondary);
+}
+
+.footer-links-group a:hover {
+  color: var(--accent-light);
+}
+
+.footer-bottom {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 1rem;
+  padding-top: 2rem;
+  font-size: 0.825rem;
+  color: var(--text-muted);
+}
+
+.back-to-top {
+  background: transparent;
+  border: 1px solid var(--border-color);
+  color: var(--text-secondary);
+  padding: 0.4rem 0.85rem;
+  border-radius: var(--radius-full);
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  cursor: pointer;
+  transition: var(--transition);
+  font-size: 0.8rem;
+}
+
+.back-to-top:hover {
+  border-color: var(--accent-primary);
+  color: var(--accent-light);
+}
+
+/* --------------------------------------------------------------------------
+   CASE STUDY MODAL (ACCESSIBLE DIALOG)
+   -------------------------------------------------------------------------- */
+.case-study-modal {
+  margin: auto;
+  border: none;
+  background: transparent;
+  max-width: 860px;
+  width: 92%;
+  max-height: 90vh;
+  padding: 0;
+  outline: none;
+  z-index: 1000;
+}
+
+.case-study-modal::backdrop {
+  background: rgba(4, 3, 7, 0.88);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+}
+
+.modal-card {
+  background: var(--bg-secondary);
+  border: 1px solid rgba(93, 43, 202, 0.4);
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.8), 0 0 40px rgba(93, 43, 202, 0.25);
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  max-height: 88vh;
+}
+
+.modal-close-btn {
+  position: absolute;
+  top: 1.25rem;
+  right: 1.25rem;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background: rgba(7, 6, 10, 0.7);
+  backdrop-filter: blur(4px);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  z-index: 10;
+  transition: var(--transition);
+}
+
+.modal-close-btn:hover {
+  background: var(--accent-primary);
+  color: #fff;
+  transform: rotate(90deg);
+}
+
+.modal-content-scroll {
+  overflow-y: auto;
+  max-height: 88vh;
+}
+
+.modal-hero-img {
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  object-fit: cover;
+  background: var(--bg-tertiary);
+}
+
+.modal-info-body {
+  padding: 2.5rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.modal-tags-row {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.modal-badge {
+  font-size: 0.75rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  color: var(--accent-light);
+  background: rgba(93, 43, 202, 0.18);
+  border: 1px solid rgba(93, 43, 202, 0.35);
+  padding: 0.25rem 0.75rem;
+  border-radius: var(--radius-full);
+}
+
+.modal-year {
+  font-family: var(--font-mono);
+  font-size: 0.8rem;
+  color: var(--text-muted);
+}
+
+.modal-title {
+  font-size: 2rem;
+  line-height: 1.2;
+}
+
+.modal-subtitle {
+  font-size: 1.05rem;
+  color: var(--text-secondary);
+}
+
+.modal-meta-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1rem;
+  background: var(--bg-primary);
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-md);
+  padding: 1.25rem;
+}
+
+.meta-item {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+}
+
+.meta-title {
+  font-size: 0.75rem;
+  color: var(--text-muted);
+  font-family: var(--font-mono);
+  text-transform: uppercase;
+}
+
+.meta-item strong {
+  font-size: 0.88rem;
+  color: var(--text-primary);
+}
+
+.modal-divider {
+  border: none;
+  border-top: 1px solid var(--border-color);
+}
+
+.modal-subheading {
+  font-size: 1.15rem;
+  margin-bottom: 0.5rem;
+}
+
+.modal-text-section p {
+  font-size: 0.95rem;
+  line-height: 1.7;
+}
+
+/* Palette Swatches */
+.palette-swatches {
+  display: flex;
+  gap: 0.85rem;
+  flex-wrap: wrap;
+  margin-top: 0.75rem;
+}
+
+.palette-swatch-box {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.35rem;
+  cursor: pointer;
+}
+
+.swatch-color {
+  width: 54px;
+  height: 54px;
+  border-radius: var(--radius-sm);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  box-shadow: var(--shadow-sm);
+  transition: transform 0.2s ease;
+}
+
+.swatch-color:hover {
+  transform: scale(1.1);
+}
+
+.swatch-hex {
+  font-family: var(--font-mono);
+  font-size: 0.75rem;
+  color: var(--text-muted);
+}
+
+.modal-footer-cta {
+  display: flex;
+  gap: 1rem;
+  flex-wrap: wrap;
+  margin-top: 1rem;
+}
+
+/* --------------------------------------------------------------------------
+   TOAST NOTIFICATION
+   -------------------------------------------------------------------------- */
+.toast-notification {
+  position: fixed;
+  bottom: 2rem;
+  right: 2rem;
+  background: var(--bg-secondary);
+  border: 1px solid var(--accent-primary);
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.7), 0 0 20px rgba(93, 43, 202, 0.3);
+  padding: 0.85rem 1.45rem;
+  border-radius: var(--radius-full);
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: var(--text-primary);
+  z-index: 9999;
+  transform: translateY(120%);
+  opacity: 0;
+  transition: transform 0.35s cubic-bezier(0.16, 1, 0.3, 1), opacity 0.35s ease;
+  pointer-events: none;
+}
+
+.toast-notification.show {
+  transform: translateY(0);
+  opacity: 1;
+}
+
+.toast-icon {
+  background: linear-gradient(135deg, #5d2bca 0%, #7c3aed 100%);
+  color: #fff;
+  width: 22px;
+  height: 22px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.75rem;
+  font-weight: 800;
+}
+
+/* --------------------------------------------------------------------------
+   RESPONSIVE DESIGN (MEDIA QUERIES)
+   -------------------------------------------------------------------------- */
+@media (max-width: 1024px) {
+  .project-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .services-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .process-timeline {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .calculator-body {
+    grid-template-columns: 1fr;
+  }
+  .about-grid {
+    grid-template-columns: 1fr;
+  }
+  .contact-grid {
+    grid-template-columns: 1fr;
+  }
+  .contact-card-wrapper {
+    padding: 2.5rem;
+  }
+  .calculator-wrapper {
+    padding: 2.5rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .desktop-nav, .header-cta {
+    display: none;
+  }
+  .mobile-menu-btn {
+    display: flex;
+  }
+  .hero-metrics {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .project-grid {
+    grid-template-columns: 1fr;
+  }
+  .services-grid {
+    grid-template-columns: 1fr;
+  }
+  .process-timeline {
+    grid-template-columns: 1fr;
+  }
+  .testimonials-grid {
+    grid-template-columns: 1fr;
+  }
+  .philosophy-grid {
+    grid-template-columns: 1fr;
+  }
+  .form-row {
+    grid-template-columns: 1fr;
+  }
+  .modal-meta-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .contact-card-wrapper {
+    padding: 1.5rem;
+  }
+  .calculator-wrapper {
+    padding: 1.5rem;
+  }
+  .pace-options {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* --------------------------------------------------------------------------
+   FLOATING QUICK CONNECT TRIGGER
+   -------------------------------------------------------------------------- */
+.floating-connect-trigger {
+  position: fixed;
+  bottom: 2rem;
+  right: 2rem;
+  background: rgba(19, 15, 33, 0.88);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+  border: 1px solid rgba(93, 43, 202, 0.45);
+  color: #ffffff;
+  padding: 0.6rem 1.15rem 0.6rem 0.75rem;
+  border-radius: var(--radius-full);
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  cursor: pointer;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.6), 0 0 25px rgba(93, 43, 202, 0.35);
+  z-index: 990;
+  transition: transform 0.25s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.25s ease, border-color 0.25s ease;
+}
+
+.floating-connect-trigger:hover {
+  transform: translateY(-4px) scale(1.02);
+  border-color: #9d6fff;
+  box-shadow: 0 14px 40px rgba(0, 0, 0, 0.7), 0 0 35px rgba(93, 43, 202, 0.55);
+}
+
+.trigger-avatar-wrap {
+  position: relative;
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  overflow: visible;
+}
+
+.trigger-avatar {
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.trigger-status-pulse {
+  position: absolute;
+  bottom: -1px;
+  right: -1px;
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background: #22c55e;
+  border: 2px solid #0d0a14;
+  box-shadow: 0 0 8px #22c55e;
+  animation: pulse-dot 2s infinite ease-in-out;
+}
+
+.trigger-label {
+  font-family: var(--font-heading);
+  font-weight: 700;
+  font-size: 0.9rem;
+  letter-spacing: -0.01em;
+  color: #ffffff;
+}
+
+.trigger-chip {
+  font-family: var(--font-mono);
+  font-size: 0.7rem;
+  font-weight: 700;
+  background: rgba(93, 43, 202, 0.35);
+  color: var(--accent-light);
+  padding: 0.2rem 0.5rem;
+  border-radius: var(--radius-full);
+}
+
+@media (max-width: 640px) {
+  .floating-connect-trigger {
+    bottom: 1.25rem;
+    right: 1.25rem;
+    padding: 0.5rem 0.9rem 0.5rem 0.6rem;
+  }
+  .trigger-chip {
+    display: none;
+  }
+}
+
+/* --------------------------------------------------------------------------
+   QUICK CONNECT POPUP MODAL DIALOG
+   -------------------------------------------------------------------------- */
+.quick-connect-modal {
+  margin: auto;
+  border: none;
+  background: transparent;
+  max-width: 480px;
+  width: 92%;
+  padding: 0;
+  outline: none;
+  z-index: 1001;
+}
+
+.quick-connect-modal::backdrop {
+  background: rgba(5, 4, 8, 0.85);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+}
+
+.connect-modal-card {
+  background: var(--bg-secondary);
+  border: 1px solid rgba(93, 43, 202, 0.45);
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  box-shadow: 0 25px 60px rgba(0, 0, 0, 0.8), 0 0 45px rgba(93, 43, 202, 0.3);
+  position: relative;
+  display: flex;
+  flex-direction: column;
+}
+
+.connect-modal-header {
+  padding: 2rem 2rem 1.5rem;
+  display: flex;
+  align-items: center;
+  gap: 1.15rem;
+  background: linear-gradient(180deg, rgba(93, 43, 202, 0.15) 0%, transparent 100%);
+  border-bottom: 1px solid var(--border-color);
+}
+
+.connect-avatar-wrap {
+  position: relative;
+  width: 58px;
+  height: 58px;
+  flex-shrink: 0;
+}
+
+.connect-avatar-img {
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 2px solid rgba(93, 43, 202, 0.5);
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.4);
+}
+
+.connect-status-pulse {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  width: 14px;
+  height: 14px;
+  border-radius: 50%;
+  background: #22c55e;
+  border: 3px solid #0d0a14;
+  box-shadow: 0 0 10px #22c55e;
+  animation: pulse-dot 2s infinite ease-in-out;
+}
+
+.connect-user-info {
+  display: flex;
+  flex-direction: column;
+  gap: 0.2rem;
+}
+
+.connect-name {
+  font-family: var(--font-heading);
+  font-size: 1.35rem;
+  font-weight: 800;
+  color: #ffffff;
+  line-height: 1.1;
+}
+
+.connect-role {
+  font-size: 0.8rem;
+  color: var(--accent-light);
+  font-weight: 600;
+}
+
+.connect-online-badge {
+  font-size: 0.72rem;
+  color: #86efac;
+  font-family: var(--font-mono);
+  margin-top: 0.25rem;
+}
+
+.connect-modal-body {
+  padding: 1.75rem 2rem 2rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+}
+
+/* Action Cards */
+.connect-action-card {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  padding: 1rem 1.25rem;
+  border-radius: var(--radius-md);
+  border: 1px solid var(--border-color);
+  background: var(--bg-tertiary);
+  transition: var(--transition);
+  cursor: pointer;
+  text-decoration: none;
+  color: inherit;
+}
+
+.connect-action-card:hover {
+  transform: translateY(-2px);
+  border-color: rgba(93, 43, 202, 0.5);
+  box-shadow: 0 8px 24px rgba(93, 43, 202, 0.2);
+}
+
+.wa-action-card {
+  border-color: rgba(37, 211, 102, 0.35);
+  background: linear-gradient(135deg, rgba(37, 211, 102, 0.08) 0%, var(--bg-tertiary) 100%);
+}
+
+.wa-action-card:hover {
+  border-color: #25d366;
+  box-shadow: 0 8px 24px rgba(37, 211, 102, 0.25);
+}
+
+.connect-action-icon {
+  width: 44px;
+  height: 44px;
+  border-radius: var(--radius-sm);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.wa-icon {
+  background: rgba(37, 211, 102, 0.15);
+  color: #25d366;
+}
+
+.mail-icon {
+  background: rgba(93, 43, 202, 0.18);
+  color: var(--accent-light);
+}
+
+.connect-action-text {
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+  gap: 0.15rem;
+}
+
+.action-card-label {
+  font-size: 0.72rem;
+  font-family: var(--font-mono);
+  color: var(--text-muted);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.action-card-val {
+  font-size: 0.95rem;
+  color: #ffffff;
+  font-weight: 700;
+  word-break: break-all;
+}
+
+.action-card-sub {
+  font-size: 0.75rem;
+  color: var(--text-muted);
+}
+
+.action-card-btn {
+  font-size: 0.78rem;
+  font-weight: 700;
+  padding: 0.35rem 0.75rem;
+  border-radius: var(--radius-full);
+  background: rgba(255, 255, 255, 0.08);
+  color: var(--text-primary);
+  flex-shrink: 0;
+  transition: var(--transition);
+}
+
+.wa-action-card .action-card-btn {
+  background: #25d366;
+  color: #000;
+}
+
+.copy-btn-tag {
+  background: rgba(93, 43, 202, 0.25);
+  color: var(--accent-light);
+}
+
+/* Social Grid inside Popup */
+.connect-social-section {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+  border-top: 1px solid var(--border-color);
+  padding-top: 1.25rem;
+}
+
+.connect-socials-title {
+  font-family: var(--font-mono);
+  font-size: 0.75rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--text-muted);
+}
+
+.connect-social-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 0.65rem;
+}
+
+.connect-social-item {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.45rem;
+  padding: 0.65rem 0.5rem;
+  border-radius: var(--radius-sm);
+  background: var(--bg-tertiary);
+  border: 1px solid var(--border-color);
+  font-size: 0.8rem;
+  font-weight: 600;
+  color: var(--text-secondary);
+  transition: var(--transition);
+  text-decoration: none;
+}
+
+.connect-social-item svg {
+  color: var(--text-muted);
+  transition: color 0.2s ease;
+}
+
+.connect-social-item:hover {
+  background: rgba(93, 43, 202, 0.15);
+  border-color: rgba(93, 43, 202, 0.45);
+  color: #ffffff;
+  transform: translateY(-2px);
+}
+
+.connect-social-item:hover svg {
+  color: var(--accent-light);
+}
+
+.connect-footer-cta {
+  margin-top: 0.5rem;
+}
+
+
+</style>
+</head>
+<body>
+  <!-- Ambient background glow elements -->
+  <div class="ambient-glow glow-top-left" aria-hidden="true"></div>
+  <div class="ambient-glow glow-top-right" aria-hidden="true"></div>
+
+  <!-- Announcement / Availability Bar -->
+  <div class="top-announcement">
+    <div class="container announcement-inner">
+      <div class="status-indicator">
+        <span class="status-dot"></span>
+        <span class="status-text">Available for New Brand Projects • Q4 2025 – 2026</span>
+      </div>
+      <div class="announcement-meta">
+        <span class="location-badge">📍 Dhaka, Bangladesh</span>
+        <span class="time-clock" id="liveClock">Loading time...</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- Header / Navigation -->
+  <header class="site-header" id="siteHeader">
+    <div class="container header-container">
+      <a href="#hero" class="brand-logo" aria-label="Al Amin Home">
+        <span class="logo-mark">A</span>
+        <div class="logo-text">
+          <span class="name">AL AMIN</span>
+          <span class="sub">INOVIX • BRAND STUDIO</span>
+        </div>
+      </a>
+
+      <nav class="desktop-nav" aria-label="Primary Navigation">
+        <ul class="nav-links">
+          <li><a href="#work" class="nav-link">Selected Work</a></li>
+          <li><a href="#services" class="nav-link">Services</a></li>
+          <li><a href="#process" class="nav-link">Process</a></li>
+          <li><a href="#calculator" class="nav-link">Scope Calculator</a></li>
+          <li><a href="#about" class="nav-link">About</a></li>
+          <li><a href="#contact" class="nav-link">Contact</a></li>
+        </ul>
+      </nav>
+
+      <div class="header-actions">
+        <!-- Theme Switcher -->
+        <button class="theme-toggle" id="themeToggle" aria-label="Toggle light/dark theme" title="Toggle Theme">
+          <svg class="icon-sun" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <circle cx="12" cy="12" r="5"></circle>
+            <line x1="12" y1="1" x2="12" y2="3"></line>
+            <line x1="12" y1="21" x2="12" y2="23"></line>
+            <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+            <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+            <line x1="1" y1="12" x2="3" y2="12"></line>
+            <line x1="21" y1="12" x2="23" y2="12"></line>
+            <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+            <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+          </svg>
+          <svg class="icon-moon" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+          </svg>
+        </button>
+
+        <a href="#contact" class="btn btn-primary header-cta">
+          <span>Let's Talk</span>
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="7" y1="17" x2="17" y2="7"></line><polyline points="7 7 17 7 17 17"></polyline></svg>
+        </a>
+
+        <!-- Mobile Menu Hamburger -->
+        <button class="mobile-menu-btn" id="mobileMenuBtn" aria-label="Toggle Navigation Menu">
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
+      </div>
+    </div>
+
+    <!-- Mobile Drawer Navigation -->
+    <div class="mobile-drawer" id="mobileDrawer">
+      <div class="mobile-drawer-content">
+        <ul class="mobile-nav-links">
+          <li><a href="#work" class="mobile-nav-link">Selected Work</a></li>
+          <li><a href="#services" class="mobile-nav-link">Services</a></li>
+          <li><a href="#process" class="mobile-nav-link">Process</a></li>
+          <li><a href="#calculator" class="mobile-nav-link">Scope Calculator</a></li>
+          <li><a href="#about" class="mobile-nav-link">About</a></li>
+          <li><a href="#contact" class="mobile-nav-link">Contact</a></li>
+        </ul>
+        <div class="mobile-drawer-footer">
+          <a href="#contact" class="btn btn-primary btn-block">Start a Project</a>
+          <div class="mobile-socials">
+            <a href="https://www.linkedin.com/in/alamininovix/" target="_blank" rel="noopener">LinkedIn</a>
+            <a href="https://dribbble.com/alamininovix" target="_blank" rel="noopener">Dribbble</a>
+            <a href="https://www.behance.net/alamininovix" target="_blank" rel="noopener">Behance</a>
+            <a href="https://wa.me/8801758261160" target="_blank" rel="noopener">WhatsApp</a>
+            <a href="mailto:infomdalaminofficial2@gmail.com">Email</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <!-- HERO SECTION -->
+    <section class="hero-section" id="hero">
+      <div class="container hero-container">
+        <div class="hero-badge">
+          <span class="badge-tag">Brand Strategy • Visual Identity • Logo Systems</span>
+        </div>
+
+        <h1 class="hero-headline">
+          Crafting High-Impact <br>
+          <span class="gradient-text">Brand Identities</span> <br>
+          That Drive Real Growth.
+        </h1>
+
+        <p class="hero-description">
+          I partner with fast-scaling tech companies, modern SaaS startups, and ambitious ventures across the 
+          <strong>US, UK, Australia, and UAE</strong> to build iconic visual systems that turn early-stage ideas 
+          into unforgettable, market-dominating brands.
+        </p>
+
+        <div class="hero-actions">
+          <a href="#work" class="btn btn-primary btn-lg">
+            <span>Explore Works</span>
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"></polyline></svg>
+          </a>
+          <a href="#calculator" class="btn btn-secondary btn-lg">
+            <span>Calculate Project Scope</span>
+            <span class="badge-pill">⚡ Instant</span>
+          </a>
+        </div>
+
+        <!-- Social Proof Bar -->
+        <div class="hero-metrics">
+          <div class="metric-card">
+            <span class="metric-num">4+</span>
+            <span class="metric-label">Years Dedicated Experience</span>
+          </div>
+          <div class="metric-card">
+            <span class="metric-num">120+</span>
+            <span class="metric-label">Brand Identities Crafted</span>
+          </div>
+          <div class="metric-card">
+            <span class="metric-num">15+</span>
+            <span class="metric-label">Countries Represented</span>
+          </div>
+          <div class="metric-card">
+            <span class="metric-num">100%</span>
+            <span class="metric-label">5-Star Client Reviews</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CLIENT LOGO / TICKER MARQUEE -->
+    <section class="brand-ticker-section" aria-label="Brand Partners">
+      <div class="ticker-wrapper">
+        <div class="ticker-track">
+          <span class="ticker-item">PARSEFLOW AI</span>
+          <span class="ticker-dot">•</span>
+          <span class="ticker-item">AVRISE FINTECH</span>
+          <span class="ticker-dot">•</span>
+          <span class="ticker-item">PIXELCORE SAAS</span>
+          <span class="ticker-dot">•</span>
+          <span class="ticker-item">UNIFIED LOGIC</span>
+          <span class="ticker-dot">•</span>
+          <span class="ticker-item">FEXORA CLOUD</span>
+          <span class="ticker-dot">•</span>
+          <span class="ticker-item">VERDEVO ORGANICS</span>
+          <span class="ticker-dot">•</span>
+          <span class="ticker-item">SYNCCLOUD</span>
+          <span class="ticker-dot">•</span>
+          <span class="ticker-item">XYLEN AI</span>
+          <span class="ticker-dot">•</span>
+          <!-- Duplicate for seamless looping -->
+          <span class="ticker-item">PARSEFLOW AI</span>
+          <span class="ticker-dot">•</span>
+          <span class="ticker-item">AVRISE FINTECH</span>
+          <span class="ticker-dot">•</span>
+          <span class="ticker-item">PIXELCORE SAAS</span>
+          <span class="ticker-dot">•</span>
+          <span class="ticker-item">UNIFIED LOGIC</span>
+          <span class="ticker-dot">•</span>
+          <span class="ticker-item">FEXORA CLOUD</span>
+          <span class="ticker-dot">•</span>
+          <span class="ticker-item">VERDEVO ORGANICS</span>
+          <span class="ticker-dot">•</span>
+          <span class="ticker-item">SYNCCLOUD</span>
+          <span class="ticker-dot">•</span>
+          <span class="ticker-item">XYLEN AI</span>
+          <span class="ticker-dot">•</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- SELECTED WORK / PORTFOLIO SECTION -->
+    <section class="work-section" id="work">
+      <div class="container">
+        <div class="section-header">
+          <div class="section-header-left">
+            <span class="section-badge">Case Studies</span>
+            <h2 class="section-title">Featured Works & Case Studies</h2>
+            <p class="section-subtitle">A curated selection of modern brand identities, logo marks, and comprehensive visual design systems.</p>
+          </div>
+
+          <!-- Category Filter Buttons -->
+          <div class="filter-group" role="tablist" aria-label="Portfolio Category Filters">
+            <button class="filter-btn active" data-filter="all" role="tab" aria-selected="true">All Works</button>
+            <button class="filter-btn" data-filter="identity" role="tab" aria-selected="false">Brand Identity</button>
+            <button class="filter-btn" data-filter="logo" role="tab" aria-selected="false">Logo Marks</button>
+            <button class="filter-btn" data-filter="tech" role="tab" aria-selected="false">AI & Tech SaaS</button>
+            <button class="filter-btn" data-filter="packaging" role="tab" aria-selected="false">Packaging & Systems</button>
+          </div>
+        </div>
+
+        <!-- Project Grid -->
+        <div class="project-grid" id="projectGrid">
+          
+          <!-- Project 1: Parseflow -->
+          <article class="project-card" data-category="identity tech" data-id="parseflow">
+            <div class="project-media">
+              <img src="https://cdn.dribbble.com/userupload/49170672/file/486fbf545c156847accda3c170c6871a.jpg?format=webp&resize=800x600&vertical=center" alt="Parseflow — AI Brand Identity & Visual System" loading="lazy">
+              <div class="project-overlay">
+                <button class="btn-preview open-modal-btn" data-target="parseflow">
+                  <span>View Case Breakdown</span>
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"></path><circle cx="12" cy="12" r="3"></circle></svg>
+                </button>
+              </div>
+            </div>
+            <div class="project-info">
+              <div class="project-meta-top">
+                <span class="project-tag">AI & Technology</span>
+                <span class="project-year">2025</span>
+              </div>
+              <h3 class="project-title">Parseflow — AI Brand Identity & Visual System</h3>
+              <p class="project-snippet">Complete brand identity, generative symbolics, and dark-mode design system for an enterprise AI workflow engine.</p>
+              <div class="project-links">
+                <button class="text-link open-modal-btn" data-target="parseflow">Case Details →</button>
+                <a href="https://dribbble.com/shots/27770906-Parseflow-AI-Brand-Identity-Visual-System" target="_blank" rel="noopener" class="dribbble-direct" title="View on Dribbble">
+                  <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"></circle><path d="M19.13 5.09C15.22 9.14 10 10.44 2.25 10.94"></path><path d="M21.75 12.84c-6.62-1.41-12.14 1-16.38 6.32"></path><path d="M8.56 2.75c4.37 6 6 9.42 8 17.72"></path></svg>
+                </a>
+              </div>
+            </div>
+          </article>
+
+          <!-- Project 2: Futuristic AI Logo -->
+          <article class="project-card" data-category="logo tech" data-id="futuristic-ai">
+            <div class="project-media">
+              <img src="https://cdn.dribbble.com/userupload/49109485/file/018a6b89436a3f4dec118b10db62371b.jpg?format=webp&resize=800x600&vertical=center" alt="AI Logo Design & Futuristic Tech Brand Identity" loading="lazy">
+              <div class="project-overlay">
+                <button class="btn-preview open-modal-btn" data-target="futuristic-ai">
+                  <span>View Case Breakdown</span>
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"></path><circle cx="12" cy="12" r="3"></circle></svg>
+                </button>
+              </div>
+            </div>
+            <div class="project-info">
+              <div class="project-meta-top">
+                <span class="project-tag">Logo Mark</span>
+                <span class="project-year">2025</span>
+              </div>
+              <h3 class="project-title">Futuristic Tech & AI Neural Mark</h3>
+              <p class="project-snippet">Multi-dimensional geometric intelligence mark with dynamic isometric gradients and responsive scaling.</p>
+              <div class="project-links">
+                <button class="text-link open-modal-btn" data-target="futuristic-ai">Case Details →</button>
+                <a href="https://dribbble.com/shots/27754864-AI-Logo-Design-Futuristic-Tech-Brand-Identity" target="_blank" rel="noopener" class="dribbble-direct" title="View on Dribbble">
+                  <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"></circle><path d="M19.13 5.09C15.22 9.14 10 10.44 2.25 10.94"></path><path d="M21.75 12.84c-6.62-1.41-12.14 1-16.38 6.32"></path><path d="M8.56 2.75c4.37 6 6 9.42 8 17.72"></path></svg>
+                </a>
+              </div>
+            </div>
+          </article>
+
+          <!-- Project 3: PixelCore -->
+          <article class="project-card" data-category="identity tech" data-id="pixelcore">
+            <div class="project-media">
+              <img src="https://cdn.dribbble.com/userupload/49027531/file/15046b9487ce852c4d15cd9345ed77fa.jpg?format=webp&resize=800x600&vertical=center" alt="PixelCore — SaaS Brand Identity & Logo Design" loading="lazy">
+              <div class="project-overlay">
+                <button class="btn-preview open-modal-btn" data-target="pixelcore">
+                  <span>View Case Breakdown</span>
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"></path><circle cx="12" cy="12" r="3"></circle></svg>
+                </button>
+              </div>
+            </div>
+            <div class="project-info">
+              <div class="project-meta-top">
+                <span class="project-tag">SaaS Identity</span>
+                <span class="project-year">2025</span>
+              </div>
+              <h3 class="project-title">PixelCore — SaaS Brand Architecture</h3>
+              <p class="project-snippet">Comprehensive visual identity, digital design language, and design token system built for high-throughput software.</p>
+              <div class="project-links">
+                <button class="text-link open-modal-btn" data-target="pixelcore">Case Details →</button>
+                <a href="https://dribbble.com/shots/27732717-PixelCore-SaaS-Brand-Identity-Logo-Design" target="_blank" rel="noopener" class="dribbble-direct" title="View on Dribbble">
+                  <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"></circle><path d="M19.13 5.09C15.22 9.14 10 10.44 2.25 10.94"></path><path d="M21.75 12.84c-6.62-1.41-12.14 1-16.38 6.32"></path><path d="M8.56 2.75c4.37 6 6 9.42 8 17.72"></path></svg>
+                </a>
+              </div>
+            </div>
+          </article>
+
+          <!-- Project 4: Unified Logic -->
+          <article class="project-card" data-category="identity logo tech" data-id="unified-logic">
+            <div class="project-media">
+              <img src="https://cdn.dribbble.com/userupload/48846171/file/23276e659f34dee314fa662d1820c007.jpg?format=webp&resize=800x600&vertical=center" alt="Unified Logic — Tech Brand Identity" loading="lazy">
+              <div class="project-overlay">
+                <button class="btn-preview open-modal-btn" data-target="unified-logic">
+                  <span>View Case Breakdown</span>
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"></path><circle cx="12" cy="12" r="3"></circle></svg>
+                </button>
+              </div>
+            </div>
+            <div class="project-info">
+              <div class="project-meta-top">
+                <span class="project-tag">Enterprise Tech</span>
+                <span class="project-year">2025</span>
+              </div>
+              <h3 class="project-title">Unified Logic — Strategic Tech Identity</h3>
+              <p class="project-snippet">Interlocking architectural monogram symbolizing unified data pipelines, precision engineering, and enterprise clarity.</p>
+              <div class="project-links">
+                <button class="text-link open-modal-btn" data-target="unified-logic">Case Details →</button>
+                <a href="https://dribbble.com/shots/27683642-Unified-Logic-Tech-Brand-Identity-Logo-Design" target="_blank" rel="noopener" class="dribbble-direct" title="View on Dribbble">
+                  <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"></circle><path d="M19.13 5.09C15.22 9.14 10 10.44 2.25 10.94"></path><path d="M21.75 12.84c-6.62-1.41-12.14 1-16.38 6.32"></path><path d="M8.56 2.75c4.37 6 6 9.42 8 17.72"></path></svg>
+                </a>
+              </div>
+            </div>
+          </article>
+
+          <!-- Project 5: Avrise Fintech -->
+          <article class="project-card" data-category="identity tech" data-id="avrise">
+            <div class="project-media">
+              <img src="https://cdn.dribbble.com/userupload/48800391/file/2998122dfeed1f8cca995be3cb905003.jpg?format=webp&resize=800x600&vertical=center" alt="Avrise - Fintech Brand Identity & Logo Design" loading="lazy">
+              <div class="project-overlay">
+                <button class="btn-preview open-modal-btn" data-target="avrise">
+                  <span>View Case Breakdown</span>
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"></path><circle cx="12" cy="12" r="3"></circle></svg>
+                </button>
+              </div>
+            </div>
+            <div class="project-info">
+              <div class="project-meta-top">
+                <span class="project-tag">Fintech App</span>
+                <span class="project-year">2025</span>
+              </div>
+              <h3 class="project-title">Avrise — Next-Gen Fintech & App Icon</h3>
+              <p class="project-snippet">Electric neon high-contrast branding, app icon geometry, and luxury dark UI aesthetic for a global payment platform.</p>
+              <div class="project-links">
+                <button class="text-link open-modal-btn" data-target="avrise">Case Details →</button>
+                <a href="https://dribbble.com/shots/27671356-Avrise-Fintech-Brand-Identity-Logo-Design" target="_blank" rel="noopener" class="dribbble-direct" title="View on Dribbble">
+                  <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"></circle><path d="M19.13 5.09C15.22 9.14 10 10.44 2.25 10.94"></path><path d="M21.75 12.84c-6.62-1.41-12.14 1-16.38 6.32"></path><path d="M8.56 2.75c4.37 6 6 9.42 8 17.72"></path></svg>
+                </a>
+              </div>
+            </div>
+          </article>
+
+          <!-- Project 6: Fexora -->
+          <article class="project-card" data-category="identity tech" data-id="fexora">
+            <div class="project-media">
+              <img src="https://cdn.dribbble.com/userupload/48643678/file/b459501340bdf872d38b908881e97c08.jpg?format=webp&resize=800x600&vertical=center" alt="Fexora — Tech Brand Identity | Logo Design" loading="lazy">
+              <div class="project-overlay">
+                <button class="btn-preview open-modal-btn" data-target="fexora">
+                  <span>View Case Breakdown</span>
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"></path><circle cx="12" cy="12" r="3"></circle></svg>
+                </button>
+              </div>
+            </div>
+            <div class="project-info">
+              <div class="project-meta-top">
+                <span class="project-tag">Cloud & Infrastructure</span>
+                <span class="project-year">2025</span>
+              </div>
+              <h3 class="project-title">Fexora — Cloud Infrastructure Brand</h3>
+              <p class="project-snippet">Ultra-sharp kinetic identity system representing speed, scale, and multi-cloud reliability for dev tools.</p>
+              <div class="project-links">
+                <button class="text-link open-modal-btn" data-target="fexora">Case Details →</button>
+                <a href="https://dribbble.com/shots/27629170-Fexora-Tech-Brand-Identity-Logo-Design" target="_blank" rel="noopener" class="dribbble-direct" title="View on Dribbble">
+                  <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"></circle><path d="M19.13 5.09C15.22 9.14 10 10.44 2.25 10.94"></path><path d="M21.75 12.84c-6.62-1.41-12.14 1-16.38 6.32"></path><path d="M8.56 2.75c4.37 6 6 9.42 8 17.72"></path></svg>
+                </a>
+              </div>
+            </div>
+          </article>
+
+          <!-- Project 7: Verdevo Packaging -->
+          <article class="project-card" data-category="identity packaging" data-id="verdevo">
+            <div class="project-media">
+              <img src="https://cdn.dribbble.com/userupload/48497633/file/7640f13663e051de28ae03af3e0718bc.jpg?format=webp&resize=800x600&vertical=center" alt="Verdevo - Brand Identity & Packaging" loading="lazy">
+              <div class="project-overlay">
+                <button class="btn-preview open-modal-btn" data-target="verdevo">
+                  <span>View Case Breakdown</span>
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"></path><circle cx="12" cy="12" r="3"></circle></svg>
+                </button>
+              </div>
+            </div>
+            <div class="project-info">
+              <div class="project-meta-top">
+                <span class="project-tag">Packaging & Eco</span>
+                <span class="project-year">2024</span>
+              </div>
+              <h3 class="project-title">Verdevo — Organic Identity & Packaging</h3>
+              <p class="project-snippet">Sustainable luxury packaging architecture, custom wordmark, and tactile unboxing experience for clean lifestyle goods.</p>
+              <div class="project-links">
+                <button class="text-link open-modal-btn" data-target="verdevo">Case Details →</button>
+                <a href="https://dribbble.com/shots/27590022-Verdevo-Brand-Identity-Packaging-CapCut-Playoff" target="_blank" rel="noopener" class="dribbble-direct" title="View on Dribbble">
+                  <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"></circle><path d="M19.13 5.09C15.22 9.14 10 10.44 2.25 10.94"></path><path d="M21.75 12.84c-6.62-1.41-12.14 1-16.38 6.32"></path><path d="M8.56 2.75c4.37 6 6 9.42 8 17.72"></path></svg>
+                </a>
+              </div>
+            </div>
+          </article>
+
+          <!-- Project 8: SyncCloud -->
+          <article class="project-card" data-category="identity logo tech" data-id="synccloud">
+            <div class="project-media">
+              <img src="https://cdn.dribbble.com/userupload/48389721/file/aa5638e9f4e6709f1a13c5dfde7c1a82.jpg?format=webp&resize=800x600&vertical=center" alt="SyncCloud - Cloud Tech Brand Identity" loading="lazy">
+              <div class="project-overlay">
+                <button class="btn-preview open-modal-btn" data-target="synccloud">
+                  <span>View Case Breakdown</span>
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"></path><circle cx="12" cy="12" r="3"></circle></svg>
+                </button>
+              </div>
+            </div>
+            <div class="project-info">
+              <div class="project-meta-top">
+                <span class="project-tag">Cloud Services</span>
+                <span class="project-year">2024</span>
+              </div>
+              <h3 class="project-title">SyncCloud — Cloud Tech Visual System</h3>
+              <p class="project-snippet">Harmonic continuous-loop geometric mark symbolizing infinite synchronization and real-time connectivity.</p>
+              <div class="project-links">
+                <button class="text-link open-modal-btn" data-target="synccloud">Case Details →</button>
+                <a href="https://dribbble.com/shots/27560234-SyncCloud-Cloud-Tech-Brand-Identity" target="_blank" rel="noopener" class="dribbble-direct" title="View on Dribbble">
+                  <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"></circle><path d="M19.13 5.09C15.22 9.14 10 10.44 2.25 10.94"></path><path d="M21.75 12.84c-6.62-1.41-12.14 1-16.38 6.32"></path><path d="M8.56 2.75c4.37 6 6 9.42 8 17.72"></path></svg>
+                </a>
+              </div>
+            </div>
+          </article>
+
+          <!-- Project 9: Xylen AI -->
+          <article class="project-card" data-category="identity tech" data-id="xylen">
+            <div class="project-media">
+              <img src="https://cdn.dribbble.com/userupload/48103510/file/cc8348d7d6b21ad59aaa2a41f4a6e749.jpg?format=webp&resize=800x600&vertical=center" alt="Xylen AI - SaaS Brand Identity" loading="lazy">
+              <div class="project-overlay">
+                <button class="btn-preview open-modal-btn" data-target="xylen">
+                  <span>View Case Breakdown</span>
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"></path><circle cx="12" cy="12" r="3"></circle></svg>
+                </button>
+              </div>
+            </div>
+            <div class="project-info">
+              <div class="project-meta-top">
+                <span class="project-tag">AI Copilot</span>
+                <span class="project-year">2024</span>
+              </div>
+              <h3 class="project-title">Xylen — Autonomous AI Workspace</h3>
+              <p class="project-snippet">Futuristic corporate positioning, adaptive dark gradient tokens, and responsive icon family for AI intelligence.</p>
+              <div class="project-links">
+                <button class="text-link open-modal-btn" data-target="xylen">Case Details →</button>
+                <a href="https://dribbble.com/shots/27482517-Xylen-AI-SaaS-Brand-Identity" target="_blank" rel="noopener" class="dribbble-direct" title="View on Dribbble">
+                  <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"></circle><path d="M19.13 5.09C15.22 9.14 10 10.44 2.25 10.94"></path><path d="M21.75 12.84c-6.62-1.41-12.14 1-16.38 6.32"></path><path d="M8.56 2.75c4.37 6 6 9.42 8 17.72"></path></svg>
+                </a>
+              </div>
+            </div>
+          </article>
+
+        </div>
+
+        <div class="portfolio-footer-cta">
+          <p>Looking for a specific industry or bespoke identity format?</p>
+          <div class="btn-group">
+            <a href="https://dribbble.com/alamininovix" target="_blank" rel="noopener" class="btn btn-secondary">
+              <span>Explore 60+ Shots on Dribbble</span>
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="7" y1="17" x2="17" y2="7"></line><polyline points="7 7 17 7 17 17"></polyline></svg>
+            </a>
+            <a href="https://www.behance.net/alamininovix" target="_blank" rel="noopener" class="btn btn-secondary">
+              <span>View Behance Case Studies</span>
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="7" y1="17" x2="17" y2="7"></line><polyline points="7 7 17 7 17 17"></polyline></svg>
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- STRATEGIC SERVICES SECTION -->
+    <section class="services-section" id="services">
+      <div class="container">
+        <div class="section-header text-center">
+          <span class="section-badge">Core Capabilities</span>
+          <h2 class="section-title">Strategic Design Services</h2>
+          <p class="section-subtitle max-w-xl mx-auto">Beyond just designing a logo, I build cohesive visual operating systems that scale effortlessly across every physical and digital touchpoint.</p>
+        </div>
+
+        <div class="services-grid">
+          <!-- Service 1 -->
+          <div class="service-card">
+            <div class="service-number">01</div>
+            <div class="service-icon">
+              <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><polygon points="12 2 2 7 12 12 22 7 12 2"></polygon><polyline points="2 17 12 22 22 17"></polyline><polyline points="2 12 12 17 22 12"></polyline></svg>
+            </div>
+            <h3 class="service-title">Brand Strategy & Positioning</h3>
+            <p class="service-desc">Defining your core value proposition, competitive landscape differentiator, customer psychology, and brand architecture before touching any canvas.</p>
+            <ul class="service-list">
+              <li>Competitor Landscape & White Space Audit</li>
+              <li>Brand Archetype & Personality Matrix</li>
+              <li>Tone of Voice & Messaging Architecture</li>
+              <li>Target Demographic Personas</li>
+            </ul>
+          </div>
+
+          <!-- Service 2 -->
+          <div class="service-card featured-service">
+            <div class="service-badge-pill">Most Requested</div>
+            <div class="service-number">02</div>
+            <div class="service-icon">
+              <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="12" cy="12" r="10"></circle><path d="m4.93 4.93 4.24 4.24"></path><path d="m14.83 9.17 4.24-4.24"></path><path d="m14.83 14.83 4.24 4.24"></path><path d="m9.17 14.83-4.24 4.24"></path></svg>
+            </div>
+            <h3 class="service-title">Logo Design & Iconic Marks</h3>
+            <p class="service-desc">Creating timeless, mathematically proportioned marks, monograms, and custom wordmarks that command attention at both 16px favicon scale and massive billboard formats.</p>
+            <ul class="service-list">
+              <li>Primary Mark & Secondary Lockups</li>
+              <li>Pixel-Perfect Vector Monograms</li>
+              <li>High-Res App Icons & Favicon Kit</li>
+              <li>Exported for Print, Screen & 3D</li>
+            </ul>
+          </div>
+
+          <!-- Service 3 -->
+          <div class="service-card">
+            <div class="service-number">03</div>
+            <div class="service-icon">
+              <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="3" y="3" width="18" height="18" rx="2" ry="2"></rect><line x1="3" y1="9" x2="21" y2="9"></line><line x1="9" y1="21" x2="9" y2="9"></line></svg>
+            </div>
+            <h3 class="service-title">Visual Systems & Brand Guidelines</h3>
+            <p class="service-desc">A comprehensive 50+ page Brand Bible that ensures any internal team member, developer, or agency partner maintains complete visual fidelity forever.</p>
+            <ul class="service-list">
+              <li>Curated Color Theories & Contrast Ratios</li>
+              <li>Typography Scales & Pairing Hierarchy</li>
+              <li>Grid Systems & Clearspace Guidelines</li>
+              <li>Do's and Don'ts Practical Field Guide</li>
+            </ul>
+          </div>
+
+          <!-- Service 4 -->
+          <div class="service-card">
+            <div class="service-number">04</div>
+            <div class="service-icon">
+              <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="2" y="7" width="20" height="14" rx="2" ry="2"></rect><path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"></path></svg>
+            </div>
+            <h3 class="service-title">Digital Kits & Social Presence</h3>
+            <p class="service-desc">High-converting social templates, LinkedIn banners, deck templates, and web asset packages that make your product look like a billion-dollar company from day one.</p>
+            <ul class="service-list">
+              <li>Figma Editable Social Media Templates</li>
+              <li>Pitch Deck & Presentation Keynotes</li>
+              <li>Email Signature & Marketing Badges</li>
+              <li>App Store & Marketing Graphics</li>
+            </ul>
+          </div>
+
+          <!-- Service 5 -->
+          <div class="service-card">
+            <div class="service-number">05</div>
+            <div class="service-icon">
+              <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="m7.5 4.27 9 5.15"></path><path d="M21 8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16Z"></path><path d="m3.3 7 8.7 5 8.7-5"></path><path d="M12 22V12"></path></svg>
+            </div>
+            <h3 class="service-title">Packaging & Tangible Collateral</h3>
+            <p class="service-desc">Unforgettable unboxing experiences, luxury finishes (foil, deboss, spot UV), and production-ready dielines for consumer products and physical branding.</p>
+            <ul class="service-list">
+              <li>Custom Dieline Layouts & Mockups</li>
+              <li>Print-Ready CMYK & Pantone Spot Prep</li>
+              <li>Stationery, Business Cards & Merch</li>
+              <li>Vendor Print Spec Oversight</li>
+            </ul>
+          </div>
+
+          <!-- Service 6 -->
+          <div class="service-card">
+            <div class="service-number">06</div>
+            <div class="service-icon">
+              <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="12" cy="12" r="3"></circle><path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1 0 2.83 2 2 0 0 1-2.83 0l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-2 2 2 2 0 0 1-2-2v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83 0 2 2 0 0 1 0-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1-2-2 2 2 0 0 1 2-2h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 0-2.83 2 2 0 0 1 2.83 0l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 2-2 2 2 0 0 1 2 2v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 0 2 2 0 0 1 0 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 2 2 2 2 0 0 1-2 2h-.09a1.65 1.65 0 0 0-1.51 1z"></path></svg>
+            </div>
+            <h3 class="service-title">Brand Refresh & Modernization</h3>
+            <p class="service-desc">Refining and modernizing legacy logos that feel outdated, while preserving the existing brand equity and customer recognition you've fought hard to build.</p>
+            <ul class="service-list">
+              <li>Visual Geometry & Kerning Corrections</li>
+              <li>Modern Digital-First Redraws</li>
+              <li>Scalability Optimization for Retina Screens</li>
+              <li>Seamless Evolution Migration Plan</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- THE 4-STEP STRATEGIC PROCESS -->
+    <section class="process-section" id="process">
+      <div class="container">
+        <div class="section-header text-center">
+          <span class="section-badge">How We Work</span>
+          <h2 class="section-title">The 4-Step Strategic Blueprint</h2>
+          <p class="section-subtitle max-w-xl mx-auto">No guessing, no endless revision loops. A battle-tested methodology designed for speed, clarity, and undeniable aesthetic excellence.</p>
+        </div>
+
+        <div class="process-timeline">
+          <!-- Step 1 -->
+          <div class="timeline-step">
+            <div class="step-marker">
+              <span class="step-num">01</span>
+            </div>
+            <div class="step-card">
+              <div class="step-badge">Week 1</div>
+              <h3 class="step-title">Discovery & Strategic Brief</h3>
+              <p class="step-desc">We begin with an in-depth creative interview covering your commercial ambitions, target clientele, competitor landscape, and core brand values to establish crystal-clear direction.</p>
+              <div class="step-deliverable">
+                <strong>Output:</strong> Creative Brief, Competitor Matrix & Moodboard Direction
+              </div>
+            </div>
+          </div>
+
+          <!-- Step 2 -->
+          <div class="timeline-step">
+            <div class="step-marker">
+              <span class="step-num">02</span>
+            </div>
+            <div class="step-card">
+              <div class="step-badge">Week 2</div>
+              <h3 class="step-title">Concept Exploration & Identity Routes</h3>
+              <p class="step-desc">I develop 2 to 3 distinct, high-conviction creative directions. Each route is presented in real-world mockups (apps, billboards, merch, cards) so you see how it breathes in the wild.</p>
+              <div class="step-deliverable">
+                <strong>Output:</strong> 2-3 Core Brand Concepts with Real-World Context Mockups
+              </div>
+            </div>
+          </div>
+
+          <!-- Step 3 -->
+          <div class="timeline-step">
+            <div class="step-marker">
+              <span class="step-num">03</span>
+            </div>
+            <div class="step-card">
+              <div class="step-badge">Week 3</div>
+              <h3 class="step-title">Refinement & System Expansion</h3>
+              <p class="step-desc">We pick the winning direction and refine every nuance — kerning, mathematical curve balance, secondary lockups, color accessibility pairings, and typography rules.</p>
+              <div class="step-deliverable">
+                <strong>Output:</strong> Finalized Vector Master Files, Color Palettes & Type Systems
+              </div>
+            </div>
+          </div>
+
+          <!-- Step 4 -->
+          <div class="timeline-step">
+            <div class="step-marker">
+              <span class="step-num">04</span>
+            </div>
+            <div class="step-card">
+              <div class="step-badge">Week 4</div>
+              <h3 class="step-title">Guidelines & Global Asset Handoff</h3>
+              <p class="step-desc">Complete delivery of organized vector source files (AI, SVG, EPS, PDF, PNG), font licenses, social asset packages, and your comprehensive Brand Guidelines Book.</p>
+              <div class="step-deliverable">
+                <strong>Output:</strong> 50+ Page Brand Bible + Production-Ready Master Drive
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- INTERACTIVE PROJECT SCOPE & COST CALCULATOR -->
+    <section class="calculator-section" id="calculator">
+      <div class="container">
+        <div class="calculator-wrapper">
+          <div class="calc-header text-center">
+            <span class="section-badge">Interactive Estimator</span>
+            <h2 class="section-title">Calculate Your Project Investment</h2>
+            <p class="section-subtitle max-w-xl mx-auto">Select your desired scope and timeline to get an instant transparent estimate. You can submit this scope directly for priority onboarding.</p>
+          </div>
+
+          <div class="calculator-body">
+            <div class="calc-options">
+              <h4 class="calc-group-title">1. Select Required Services:</h4>
+              
+              <div class="service-checkboxes">
+                <label class="calc-check-card active" data-price="650">
+                  <input type="checkbox" name="calc-service" value="logo" checked>
+                  <div class="calc-check-content">
+                    <div class="check-title-row">
+                      <span class="check-title">Core Logo Design & Marks</span>
+                      <span class="check-price">+$650</span>
+                    </div>
+                    <span class="check-desc">Primary logo, secondary lockups, icon & responsive vector marks.</span>
+                  </div>
+                </label>
+
+                <label class="calc-check-card active" data-price="950">
+                  <input type="checkbox" name="calc-service" value="identity" checked>
+                  <div class="calc-check-content">
+                    <div class="check-title-row">
+                      <span class="check-title">Full Visual Identity & Color System</span>
+                      <span class="check-price">+$950</span>
+                    </div>
+                    <span class="check-desc">Curated color hierarchy, typography rules, brand imagery rules.</span>
+                  </div>
+                </label>
+
+                <label class="calc-check-card" data-price="550">
+                  <input type="checkbox" name="calc-service" value="guidelines">
+                  <div class="calc-check-content">
+                    <div class="check-title-row">
+                      <span class="check-title">Comprehensive Brand Guidelines Book</span>
+                      <span class="check-price">+$550</span>
+                    </div>
+                    <span class="check-desc">40-60 page Brand Bible with usage rules, grids, and clearspace rules.</span>
+                  </div>
+                </label>
+
+                <label class="calc-check-card" data-price="450">
+                  <input type="checkbox" name="calc-service" value="digital">
+                  <div class="calc-check-content">
+                    <div class="check-title-row">
+                      <span class="check-title">Digital & Social Media Kit</span>
+                      <span class="check-price">+$450</span>
+                    </div>
+                    <span class="check-desc">Figma social templates, banners, app icons & pitch deck template.</span>
+                  </div>
+                </label>
+
+                <label class="calc-check-card" data-price="600">
+                  <input type="checkbox" name="calc-service" value="packaging">
+                  <div class="calc-check-content">
+                    <div class="check-title-row">
+                      <span class="check-title">Packaging & Print Collateral</span>
+                      <span class="check-price">+$600</span>
+                    </div>
+                    <span class="check-desc">Production dielines, stationery, business cards & merch graphics.</span>
+                  </div>
+                </label>
+              </div>
+
+              <h4 class="calc-group-title mt-6">2. Select Desired Delivery Pace:</h4>
+              <div class="pace-options">
+                <label class="pace-card" data-multiplier="0.95" data-weeks="4-6">
+                  <input type="radio" name="calc-pace" value="relaxed">
+                  <span class="pace-title">Relaxed Pace</span>
+                  <span class="pace-subtitle">4 – 6 Weeks</span>
+                  <span class="pace-discount">5% Saver</span>
+                </label>
+
+                <label class="pace-card active" data-multiplier="1.0" data-weeks="3-4">
+                  <input type="radio" name="calc-pace" value="standard" checked>
+                  <span class="pace-title">Standard Timeline</span>
+                  <span class="pace-subtitle">3 – 4 Weeks</span>
+                  <span class="pace-discount">Recommended</span>
+                </label>
+
+                <label class="pace-card" data-multiplier="1.3" data-weeks="1-2">
+                  <input type="radio" name="calc-pace" value="rush">
+                  <span class="pace-title">Priority Sprint</span>
+                  <span class="pace-subtitle">10 – 14 Days</span>
+                  <span class="pace-discount">+30% Rush</span>
+                </label>
+              </div>
+            </div>
+
+            <!-- Real-time Cost Summary Column -->
+            <div class="calc-summary-panel">
+              <div class="summary-card">
+                <span class="summary-badge">Live Estimate</span>
+                <div class="summary-price-box">
+                  <span class="currency">$</span>
+                  <span class="total-amount" id="calcTotal">1,600</span>
+                  <span class="currency-tag">USD</span>
+                </div>
+                <div class="summary-timeline">
+                  <span class="timeline-label">Estimated Delivery:</span>
+                  <strong id="calcTimeline">3 – 4 Weeks</strong>
+                </div>
+
+                <div class="summary-features" id="calcFeaturesList">
+                  <div class="summary-feature-item">✓ Core Logo Design & Responsive Marks</div>
+                  <div class="summary-feature-item">✓ Full Visual Identity & Color System</div>
+                  <div class="summary-feature-item">✓ 100% Vector Master Source Files</div>
+                  <div class="summary-feature-item">✓ Full Commercial Rights & Ownership</div>
+                </div>
+
+                <div class="summary-actions">
+                  <button class="btn btn-primary btn-block" id="calcApplyBtn">
+                    <span>Lock In This Scope</span>
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
+                  </button>
+                  <p class="summary-note">No upfront commitment. We confirm all deliverables during our initial briefing call.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ABOUT SECTION -->
+    <section class="about-section" id="about">
+      <div class="container">
+        <div class="about-grid">
+          <div class="about-image-column">
+            <div class="avatar-card">
+              <img src="https://cdn.dribbble.com/users/19103600/avatars/normal/0f3b4d68faf2ee3c9bc5466f15b3d06d.jpg?1754217194" alt="MD Al Amin — Brand Identity Designer" class="avatar-img">
+              <div class="avatar-badge">
+                <span class="avatar-badge-title">MD AL AMIN</span>
+                <span class="avatar-badge-role">Brand Specialist & Visual Architect</span>
+              </div>
+            </div>
+            
+            <div class="skills-box">
+              <span class="skills-box-title">Core Toolkit & Mastery</span>
+              <div class="skill-tags">
+                <span class="tag">Adobe Illustrator</span>
+                <span class="tag">Adobe Photoshop</span>
+                <span class="tag">Figma</span>
+                <span class="tag">Adobe InDesign</span>
+                <span class="tag">Vector Typography</span>
+                <span class="tag">Brand Strategy</span>
+                <span class="tag">Packaging Dielines</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="about-text-column">
+            <span class="section-badge">About MD Al Amin</span>
+            <h2 class="section-title">Design Isn't Just Decoration; It's Commercial Leverage.</h2>
+            
+            <div class="about-bio">
+              <p>
+                Hi! I'm <strong>MD Al Amin</strong> (known online as <em>alamininovix</em>). Over the past 4+ years, I have dedicated myself to mastering the intersection of 
+                <strong>visual aesthetics, brand psychology, and strategic positioning</strong>.
+              </p>
+              <p>
+                I don't design for vanity metrics or fleeting design fads. My work is engineered to solve a concrete business problem: 
+                <em>how to make your business look and feel authoritative, memorable, and premium enough to command higher pricing and win high-ticket clients.</em>
+              </p>
+              <p>
+                From solo founders launching AI startups to enterprise software companies in the <strong>US, UK, Australia, and Abu Dhabi</strong>, 
+                I deliver systems that look effortlessly cohesive across every screen, bill, package, and pitch deck.
+              </p>
+            </div>
+
+            <!-- Quick Philosophy Pillars -->
+            <div class="philosophy-grid">
+              <div class="philosophy-item">
+                <div class="philo-icon">⚡</div>
+                <div>
+                  <strong>Radical Simplicity</strong>
+                  <p>Strip away the non-essential until only the most powerful identity remains.</p>
+                </div>
+              </div>
+              <div class="philosophy-item">
+                <div class="philo-icon">📐</div>
+                <div>
+                  <strong>Mathematical Precision</strong>
+                  <p>Harmonic proportions, optical balance, and vector perfection that scales effortlessly.</p>
+                </div>
+              </div>
+              <div class="philosophy-item">
+                <div class="philo-icon">💼</div>
+                <div>
+                  <strong>Commercial Focus</strong>
+                  <p>Built to resonate directly with decision-makers and paying enterprise customers.</p>
+                </div>
+              </div>
+            </div>
+
+            <div class="about-cta-row">
+              <a href="https://www.linkedin.com/in/alamininovix/" target="_blank" rel="noopener" class="btn btn-secondary">
+                <span>LinkedIn</span>
+                <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="7" y1="17" x2="17" y2="7"></line><polyline points="7 7 17 7 17 17"></polyline></svg>
+              </a>
+              <a href="https://dribbble.com/alamininovix" target="_blank" rel="noopener" class="btn btn-secondary">
+                <span>Dribbble</span>
+                <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="7" y1="17" x2="17" y2="7"></line><polyline points="7 7 17 7 17 17"></polyline></svg>
+              </a>
+              <a href="https://www.behance.net/alamininovix" target="_blank" rel="noopener" class="btn btn-secondary">
+                <span>Behance</span>
+                <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="7" y1="17" x2="17" y2="7"></line><polyline points="7 7 17 7 17 17"></polyline></svg>
+              </a>
+              <a href="https://wa.me/8801758261160?text=Hi%20Al%20Amin,%20I'm%20interested%20in%20a%20brand%20project!" target="_blank" rel="noopener" class="btn btn-secondary">
+                <span>WhatsApp</span>
+                <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="7" y1="17" x2="17" y2="7"></line><polyline points="7 7 17 7 17 17"></polyline></svg>
+              </a>
+              <button class="btn btn-primary" id="copyEmailAboutBtn">
+                <span>Copy Email</span>
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- TESTIMONIALS SECTION -->
+    <section class="testimonials-section">
+      <div class="container">
+        <div class="section-header text-center">
+          <span class="section-badge">Client Endorsements</span>
+          <h2 class="section-title">Trusted by Founders Globally</h2>
+          <p class="section-subtitle max-w-xl mx-auto">Here is what startup founders and marketing executives say about working with Al Amin.</p>
+        </div>
+
+        <div class="testimonials-grid">
+          <div class="testimonial-card">
+            <div class="stars-row">★★★★★</div>
+            <p class="quote">"Al Amin transformed our SaaS product from looking like a weekend prototype into a venture-backed enterprise platform. Our conversion rate jumped within weeks of launching the new identity."</p>
+            <div class="author-meta">
+              <div class="author-avatar-ph">M</div>
+              <div>
+                <strong class="author-name">Marcus Vance</strong>
+                <span class="author-title">Co-Founder, Parseflow AI (San Francisco, CA)</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="testimonial-card">
+            <div class="stars-row">★★★★★</div>
+            <p class="quote">"Working with Al Amin was one of the smoothest creative collaborations we've had. His attention to detail, typography finesse, and structured brand guidelines made our developer handoff effortless."</p>
+            <div class="author-meta">
+              <div class="author-avatar-ph">S</div>
+              <div>
+                <strong class="author-name">Sophia Sterling</strong>
+                <span class="author-title">Head of Marketing, Avrise Fintech (London, UK)</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="testimonial-card">
+            <div class="stars-row">★★★★★</div>
+            <p class="quote">"If you want a minimal, modern brand that stands shoulder-to-shoulder with Stripe and Linear, hire Al Amin. He understood our vision on day one and delivered ahead of schedule."</p>
+            <div class="author-meta">
+              <div class="author-avatar-ph">L</div>
+              <div>
+                <strong class="author-name">Liam O'Connor</strong>
+                <span class="author-title">Founder, Verdevo Eco Solutions (Sydney, Australia)</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CONTACT & INQUIRY SECTION -->
+    <section class="contact-section" id="contact">
+      <div class="container">
+        <div class="contact-card-wrapper">
+          <div class="contact-grid">
+            
+            <div class="contact-left">
+              <span class="section-badge">Direct Inquiries</span>
+              <h2 class="contact-title">Let's Build an Iconic Brand Together.</h2>
+              <p class="contact-subtitle">
+                Have an upcoming project, rebrand, or need an iconic visual system? 
+                Reach out directly, and I'll get back to you within 24 hours with a custom proposal.
+              </p>
+
+              <div class="contact-methods">
+                <div class="method-item">
+                  <div class="method-icon">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path><polyline points="22,6 12,13 2,6"></polyline></svg>
+                  </div>
+                  <div>
+                    <span class="method-label">Official Work Email</span>
+                    <div class="email-copy-row">
+                      <span class="email-text">infomdalaminofficial2@gmail.com</span>
+                      <button class="copy-icon-btn" id="copyEmailContactBtn" title="Copy to clipboard">
+                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg>
+                      </button>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="method-item">
+                  <div class="method-icon" style="color: #25d366;">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+                      <path d="M12.031 6.172c-3.181 0-5.767 2.586-5.768 5.766-.001 1.298.38 2.27 1.019 3.287l-.582 2.128 2.182-.573c.978.58 1.911.928 3.145.929 3.178 0 5.767-2.587 5.768-5.766.001-3.187-2.575-5.77-5.764-5.771zm3.392 8.244c-.144.405-.837.774-1.17.824-.312.045-.694.074-2.022-.477-1.579-.655-2.59-2.273-2.668-2.378-.079-.104-.637-.849-.637-1.618 0-.769.404-1.148.547-1.304.144-.157.313-.196.417-.196.104 0 .209.001.299.006.096.005.223-.036.349.267.126.303.432 1.053.469 1.131.037.078.062.17.012.274-.05.105-.075.17-.149.261-.074.091-.157.203-.223.274-.075.08-.152.167-.066.315.086.148.383.632.822 1.023.565.502 1.042.658 1.19.732.148.074.235.065.322-.036.087-.101.373-.434.473-.583.1-.148.199-.124.335-.074.136.05.864.408 1.013.482.148.074.248.111.284.173.037.062.037.36-.107.765z"/>
+                      <path d="M12 2C6.477 2 2 6.477 2 12c0 1.891.527 3.66 1.443 5.174L2 22l4.981-1.398A9.957 9.957 0 0 0 12 22c5.523 0 10-4.477 10-10S17.523 2 12 2zm0 18.053c-1.637 0-3.167-.47-4.463-1.283l-.32-.2-2.956.828.843-2.88-.209-.333A8.026 8.026 0 0 1 3.947 12c0-4.441 3.612-8.053 8.053-8.053s8.053 3.612 8.053 8.053-3.612 8.053-8.053 8.053z"/>
+                    </svg>
+                  </div>
+                  <div>
+                    <span class="method-label">WhatsApp Direct (Instant Reply)</span>
+                    <a href="https://wa.me/8801758261160?text=Hi%20Al%20Amin,%20I'm%20interested%20in%20a%20brand%20project!" target="_blank" rel="noopener" class="email-text" style="color: #25d366; text-decoration: underline;">
+                      +880 1758-261160
+                    </a>
+                  </div>
+                </div>
+
+                <div class="method-item">
+                  <div class="method-icon">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg>
+                  </div>
+                  <div>
+                    <span class="method-label">Response Time</span>
+                    <strong>Within 12 to 24 Hours (Guaranteed)</strong>
+                  </div>
+                </div>
+
+                <div class="method-item">
+                  <div class="method-icon">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path><circle cx="12" cy="10" r="3"></circle></svg>
+                  </div>
+                  <div>
+                    <span class="method-label">Base of Operations</span>
+                    <strong>Dhaka, Bangladesh • Serving Worldwide</strong>
+                  </div>
+                </div>
+              </div>
+
+              <div class="contact-social-pills">
+                <a href="https://www.linkedin.com/in/alamininovix/" target="_blank" rel="noopener" class="social-pill" title="LinkedIn">
+                  <svg width="17" height="17" viewBox="0 0 24 24" fill="currentColor"><path d="M19 3a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h14m-.5 15.5v-5.3a3.26 3.26 0 0 0-3.26-3.26c-.85 0-1.84.52-2.28 1.3v-1.11h-2.79v8.37h2.79v-4.93c0-.77.62-1.4 1.39-1.4a1.4 1.4 0 0 1 1.4 1.4v4.93h2.75M6.88 8.56a1.68 1.68 0 0 0 1.68-1.68c0-.93-.75-1.69-1.68-1.69a1.69 1.69 0 0 0-1.69 1.69c0 .93.76 1.68 1.69 1.68m1.39 9.94v-8.37H5.5v8.37h2.77z"/></svg>
+                  <span>LinkedIn</span>
+                </a>
+                <a href="https://dribbble.com/alamininovix" target="_blank" rel="noopener" class="social-pill" title="Dribbble">
+                  <svg width="17" height="17" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2a10 10 0 0 0-10 10 10 10 0 0 0 10 10 10 10 0 0 0 10-10A10 10 0 0 0 12 2zm7.93 9.07a8.04 8.04 0 0 1-4.04 7.03 15.35 15.35 0 0 1-1.39-4.8 17.5 17.5 0 0 0 5.43-2.23zm-7.93 8.93a8.07 8.07 0 0 1-5.63-2.29c.14-.24 1.93-3.24 6.07-4.66.97 2.64 1.7 5.09 1.91 5.95a8.1 8.1 0 0 1-2.35 1zm-6.93-3.95c-.67-1.18-1.07-2.54-1.07-4.05 0-.41.03-.82.1-1.21 2.37.51 5.75.92 8.44-.06-.17.47-1.89 5.01-7.47 5.32zm.98-7.25c.01-.02.01-.03.02-.05A8.04 8.04 0 0 1 12 4a7.97 7.97 0 0 1 5.46 2.19c-2.45 1.54-5.32 2.54-8.83 2.54-.86 0-1.74-.06-2.58-.19zm13.1 1.76c.55 1.05.85 2.24.85 3.51 0 .28-.02.56-.05.83-2.02.77-4.22 1.2-6.55 1.25-.13-.39-.27-.8-.43-1.22 3.63-1.63 5.56-3.88 6.18-4.37z"/></svg>
+                  <span>Dribbble</span>
+                </a>
+                <a href="https://www.behance.net/alamininovix" target="_blank" rel="noopener" class="social-pill" title="Behance">
+                  <svg width="17" height="17" viewBox="0 0 24 24" fill="currentColor"><path d="M22 7h-7V5h7v2zm-2.8 4.3c-2.4 0-4.2 1.6-4.2 4.2 0 2.8 1.9 4.3 4.4 4.3 1.9 0 3.3-.9 3.8-2.5h-2.1c-.2.5-.9.9-1.7.9-1.2 0-2.1-.8-2.2-2.1h6.1c.1-.4.1-.7.1-1 0-2.2-1.7-3.8-4.2-3.8zm-2 3.2c.2-1 .9-1.7 2-1.7s1.8.7 1.9 1.7h-3.9zm-10-6.5h-5.2v12h5.2c2.7 0 4.4-1.4 4.4-3.5 0-1.4-.8-2.4-2.1-2.8 1-.5 1.7-1.3 1.7-2.6 0-1.9-1.6-3.1-4-3.1zm-3 4.7v-2.7h2.9c1.1 0 1.8.5 1.8 1.4 0 .9-.7 1.3-1.8 1.3h-2.9zm0 5.3v-3.3h3.2c1.2 0 2 .5 2 1.6 0 1.2-.8 1.7-2 1.7h-3.2z"/></svg>
+                  <span>Behance</span>
+                </a>
+                <a href="https://www.facebook.com/alamininovix/" target="_blank" rel="noopener" class="social-pill" title="Facebook">
+                  <svg width="17" height="17" viewBox="0 0 24 24" fill="currentColor"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg>
+                  <span>Facebook</span>
+                </a>
+                <a href="https://x.com/alamininovix" target="_blank" rel="noopener" class="social-pill" title="X (Twitter)">
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
+                  <span>X</span>
+                </a>
+                <a href="https://www.pinterest.com/alamininovix/" target="_blank" rel="noopener" class="social-pill" title="Pinterest">
+                  <svg width="17" height="17" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.373 0 0 5.372 0 12c0 5.084 3.163 9.426 7.627 11.174-.105-.949-.2-2.405.042-3.441.218-.937 1.407-5.965 1.407-5.965s-.359-.719-.359-1.782c0-1.668.967-2.914 2.171-2.914 1.023 0 1.518.769 1.518 1.69 0 1.029-.655 2.568-.994 3.995-.283 1.194.599 2.169 1.777 2.169 2.133 0 3.772-2.249 3.772-5.495 0-2.873-2.064-4.882-5.012-4.882-3.414 0-5.418 2.561-5.418 5.207 0 1.031.397 2.138.893 2.738a.36.36 0 0 1 .083.345l-.333 1.36c-.053.22-.174.267-.402.161-1.499-.698-2.436-2.889-2.436-4.649 0-3.785 2.75-7.262 7.929-7.262 4.163 0 7.398 2.967 7.398 6.931 0 4.136-2.607 7.464-6.227 7.464-1.216 0-2.359-.631-2.75-1.378l-.748 2.853c-.271 1.043-1.002 2.35-1.492 3.146C9.57 23.812 10.763 24 12 24c6.627 0 12-5.373 12-12 0-6.628-5.373-12-12-12z"/></svg>
+                  <span>Pinterest</span>
+                </a>
+              </div>
+            </div>
+
+            <!-- Form Column -->
+            <div class="contact-right">
+              <form class="contact-form" id="projectInquiryForm">
+                <div class="form-row">
+                  <div class="form-field">
+                    <label for="userName">Your Full Name *</label>
+                    <input type="text" id="userName" name="name" placeholder="e.g. Alex Morgan" required>
+                  </div>
+                  <div class="form-field">
+                    <label for="userEmail">Work Email *</label>
+                    <input type="email" id="userEmail" name="email" placeholder="alex@company.com" required>
+                  </div>
+                </div>
+
+                <div class="form-row">
+                  <div class="form-field">
+                    <label for="companyName">Company / Project Name</label>
+                    <input type="text" id="companyName" name="company" placeholder="e.g. NextWave AI">
+                  </div>
+                  <div class="form-field">
+                    <label for="projectBudget">Estimated Budget (USD)</label>
+                    <select id="projectBudget" name="budget">
+                      <option value="$1,000 - $2,500">$1,000 – $2,500</option>
+                      <option value="$2,500 - $5,000" selected>$2,500 – $5,000</option>
+                      <option value="$5,000 - $10,000">$5,000 – $10,000</option>
+                      <option value="$10,000+">$10,000+</option>
+                    </select>
+                  </div>
+                </div>
+
+                <div class="form-field">
+                  <label for="projectServices">Primary Service Needed</label>
+                  <select id="projectServices" name="service">
+                    <option value="Complete Brand Identity & Guidelines">Complete Brand Identity & Guidelines</option>
+                    <option value="Logo Design & Visual Marks">Logo Design & Visual Marks</option>
+                    <option value="Brand Redesign / Modernization">Brand Redesign / Modernization</option>
+                    <option value="Packaging & Physical Assets">Packaging & Physical Assets</option>
+                    <option value="Digital Brand Assets & Social Kit">Digital Brand Assets & Social Kit</option>
+                  </select>
+                </div>
+
+                <div class="form-field">
+                  <label for="projectMessage">Tell Me About Your Brand Vision *</label>
+                  <textarea id="projectMessage" name="message" rows="4" placeholder="Briefly describe your company, target audience, timeline, or any specific inspirations..." required></textarea>
+                </div>
+
+                <button type="submit" class="btn btn-primary btn-block btn-lg" id="submitInquiryBtn">
+                  <span>Send Project Inquiry</span>
+                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="22" y1="2" x2="11" y2="13"></line><polygon points="22 2 15 22 11 13 2 9 22 2"></polygon></svg>
+                </button>
+                <div class="form-status" id="formStatus" aria-live="polite"></div>
+              </form>
+            </div>
+
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- SITE FOOTER -->
+  <footer class="site-footer">
+    <div class="container footer-container">
+      <div class="footer-top">
+        <div class="footer-brand">
+          <span class="logo-mark">A</span>
+          <div>
+            <span class="footer-brand-title">MD AL AMIN</span>
+            <p class="footer-brand-desc">Brand Specialist, Logo Designer & Visual Identity Architect.</p>
+          </div>
+        </div>
+        <div class="footer-links-group">
+          <a href="#work">Work</a>
+          <a href="#services">Services</a>
+          <a href="#process">Process</a>
+          <a href="#calculator">Calculator</a>
+          <a href="#about">About</a>
+          <a href="#contact">Contact</a>
+          <a href="https://www.linkedin.com/in/alamininovix/" target="_blank" rel="noopener">LinkedIn</a>
+          <a href="https://dribbble.com/alamininovix" target="_blank" rel="noopener">Dribbble</a>
+          <a href="https://www.behance.net/alamininovix" target="_blank" rel="noopener">Behance</a>
+          <a href="https://www.facebook.com/alamininovix/" target="_blank" rel="noopener">Facebook</a>
+          <a href="https://x.com/alamininovix" target="_blank" rel="noopener">X</a>
+          <a href="https://www.pinterest.com/alamininovix/" target="_blank" rel="noopener">Pinterest</a>
+          <a href="https://wa.me/8801758261160" target="_blank" rel="noopener" style="color: #25d366;">WhatsApp</a>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <p class="footer-copy">© 2025–2026 MD Al Amin (alamininovix). All rights reserved. Crafted for excellence.</p>
+        <button class="back-to-top" id="backToTopBtn" aria-label="Scroll back to top">
+          <span>Back to Top</span>
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="12" y1="19" x2="12" y2="5"></line><polyline points="5 12 12 5 19 12"></polyline></svg>
+        </button>
+      </div>
+    </div>
+  </footer>
+
+  <!-- CASE STUDY DETAIL MODAL (Accessible Dialog) -->
+  <dialog class="case-study-modal" id="caseStudyModal" aria-labelledby="modalTitle">
+    <div class="modal-card">
+      <button class="modal-close-btn" id="modalCloseBtn" aria-label="Close Case Study Details">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg>
+      </button>
+
+      <div class="modal-content-scroll">
+        <div class="modal-image-holder">
+          <img src="" alt="" id="modalImg" class="modal-hero-img">
+        </div>
+
+        <div class="modal-info-body">
+          <div class="modal-tags-row">
+            <span class="modal-badge" id="modalCategory">Category</span>
+            <span class="modal-year" id="modalYear">2025</span>
+          </div>
+
+          <h2 class="modal-title" id="modalTitle">Project Title</h2>
+          <p class="modal-subtitle" id="modalSubtitle">Subheading or one-liner</p>
+
+          <div class="modal-meta-grid">
+            <div class="meta-item">
+              <span class="meta-title">Client / Project</span>
+              <strong id="modalClient">Client Name</strong>
+            </div>
+            <div class="meta-item">
+              <span class="meta-title">Deliverables</span>
+              <strong id="modalDeliverables">Full Identity, Logo, Guidelines</strong>
+            </div>
+            <div class="meta-item">
+              <span class="meta-title">Industry</span>
+              <strong id="modalIndustry">AI & Technology</strong>
+            </div>
+            <div class="meta-item">
+              <span class="meta-title">Timeline</span>
+              <strong id="modalDuration">3 Weeks</strong>
+            </div>
+          </div>
+
+          <hr class="modal-divider">
+
+          <div class="modal-text-section">
+            <h4 class="modal-subheading">The Challenge & Strategic Intent</h4>
+            <p id="modalChallenge">Detailed challenge description here...</p>
+          </div>
+
+          <div class="modal-text-section">
+            <h4 class="modal-subheading">Color System & Tokens</h4>
+            <div class="palette-swatches" id="modalPalette">
+              <!-- Swatches generated dynamically -->
+            </div>
+          </div>
+
+          <div class="modal-text-section">
+            <h4 class="modal-subheading">Outcome & Impact</h4>
+            <p id="modalOutcome">Outcome description here...</p>
+          </div>
+
+          <div class="modal-footer-cta">
+            <a href="#" target="_blank" rel="noopener" class="btn btn-primary" id="modalDribbbleLink">
+              <span>View Full Presentation on Dribbble</span>
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="7" y1="17" x2="17" y2="7"></line><polyline points="7 7 17 7 17 17"></polyline></svg>
+            </a>
+            <button class="btn btn-secondary" id="modalInquireBtn">
+              <span>Request Similar Brand Project</span>
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </dialog>
+
+  <!-- Sleek Floating Quick Connect Trigger -->
+  <button class="floating-connect-trigger" id="openQuickConnectBtn" aria-label="Connect with Al Amin" title="Open Quick Connect & Social Hub">
+    <div class="trigger-avatar-wrap">
+      <img src="https://cdn.dribbble.com/users/19103600/avatars/normal/0f3b4d68faf2ee3c9bc5466f15b3d06d.jpg?1754217194" alt="MD Al Amin" class="trigger-avatar">
+      <span class="trigger-status-pulse"></span>
+    </div>
+    <span class="trigger-label">Connect with Al Amin</span>
+    <span class="trigger-chip">⚡ Instant</span>
+  </button>
+
+  <!-- QUICK CONNECT & SOCIAL HUB POPUP MODAL (Accessible Dialog) -->
+  <dialog class="quick-connect-modal" id="quickConnectModal" aria-labelledby="connectModalTitle">
+    <div class="connect-modal-card">
+      <button class="modal-close-btn" id="connectModalCloseBtn" aria-label="Close Quick Connect Popup">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg>
+      </button>
+
+      <div class="connect-modal-header">
+        <div class="connect-avatar-wrap">
+          <img src="https://cdn.dribbble.com/users/19103600/avatars/normal/0f3b4d68faf2ee3c9bc5466f15b3d06d.jpg?1754217194" alt="MD Al Amin" class="connect-avatar-img">
+          <span class="connect-status-pulse"></span>
+        </div>
+        <div class="connect-user-info">
+          <h3 id="connectModalTitle" class="connect-name">MD Al Amin</h3>
+          <p class="connect-role">Brand Specialist & Visual Identity Expert</p>
+          <span class="connect-online-badge">🟢 Online on WhatsApp • Usually replies in minutes</span>
+        </div>
+      </div>
+
+      <div class="connect-modal-body">
+        <!-- Direct WhatsApp Action Card -->
+        <a href="https://wa.me/8801758261160?text=Hi%20Al%20Amin,%20I'm%20interested%20in%20discussing%20a%20brand%20identity%20project!" target="_blank" rel="noopener" class="connect-action-card wa-action-card">
+          <div class="connect-action-icon wa-icon">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
+              <path d="M12.031 6.172c-3.181 0-5.767 2.586-5.768 5.766-.001 1.298.38 2.27 1.019 3.287l-.582 2.128 2.182-.573c.978.58 1.911.928 3.145.929 3.178 0 5.767-2.587 5.768-5.766.001-3.187-2.575-5.77-5.764-5.771zm3.392 8.244c-.144.405-.837.774-1.17.824-.312.045-.694.074-2.022-.477-1.579-.655-2.59-2.273-2.668-2.378-.079-.104-.637-.849-.637-1.618 0-.769.404-1.148.547-1.304.144-.157.313-.196.417-.196.104 0 .209.001.299.006.096.005.223-.036.349.267.126.303.432 1.053.469 1.131.037.078.062.17.012.274-.05.105-.075.17-.149.261-.074.091-.157.203-.223.274-.075.08-.152.167-.066.315.086.148.383.632.822 1.023.565.502 1.042.658 1.19.732.148.074.235.065.322-.036.087-.101.373-.434.473-.583.1-.148.199-.124.335-.074.136.05.864.408 1.013.482.148.074.248.111.284.173.037.062.037.36-.107.765z"/>
+              <path d="M12 2C6.477 2 2 6.477 2 12c0 1.891.527 3.66 1.443 5.174L2 22l4.981-1.398A9.957 9.957 0 0 0 12 22c5.523 0 10-4.477 10-10S17.523 2 12 2zm0 18.053c-1.637 0-3.167-.47-4.463-1.283l-.32-.2-2.956.828.843-2.88-.209-.333A8.026 8.026 0 0 1 3.947 12c0-4.441 3.612-8.053 8.053-8.053s8.053 3.612 8.053 8.053-3.612 8.053-8.053 8.053z"/>
+            </svg>
+          </div>
+          <div class="connect-action-text">
+            <span class="action-card-label">WhatsApp Direct</span>
+            <strong class="action-card-val">+880 1758-261160</strong>
+            <span class="action-card-sub">Instant chat & project discussions</span>
+          </div>
+          <span class="action-card-btn">Chat →</span>
+        </a>
+
+        <!-- Direct Email Action Card -->
+        <div class="connect-action-card mail-action-card" id="popupEmailCopyBtn" role="button" tabindex="0">
+          <div class="connect-action-icon mail-icon">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path><polyline points="22,6 12,13 2,6"></polyline></svg>
+          </div>
+          <div class="connect-action-text">
+            <span class="action-card-label">Official Work Email</span>
+            <strong class="action-card-val">infomdalaminofficial2@gmail.com</strong>
+            <span class="action-card-sub">Click to copy email address</span>
+          </div>
+          <span class="action-card-btn copy-btn-tag">Copy</span>
+        </div>
+
+        <div class="connect-social-section">
+          <span class="connect-socials-title">Follow & Portfolio Profiles</span>
+          <div class="connect-social-grid">
+            <a href="https://www.linkedin.com/in/alamininovix/" target="_blank" rel="noopener" class="connect-social-item" title="LinkedIn">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M19 3a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h14m-.5 15.5v-5.3a3.26 3.26 0 0 0-3.26-3.26c-.85 0-1.84.52-2.28 1.3v-1.11h-2.79v8.37h2.79v-4.93c0-.77.62-1.4 1.39-1.4a1.4 1.4 0 0 1 1.4 1.4v4.93h2.75M6.88 8.56a1.68 1.68 0 0 0 1.68-1.68c0-.93-.75-1.69-1.68-1.69a1.69 1.69 0 0 0-1.69 1.69c0 .93.76 1.68 1.69 1.68m1.39 9.94v-8.37H5.5v8.37h2.77z"/></svg>
+              <span>LinkedIn</span>
+            </a>
+
+            <a href="https://dribbble.com/alamininovix" target="_blank" rel="noopener" class="connect-social-item" title="Dribbble">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2a10 10 0 0 0-10 10 10 10 0 0 0 10 10 10 10 0 0 0 10-10A10 10 0 0 0 12 2zm7.93 9.07a8.04 8.04 0 0 1-4.04 7.03 15.35 15.35 0 0 1-1.39-4.8 17.5 17.5 0 0 0 5.43-2.23zm-7.93 8.93a8.07 8.07 0 0 1-5.63-2.29c.14-.24 1.93-3.24 6.07-4.66.97 2.64 1.7 5.09 1.91 5.95a8.1 8.1 0 0 1-2.35 1zm-6.93-3.95c-.67-1.18-1.07-2.54-1.07-4.05 0-.41.03-.82.1-1.21 2.37.51 5.75.92 8.44-.06-.17.47-1.89 5.01-7.47 5.32zm.98-7.25c.01-.02.01-.03.02-.05A8.04 8.04 0 0 1 12 4a7.97 7.97 0 0 1 5.46 2.19c-2.45 1.54-5.32 2.54-8.83 2.54-.86 0-1.74-.06-2.58-.19zm13.1 1.76c.55 1.05.85 2.24.85 3.51 0 .28-.02.56-.05.83-2.02.77-4.22 1.2-6.55 1.25-.13-.39-.27-.8-.43-1.22 3.63-1.63 5.56-3.88 6.18-4.37z"/></svg>
+              <span>Dribbble</span>
+            </a>
+
+            <a href="https://www.behance.net/alamininovix" target="_blank" rel="noopener" class="connect-social-item" title="Behance">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M22 7h-7V5h7v2zm-2.8 4.3c-2.4 0-4.2 1.6-4.2 4.2 0 2.8 1.9 4.3 4.4 4.3 1.9 0 3.3-.9 3.8-2.5h-2.1c-.2.5-.9.9-1.7.9-1.2 0-2.1-.8-2.2-2.1h6.1c.1-.4.1-.7.1-1 0-2.2-1.7-3.8-4.2-3.8zm-2 3.2c.2-1 .9-1.7 2-1.7s1.8.7 1.9 1.7h-3.9zm-10-6.5h-5.2v12h5.2c2.7 0 4.4-1.4 4.4-3.5 0-1.4-.8-2.4-2.1-2.8 1-.5 1.7-1.3 1.7-2.6 0-1.9-1.6-3.1-4-3.1zm-3 4.7v-2.7h2.9c1.1 0 1.8.5 1.8 1.4 0 .9-.7 1.3-1.8 1.3h-2.9zm0 5.3v-3.3h3.2c1.2 0 2 .5 2 1.6 0 1.2-.8 1.7-2 1.7h-3.2z"/></svg>
+              <span>Behance</span>
+            </a>
+
+            <a href="https://www.facebook.com/alamininovix/" target="_blank" rel="noopener" class="connect-social-item" title="Facebook">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg>
+              <span>Facebook</span>
+            </a>
+
+            <a href="https://x.com/alamininovix" target="_blank" rel="noopener" class="connect-social-item" title="X (Twitter)">
+              <svg width="17" height="17" viewBox="0 0 24 24" fill="currentColor"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
+              <span>X</span>
+            </a>
+
+            <a href="https://www.pinterest.com/alamininovix/" target="_blank" rel="noopener" class="connect-social-item" title="Pinterest">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.373 0 0 5.372 0 12c0 5.084 3.163 9.426 7.627 11.174-.105-.949-.2-2.405.042-3.441.218-.937 1.407-5.965 1.407-5.965s-.359-.719-.359-1.782c0-1.668.967-2.914 2.171-2.914 1.023 0 1.518.769 1.518 1.69 0 1.029-.655 2.568-.994 3.995-.283 1.194.599 2.169 1.777 2.169 2.133 0 3.772-2.249 3.772-5.495 0-2.873-2.064-4.882-5.012-4.882-3.414 0-5.418 2.561-5.418 5.207 0 1.031.397 2.138.893 2.738a.36.36 0 0 1 .083.345l-.333 1.36c-.053.22-.174.267-.402.161-1.499-.698-2.436-2.889-2.436-4.649 0-3.785 2.75-7.262 7.929-7.262 4.163 0 7.398 2.967 7.398 6.931 0 4.136-2.607 7.464-6.227 7.464-1.216 0-2.359-.631-2.75-1.378l-.748 2.853c-.271 1.043-1.002 2.35-1.492 3.146C9.57 23.812 10.763 24 12 24c6.627 0 12-5.373 12-12 0-6.628-5.373-12-12-12z"/></svg>
+              <span>Pinterest</span>
+            </a>
+          </div>
+        </div>
+
+        <div class="connect-footer-cta">
+          <a href="#contact" class="btn btn-primary btn-block" id="connectModalToFormBtn">
+            <span>Send Custom Project Brief</span>
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
+          </a>
+        </div>
+      </div>
+    </div>
+  </dialog>
+
+  <!-- Toast Notification Container -->
+  <div class="toast-notification" id="toastNotification" role="alert" aria-live="assertive">
+    <span class="toast-icon">✓</span>
+    <span class="toast-message" id="toastMessage">Action completed!</span>
+  </div>
+
+  <script>
+/**
+ * MD AL AMIN (ALAMININOVIX) PORTFOLIO — CORE SCRIPT
+ * Handles: Theme Toggle, Project Modals, Scope Calculator, Category Filters,
+ * Live Dhaka Clock, Clipboard Actions, and Form Handling.
+ */
+
+// -----------------------------------------------------------------------------
+// 1. PROJECT CASE STUDY DATABASE
+// -----------------------------------------------------------------------------
+const PROJECTS_DATA = {
+  'parseflow': {
+    title: 'Parseflow — AI Brand Identity & Visual System',
+    subtitle: 'End-to-end visual architecture for a next-generation AI workflow engine.',
+    category: 'Brand Identity & AI',
+    year: '2025',
+    client: 'Parseflow Inc. (San Francisco, CA)',
+    deliverables: 'Brand Strategy, Dynamic Logo, Dark UI Tokens, Brand Guidelines',
+    industry: 'Artificial Intelligence & SaaS',
+    duration: '4 Weeks',
+    challenge: 'Parseflow needed to break away from generic gradient-heavy AI tropes. They needed an identity that felt grounded in enterprise-grade reliability, neural logic, and high-velocity workflow computation without feeling sterile.',
+    palette: [
+      { hex: '#090A0E', label: 'Obsidian Black' },
+      { hex: '#FF5C00', label: 'Neural Orange' },
+      { hex: '#FFB800', label: 'Circuit Amber' },
+      { hex: '#1E2330', label: 'Deep Slate' },
+      { hex: '#F3F4F6', label: 'Pure Flow' }
+    ],
+    outcome: 'Delivered an iconic geometric symbol combining neural pathways with continuous directional arrows. The new brand identity enabled the company to secure strategic pilot partners in Q1 2025 and established an undeniable competitive edge.',
+    dribbbleUrl: 'https://dribbble.com/shots/27770906-Parseflow-AI-Brand-Identity-Visual-System',
+    imgUrl: 'https://cdn.dribbble.com/userupload/49170672/file/486fbf545c156847accda3c170c6871a.jpg?format=webp&resize=1000x750&vertical=center'
+  },
+  'futuristic-ai': {
+    title: 'Futuristic Tech & AI Neural Mark',
+    subtitle: 'Mathematical precision mark exploring multi-dimensional intelligence.',
+    category: 'Logo Design & Tech',
+    year: '2025',
+    client: 'Autonomous Cyber Labs (Austin, TX)',
+    deliverables: 'Monogram System, App Icon Matrix, Scalability Guides',
+    industry: 'DeepTech & Robotics',
+    duration: '2 Weeks',
+    challenge: 'Designing a mark that performs flawlessly from a 16px favicon/status bar icon up to massive architectural signage, while reflecting advanced machine cognition.',
+    palette: [
+      { hex: '#050508', label: 'Space Black' },
+      { hex: '#00F0FF', label: 'Quantum Cyan' },
+      { hex: '#7000FF', label: 'Neural Violet' },
+      { hex: '#FFFFFF', label: 'Optic White' }
+    ],
+    outcome: 'Crafted an isometric neural node mark built on a strict 12-column isometric grid with optical curve compensation for ultra-high-density displays.',
+    dribbbleUrl: 'https://dribbble.com/shots/27754864-AI-Logo-Design-Futuristic-Tech-Brand-Identity',
+    imgUrl: 'https://cdn.dribbble.com/userupload/49109485/file/018a6b89436a3f4dec118b10db62371b.jpg?format=webp&resize=1000x750&vertical=center'
+  },
+  'pixelcore': {
+    title: 'PixelCore — SaaS Brand Architecture',
+    subtitle: 'Unified design system and visual branding for enterprise software teams.',
+    category: 'SaaS Identity & System',
+    year: '2025',
+    client: 'PixelCore Global (Sydney, Australia)',
+    deliverables: 'Visual Identity, Design System Tokens, 50-page Brand Bible',
+    industry: 'Developer Tools & Cloud',
+    duration: '5 Weeks',
+    challenge: 'A growing suite of 4 software developer tools had fragmented logos, inconsistent palettes, and confused brand messaging across their global marketing sites.',
+    palette: [
+      { hex: '#0D0E12', label: 'Carbon Core' },
+      { hex: '#3B82F6', label: 'Hyper Blue' },
+      { hex: '#10B981', label: 'Status Emerald' },
+      { hex: '#6366F1', label: 'Indigo Wave' },
+      { hex: '#F8FAFC', label: 'Cloud White' }
+    ],
+    outcome: 'Architected a modular sub-branding system sharing unified typography and geometric primitives, accelerating future product rollouts by 60%.',
+    dribbbleUrl: 'https://dribbble.com/shots/27732717-PixelCore-SaaS-Brand-Identity-Logo-Design',
+    imgUrl: 'https://cdn.dribbble.com/userupload/49027531/file/15046b9487ce852c4d15cd9345ed77fa.jpg?format=webp&resize=1000x750&vertical=center'
+  },
+  'unified-logic': {
+    title: 'Unified Logic — Strategic Tech Identity',
+    subtitle: 'Interlocking architectural monogram symbolizing unified enterprise data.',
+    category: 'Enterprise Tech & Logo',
+    year: '2025',
+    client: 'Unified Logic Corp (Seattle, WA)',
+    deliverables: 'Primary Logo, Executive Stationary, Brand Guidelines',
+    industry: 'Data Infrastructure',
+    duration: '3 Weeks',
+    challenge: 'Creating a high-credibility identity suited for Fortune 500 procurement teams while expressing forward-thinking modern cloud capabilities.',
+    palette: [
+      { hex: '#0B0D13', label: 'Obsidian Vault' },
+      { hex: '#2563EB', label: 'Logic Blue' },
+      { hex: '#64748B', label: 'Steel Grey' },
+      { hex: '#E2E8F0', label: 'Platinum' }
+    ],
+    outcome: 'A timeless optical monogram representing interconnected server clusters and streamlined processing pathways.',
+    dribbbleUrl: 'https://dribbble.com/shots/27683642-Unified-Logic-Tech-Brand-Identity-Logo-Design',
+    imgUrl: 'https://cdn.dribbble.com/userupload/48846171/file/23276e659f34dee314fa662d1820c007.jpg?format=webp&resize=1000x750&vertical=center'
+  },
+  'avrise': {
+    title: 'Avrise — Next-Gen Fintech & App Icon',
+    subtitle: 'High-contrast neon dark aesthetic for global cross-border payments.',
+    category: 'Fintech & Mobile',
+    year: '2025',
+    client: 'Avrise Payments Ltd (London, UK)',
+    deliverables: 'App Icon System, Marketing Collateral, Motion Guidelines',
+    industry: 'Fintech & Digital Banking',
+    duration: '4 Weeks',
+    challenge: 'Disrupting traditional legacy banks with an electric, ultra-fast financial identity tailored for Gen Z and tech-savvy digital nomads.',
+    palette: [
+      { hex: '#060709', label: 'Midnight Black' },
+      { hex: '#C8F560', label: 'Volt Green' },
+      { hex: '#00D1FF', label: 'Cyber Blue' },
+      { hex: '#1C1F26', label: 'Gunmetal Surface' }
+    ],
+    outcome: 'Delivered an unmistakable neon lettermark that stood out dramatically on the iOS App Store and Google Play Store, driving a 34% uptick in installs.',
+    dribbbleUrl: 'https://dribbble.com/shots/27671356-Avrise-Fintech-Brand-Identity-Logo-Design',
+    imgUrl: 'https://cdn.dribbble.com/userupload/48800391/file/2998122dfeed1f8cca995be3cb905003.jpg?format=webp&resize=1000x750&vertical=center'
+  },
+  'fexora': {
+    title: 'Fexora — Cloud Infrastructure Brand',
+    subtitle: 'Kinetic identity system conveying high-velocity compute and reliability.',
+    category: 'Cloud SaaS',
+    year: '2025',
+    client: 'Fexora Cloud Platform (Toronto, Canada)',
+    deliverables: 'Wordmark, Custom Monogram, Developer Portal Assets',
+    industry: 'Cloud Computing & DevOps',
+    duration: '3 Weeks',
+    challenge: 'Conveying military-grade server encryption without appearing intimidating or rigid to everyday software developers.',
+    palette: [
+      { hex: '#0A0C10', label: 'Dark Core' },
+      { hex: '#0284C7', label: 'Pacific Azure' },
+      { hex: '#38BDF8', label: 'Vivid Cyan' },
+      { hex: '#F1F5F9', label: 'Pure Frost' }
+    ],
+    outcome: 'An aerodynamic F-letterform combining aerodynamic speed facets with solid structural foundations.',
+    dribbbleUrl: 'https://dribbble.com/shots/27629170-Fexora-Tech-Brand-Identity-Logo-Design',
+    imgUrl: 'https://cdn.dribbble.com/userupload/48643678/file/b459501340bdf872d38b908881e97c08.jpg?format=webp&resize=1000x750&vertical=center'
+  },
+  'verdevo': {
+    title: 'Verdevo — Organic Identity & Packaging',
+    subtitle: 'Sustainable luxury packaging architecture and holistic tactile brand.',
+    category: 'Packaging & Eco',
+    year: '2024',
+    client: 'Verdevo Organics (Sydney, Australia)',
+    deliverables: 'Custom Wordmark, Sustainable Packaging Dielines, Merch Specs',
+    industry: 'Consumer Goods & Lifestyle',
+    duration: '4 Weeks',
+    challenge: 'Designing a premium lifestyle brand that reflects certified organic credentials while avoiding cliched green leaf imagery.',
+    palette: [
+      { hex: '#1C2826', label: 'Botanical Forest' },
+      { hex: '#A3B18A', label: 'Sage Olive' },
+      { hex: '#DAD7CD', label: 'Unbleached Linen' },
+      { hex: '#344E41', label: 'Deep Moss' }
+    ],
+    outcome: 'Custom embossed packaging with vegetable-ink foil details that elevated retail shelf presence across 14 organic grocers in Australia.',
+    dribbbleUrl: 'https://dribbble.com/shots/27590022-Verdevo-Brand-Identity-Packaging-CapCut-Playoff',
+    imgUrl: 'https://cdn.dribbble.com/userupload/48497633/file/7640f13663e051de28ae03af3e0718bc.jpg?format=webp&resize=1000x750&vertical=center'
+  },
+  'synccloud': {
+    title: 'SyncCloud — Cloud Tech Visual System',
+    subtitle: 'Harmonic continuous-loop geometric mark symbolizing infinite synchronization.',
+    category: 'Cloud Services & Logo',
+    year: '2024',
+    client: 'SyncCloud Network (Dubai, UAE)',
+    deliverables: 'Brand Identity, Iconography Kit, Presentation Deck',
+    industry: 'Enterprise Storage & Networking',
+    duration: '3 Weeks',
+    challenge: 'Standing out in the congested enterprise backup space with an identity that communicated seamless real-time syncing and zero downtime.',
+    palette: [
+      { hex: '#0B0D14', label: 'Abyssal Black' },
+      { hex: '#6366F1', label: 'Indigo Flux' },
+      { hex: '#A855F7', label: 'Pulse Purple' },
+      { hex: '#FFFFFF', label: 'Clarity White' }
+    ],
+    outcome: 'Created a continuous mobius ribbon emblem that dynamically animates during file sync operations inside their desktop app.',
+    dribbbleUrl: 'https://dribbble.com/shots/27560234-SyncCloud-Cloud-Tech-Brand-Identity',
+    imgUrl: 'https://cdn.dribbble.com/userupload/48389721/file/aa5638e9f4e6709f1a13c5dfde7c1a82.jpg?format=webp&resize=1000x750&vertical=center'
+  },
+  'xylen': {
+    title: 'Xylen — Autonomous AI Workspace',
+    subtitle: 'Futuristic corporate positioning and adaptive tokens for AI intelligence.',
+    category: 'AI Copilot & SaaS',
+    year: '2024',
+    client: 'Xylen AI Systems (Stockholm, Sweden)',
+    deliverables: 'Full Visual Identity, UI Brand Language, Social Kit',
+    industry: 'Generative AI & Productivity',
+    duration: '4 Weeks',
+    challenge: 'Communicating autonomous multi-agent capability without appearing unapproachable to non-technical knowledge workers.',
+    palette: [
+      { hex: '#08080C', label: 'Void Black' },
+      { hex: '#EC4899', label: 'Neon Magenta' },
+      { hex: '#8B5CF6', label: 'Spectral Violet' },
+      { hex: '#F3F4F6', label: 'Clean Ivory' }
+    ],
+    outcome: 'An adaptive polymorphic branding system that morphs across light/dark workspaces and scales across enterprise marketing touchpoints.',
+    dribbbleUrl: 'https://dribbble.com/shots/27482517-Xylen-AI-SaaS-Brand-Identity',
+    imgUrl: 'https://cdn.dribbble.com/userupload/48103510/file/cc8348d7d6b21ad59aaa2a41f4a6e749.jpg?format=webp&resize=1000x750&vertical=center'
+  }
+};
+
+// -----------------------------------------------------------------------------
+// 2. THEME SWITCHER (DARK / LIGHT)
+// -----------------------------------------------------------------------------
+function initTheme() {
+  const themeToggle = document.getElementById('themeToggle');
+  const savedTheme = localStorage.getItem('alamin_theme') || 'dark';
+
+  document.documentElement.setAttribute('data-theme', savedTheme);
+
+  if (themeToggle) {
+    themeToggle.addEventListener('click', () => {
+      const currentTheme = document.documentElement.getAttribute('data-theme');
+      const nextTheme = currentTheme === 'dark' ? 'light' : 'dark';
+      document.documentElement.setAttribute('data-theme', nextTheme);
+      localStorage.setItem('alamin_theme', nextTheme);
+      showToast(`Switched to ${nextTheme === 'dark' ? 'Dark Mode' : 'Light Mode'}`);
+    });
+  }
+}
+
+// -----------------------------------------------------------------------------
+// 3. LIVE DHAKA CLOCK (GMT+6)
+// -----------------------------------------------------------------------------
+function initDhakaClock() {
+  const clockEl = document.getElementById('liveClock');
+  if (!clockEl) return;
+
+  function update() {
+    try {
+      const now = new Date();
+      // Format time in Dhaka (Asia/Dhaka)
+      const options = {
+        timeZone: 'Asia/Dhaka',
+        hour: 'numeric',
+        minute: '2-digit',
+        hour12: true
+      };
+      const timeString = new Intl.DateTimeFormat('en-US', options).format(now);
+      clockEl.textContent = `${timeString} BST (UTC+6)`;
+    } catch (e) {
+      clockEl.textContent = 'GMT+6 (Dhaka)';
+    }
+  }
+
+  update();
+  setInterval(update, 15000);
+}
+
+// -----------------------------------------------------------------------------
+// 4. PORTFOLIO FILTERING
+// -----------------------------------------------------------------------------
+function initPortfolioFilters() {
+  const filterBtns = document.querySelectorAll('.filter-btn');
+  const projectCards = document.querySelectorAll('.project-card');
+
+  filterBtns.forEach(btn => {
+    btn.addEventListener('click', () => {
+      filterBtns.forEach(b => {
+        b.classList.remove('active');
+        b.setAttribute('aria-selected', 'false');
+      });
+      btn.classList.add('active');
+      btn.setAttribute('aria-selected', 'true');
+
+      const filterVal = btn.dataset.filter;
+
+      projectCards.forEach(card => {
+        const categories = (card.dataset.category || '').split(' ');
+        if (filterVal === 'all' || categories.includes(filterVal)) {
+          card.style.display = 'flex';
+          card.style.opacity = '1';
+          card.style.transform = 'translateY(0)';
+        } else {
+          card.style.display = 'none';
+        }
+      });
+    });
+  });
+}
+
+// -----------------------------------------------------------------------------
+// 5. CASE STUDY DETAIL MODAL (NATIVE <dialog>)
+// -----------------------------------------------------------------------------
+function initCaseStudyModal() {
+  const modal = document.getElementById('caseStudyModal');
+  const closeBtn = document.getElementById('modalCloseBtn');
+  const openBtns = document.querySelectorAll('.open-modal-btn');
+  const modalInquireBtn = document.getElementById('modalInquireBtn');
+
+  if (!modal) return;
+
+  function openProject(projectId) {
+    const data = PROJECTS_DATA[projectId];
+    if (!data) return;
+
+    // Populate modal contents
+    document.getElementById('modalImg').src = data.imgUrl;
+    document.getElementById('modalImg').alt = data.title;
+    document.getElementById('modalCategory').textContent = data.category;
+    document.getElementById('modalYear').textContent = data.year;
+    document.getElementById('modalTitle').textContent = data.title;
+    document.getElementById('modalSubtitle').textContent = data.subtitle;
+    document.getElementById('modalClient').textContent = data.client;
+    document.getElementById('modalDeliverables').textContent = data.deliverables;
+    document.getElementById('modalIndustry').textContent = data.industry;
+    document.getElementById('modalDuration').textContent = data.duration;
+    document.getElementById('modalChallenge').textContent = data.challenge;
+    document.getElementById('modalOutcome').textContent = data.outcome;
+    document.getElementById('modalDribbbleLink').href = data.dribbbleUrl;
+
+    // Render palette swatches
+    const paletteContainer = document.getElementById('modalPalette');
+    paletteContainer.innerHTML = '';
+    data.palette.forEach(color => {
+      const box = document.createElement('div');
+      box.className = 'palette-swatch-box';
+      box.title = `Click to copy ${color.hex}`;
+      box.innerHTML = `
+        <div class="swatch-color" style="background-color: ${color.hex}"></div>
+        <span class="swatch-hex">${color.hex}</span>
+      `;
+      box.addEventListener('click', () => {
+        copyTextToClipboard(color.hex, `Copied color token: ${color.hex} (${color.label})`);
+      });
+      paletteContainer.appendChild(box);
+    });
+
+    // Show modal dialog
+    if (typeof modal.showModal === 'function') {
+      modal.showModal();
+    } else {
+      modal.setAttribute('open', '');
+    }
+    document.body.style.overflow = 'hidden';
+  }
+
+  function closeModal() {
+    if (typeof modal.close === 'function') {
+      modal.close();
+    } else {
+      modal.removeAttribute('open');
+    }
+    document.body.style.overflow = '';
+  }
+
+  // Open modal on click
+  openBtns.forEach(btn => {
+    btn.addEventListener('click', (e) => {
+      e.stopPropagation();
+      const targetId = btn.dataset.target;
+      openProject(targetId);
+    });
+  });
+
+  // Clicking anywhere on project card opens modal too
+  document.querySelectorAll('.project-card').forEach(card => {
+    card.addEventListener('click', (e) => {
+      // ignore if clicked direct external dribbble link
+      if (e.target.closest('.dribbble-direct')) return;
+      const targetId = card.dataset.id;
+      if (targetId) openProject(targetId);
+    });
+  });
+
+  // Close triggers
+  if (closeBtn) {
+    closeBtn.addEventListener('click', closeModal);
+  }
+
+  modal.addEventListener('click', (e) => {
+    // Backdrop click
+    const rect = modal.getBoundingClientRect();
+    const isOutside = (
+      e.clientX < rect.left ||
+      e.clientX > rect.right ||
+      e.clientY < rect.top ||
+      e.clientY > rect.bottom
+    );
+    if (isOutside) {
+      closeModal();
+    }
+  });
+
+  modal.addEventListener('cancel', () => {
+    document.body.style.overflow = '';
+  });
+
+  if (modalInquireBtn) {
+    modalInquireBtn.addEventListener('click', () => {
+      const activeTitle = document.getElementById('modalTitle').textContent;
+      closeModal();
+      const messageField = document.getElementById('projectMessage');
+      if (messageField) {
+        messageField.value = `Hi Al Amin, I'm interested in an identity similar to your project: "${activeTitle}". Here are details about our project: `;
+      }
+      const contactSection = document.getElementById('contact');
+      if (contactSection) {
+        contactSection.scrollIntoView({ behavior: 'smooth' });
+        setTimeout(() => messageField.focus(), 600);
+      }
+    });
+  }
+}
+
+// -----------------------------------------------------------------------------
+// 6. SCOPE & INVESTMENT CALCULATOR
+// -----------------------------------------------------------------------------
+function initCalculator() {
+  const serviceCards = document.querySelectorAll('.calc-check-card');
+  const paceCards = document.querySelectorAll('.pace-card');
+  const totalAmountEl = document.getElementById('calcTotal');
+  const timelineEl = document.getElementById('calcTimeline');
+  const featuresListEl = document.getElementById('calcFeaturesList');
+  const applyBtn = document.getElementById('calcApplyBtn');
+
+  if (!totalAmountEl) return;
+
+  function calculate() {
+    let basePrice = 0;
+    let selectedServices = [];
+
+    // Tally selected services
+    serviceCards.forEach(card => {
+      const checkbox = card.querySelector('input[type="checkbox"]');
+      const price = parseInt(card.dataset.price, 10);
+      const title = card.querySelector('.check-title').textContent.trim();
+
+      if (checkbox.checked) {
+        card.classList.add('active');
+        basePrice += price;
+        selectedServices.push(title);
+      } else {
+        card.classList.remove('active');
+      }
+    });
+
+    // Pace selection
+    let multiplier = 1.0;
+    let weeksText = '3 – 4 Weeks';
+
+    paceCards.forEach(card => {
+      const radio = card.querySelector('input[type="radio"]');
+      if (radio.checked) {
+        card.classList.add('active');
+        multiplier = parseFloat(card.dataset.multiplier);
+        weeksText = card.dataset.weeks + ' Weeks';
+      } else {
+        card.classList.remove('active');
+      }
+    });
+
+    const finalTotal = Math.round(basePrice * multiplier);
+    totalAmountEl.textContent = finalTotal.toLocaleString();
+    timelineEl.textContent = weeksText;
+
+    // Update feature summary list
+    if (featuresListEl) {
+      if (selectedServices.length === 0) {
+        featuresListEl.innerHTML = `<div class="summary-feature-item" style="color: var(--text-muted)">Please select at least 1 service item.</div>`;
+      } else {
+        featuresListEl.innerHTML = selectedServices.map(s => 
+          `<div class="summary-feature-item">✓ ${s}</div>`
+        ).join('') + `
+          <div class="summary-feature-item">✓ 100% Vector Master Source Files</div>
+          <div class="summary-feature-item">✓ Full Commercial Rights & Ownership</div>
+        `;
+      }
+    }
+
+    return { finalTotal, selectedServices, weeksText };
+  }
+
+  // Bind change events
+  serviceCards.forEach(card => {
+    card.addEventListener('click', (e) => {
+      const checkbox = card.querySelector('input[type="checkbox"]');
+      if (e.target !== checkbox) {
+        checkbox.checked = !checkbox.checked;
+      }
+      calculate();
+    });
+  });
+
+  paceCards.forEach(card => {
+    card.addEventListener('click', () => {
+      const radio = card.querySelector('input[type="radio"]');
+      radio.checked = true;
+      calculate();
+    });
+  });
+
+  // Apply scope to Contact Form
+  if (applyBtn) {
+    applyBtn.addEventListener('click', () => {
+      const { finalTotal, selectedServices, weeksText } = calculate();
+      const budgetSelect = document.getElementById('projectBudget');
+      const messageField = document.getElementById('projectMessage');
+
+      // Adjust budget dropdown to match
+      if (budgetSelect) {
+        if (finalTotal <= 2500) {
+          budgetSelect.value = '$1,000 - $2,500';
+        } else if (finalTotal <= 5000) {
+          budgetSelect.value = '$2,500 - $5,000';
+        } else {
+          budgetSelect.value = '$5,000 - $10,000';
+        }
+      }
+
+      // Pre-fill message
+      if (messageField) {
+        const servicesList = selectedServices.join(', ');
+        messageField.value = `Estimated Scope: ${servicesList}\nTimeline: ${weeksText}\nTarget Investment: ~$${finalTotal.toLocaleString()} USD\n\nAdditional Notes: `;
+      }
+
+      // Scroll smoothly to contact
+      const contactSection = document.getElementById('contact');
+      if (contactSection) {
+        contactSection.scrollIntoView({ behavior: 'smooth' });
+        showToast('Scope locked! Please add your project contact details below.');
+        setTimeout(() => {
+          document.getElementById('userName')?.focus();
+        }, 600);
+      }
+    });
+  }
+
+  // Run initial calculation
+  calculate();
+}
+
+// -----------------------------------------------------------------------------
+// 7. CLIPBOARD & TOAST NOTIFICATION
+// -----------------------------------------------------------------------------
+function showToast(message) {
+  const toast = document.getElementById('toastNotification');
+  const toastMsg = document.getElementById('toastMessage');
+  if (!toast || !toastMsg) return;
+
+  toastMsg.textContent = message;
+  toast.classList.add('show');
+
+  clearTimeout(window._toastTimeout);
+  window._toastTimeout = setTimeout(() => {
+    toast.classList.remove('show');
+  }, 3500);
+}
+
+function copyTextToClipboard(text, successMessage) {
+  if (navigator.clipboard && navigator.clipboard.writeText) {
+    navigator.clipboard.writeText(text).then(() => {
+      showToast(successMessage || `Copied to clipboard: ${text}`);
+    }).catch(() => {
+      fallbackCopy(text, successMessage);
+    });
+  } else {
+    fallbackCopy(text, successMessage);
+  }
+}
+
+function fallbackCopy(text, successMessage) {
+  const tempInput = document.createElement('textarea');
+  tempInput.value = text;
+  document.body.appendChild(tempInput);
+  tempInput.select();
+  try {
+    document.execCommand('copy');
+    showToast(successMessage || `Copied: ${text}`);
+  } catch (err) {
+    showToast(`Email: ${text}`);
+  }
+  document.body.removeChild(tempInput);
+}
+
+function initCopyButtons() {
+  const emailContactBtn = document.getElementById('copyEmailContactBtn');
+  const emailAboutBtn = document.getElementById('copyEmailAboutBtn');
+
+  const email = 'infomdalaminofficial2@gmail.com';
+
+  if (emailContactBtn) {
+    emailContactBtn.addEventListener('click', () => {
+      copyTextToClipboard(email, 'Copied email: infomdalaminofficial2@gmail.com');
+    });
+  }
+
+  if (emailAboutBtn) {
+    emailAboutBtn.addEventListener('click', () => {
+      copyTextToClipboard(email, 'Copied email: infomdalaminofficial2@gmail.com');
+    });
+  }
+}
+
+// -----------------------------------------------------------------------------
+// 8. CONTACT FORM SUBMISSION
+// -----------------------------------------------------------------------------
+function initContactForm() {
+  const form = document.getElementById('projectInquiryForm');
+  const statusEl = document.getElementById('formStatus');
+
+  if (!form) return;
+
+  form.addEventListener('submit', (e) => {
+    e.preventDefault();
+
+    const name = document.getElementById('userName').value.trim();
+    const email = document.getElementById('userEmail').value.trim();
+    const company = document.getElementById('companyName').value.trim();
+    const budget = document.getElementById('projectBudget').value;
+    const service = document.getElementById('projectServices').value;
+    const message = document.getElementById('projectMessage').value.trim();
+
+    if (!name || !email || !message) {
+      statusEl.className = 'form-status error';
+      statusEl.textContent = 'Please fill out all required fields marked with *.';
+      return;
+    }
+
+    // Compose mailto body
+    const subject = encodeURIComponent(`Brand Project Inquiry: ${name} (${company || 'New Project'})`);
+    const bodyContent = `Name: ${name}
+Work Email: ${email}
+Company: ${company || 'N/A'}
+Service Required: ${service}
+Estimated Budget: ${budget}
+
+Project Vision & Details:
+${message}
+    `;
+
+    const mailtoUrl = `mailto:infomdalaminofficial2@gmail.com?subject=${subject}&body=${encodeURIComponent(bodyContent)}`;
+
+    statusEl.className = 'form-status success';
+    statusEl.textContent = 'Opening your email client with your pre-filled inquiry...';
+
+    // Trigger email client
+    window.location.href = mailtoUrl;
+
+    showToast('Inquiry drafted! You can also email infomdalaminofficial2@gmail.com directly.');
+
+    setTimeout(() => {
+      statusEl.textContent = 'Inquiry prepared. Looking forward to partnering with you!';
+    }, 2500);
+  });
+}
+
+// -----------------------------------------------------------------------------
+// 9. MOBILE DRAWER NAVIGATION & SCROLL
+// -----------------------------------------------------------------------------
+function initMobileNav() {
+  const menuBtn = document.getElementById('mobileMenuBtn');
+  const drawer = document.getElementById('mobileDrawer');
+  const links = document.querySelectorAll('.mobile-nav-link');
+
+  if (!menuBtn || !drawer) return;
+
+  menuBtn.addEventListener('click', () => {
+    menuBtn.classList.toggle('open');
+    drawer.classList.toggle('open');
+  });
+
+  links.forEach(link => {
+    link.addEventListener('click', () => {
+      menuBtn.classList.remove('open');
+      drawer.classList.remove('open');
+    });
+  });
+}
+
+// -----------------------------------------------------------------------------
+// 10. QUICK CONNECT & SOCIAL HUB POPUP MODAL
+// -----------------------------------------------------------------------------
+function initQuickConnectModal() {
+  const modal = document.getElementById('quickConnectModal');
+  const openBtn = document.getElementById('openQuickConnectBtn');
+  const closeBtn = document.getElementById('connectModalCloseBtn');
+  const toFormBtn = document.getElementById('connectModalToFormBtn');
+  const copyEmailBtn = document.getElementById('popupEmailCopyBtn');
+
+  if (!modal) return;
+
+  function openModal() {
+    if (typeof modal.showModal === 'function') {
+      modal.showModal();
+    } else {
+      modal.setAttribute('open', '');
+    }
+    document.body.style.overflow = 'hidden';
+  }
+
+  function closeModal() {
+    if (typeof modal.close === 'function') {
+      modal.close();
+    } else {
+      modal.removeAttribute('open');
+    }
+    document.body.style.overflow = '';
+  }
+
+  if (openBtn) {
+    openBtn.addEventListener('click', openModal);
+  }
+
+  if (closeBtn) {
+    closeBtn.addEventListener('click', closeModal);
+  }
+
+  if (toFormBtn) {
+    toFormBtn.addEventListener('click', () => {
+      closeModal();
+      const contactSection = document.getElementById('contact');
+      if (contactSection) {
+        contactSection.scrollIntoView({ behavior: 'smooth' });
+        setTimeout(() => document.getElementById('userName')?.focus(), 500);
+      }
+    });
+  }
+
+  if (copyEmailBtn) {
+    copyEmailBtn.addEventListener('click', () => {
+      const email = 'infomdalaminofficial2@gmail.com';
+      copyTextToClipboard(email, 'Copied email: infomdalaminofficial2@gmail.com');
+    });
+  }
+
+  modal.addEventListener('click', (e) => {
+    const rect = modal.getBoundingClientRect();
+    const isOutside = (
+      e.clientX < rect.left ||
+      e.clientX > rect.right ||
+      e.clientY < rect.top ||
+      e.clientY > rect.bottom
+    );
+    if (isOutside) {
+      closeModal();
+    }
+  });
+
+  modal.addEventListener('cancel', () => {
+    document.body.style.overflow = '';
+  });
+}
+
+// -----------------------------------------------------------------------------
+// 11. BACK TO TOP BUTTON
+// -----------------------------------------------------------------------------
+function initBackToTop() {
+  const backToTopBtn = document.getElementById('backToTopBtn');
+  if (!backToTopBtn) return;
+
+  backToTopBtn.addEventListener('click', () => {
+    window.scrollTo({
+      top: 0,
+      behavior: 'smooth'
+    });
+  });
+}
+
+// -----------------------------------------------------------------------------
+// INITIALIZE EVERYTHING ON DOM CONTENT LOADED
+// -----------------------------------------------------------------------------
+document.addEventListener('DOMContentLoaded', () => {
+  initTheme();
+  initDhakaClock();
+  initPortfolioFilters();
+  initCaseStudyModal();
+  initCalculator();
+  initCopyButtons();
+  initContactForm();
+  initMobileNav();
+  initQuickConnectModal();
+  initBackToTop();
+});
+
+</script>
+</body>
+</html>
