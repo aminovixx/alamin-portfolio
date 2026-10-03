@@ -678,7 +678,7 @@ function initContactForm() {
   form.addEventListener('submit', async (e) => {
     e.preventDefault();
 
-    // Check honeypot
+    // Check honeypot field
     const botField = form.querySelector('input[name="bot-field"]');
     if (botField && botField.value) {
       console.warn('Bot submission blocked');
@@ -695,7 +695,6 @@ function initContactForm() {
 
     try {
       const formData = new FormData(form);
-      // Netlify Forms AJAX
       const response = await fetch('/', {
         method: 'POST',
         headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
@@ -707,11 +706,13 @@ function initContactForm() {
         statusDiv.innerHTML = '✓ <strong>Thank you!</strong> Your brand inquiry has been received. I will review your requirements and respond within 12–24 hours (Guaranteed).';
         form.reset();
       } else {
-        throw new Error('Network response not ok');
+        throw new Error('Server returned status: ' + response.status);
       }
     } catch (err) {
-      statusDiv.className = 'form-status success'; // Graceful fallback
-      statusDiv.innerHTML = '✓ <strong>Inquiry Logged!</strong> Thank you for reaching out. You can also connect directly on <a href="https://wa.me/8801758261160" target="_blank" style="color:var(--accent-hover);text-decoration:underline;">WhatsApp</a> for instant project discussion.';
+      console.error('Contact Form Submission Error:', err);
+      // Honest, actionable error handling
+      statusDiv.className = 'form-status error';
+      statusDiv.innerHTML = '⚠️ <strong>Message could not be delivered.</strong> Please check your connection and try again, or reach out directly on <a href="https://wa.me/8801758261160" target="_blank" rel="noopener" style="color:var(--accent-hover);text-decoration:underline;">WhatsApp</a> or email <a href="mailto:infomdalaminofficial2@gmail.com" style="color:var(--accent-hover);text-decoration:underline;">infomdalaminofficial2@gmail.com</a>.';
     } finally {
       if (submitBtn) {
         submitBtn.disabled = false;

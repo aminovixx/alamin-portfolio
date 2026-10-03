@@ -1,67 +1,92 @@
-# MD Al Amin (alamininovix) — Brand Specialist Portfolio
+# MD Al Amin (alamininovix) — Portfolio
 
-A modern, high-conversion, luxury-editorial portfolio website built specifically for **MD Al Amin** — Brand Specialist, Logo Designer, and Visual Identity Expert.
+Official portfolio website of **MD Al Amin** (`alamininovix`) — Independent Brand Identity Designer & Visual Strategist.
 
-## 🚀 Key Features
-
-1. **Modern Editorial Aesthetic:**
-   - Dark mode by default (Carbon / Obsidian with Electric Volt Lime accent)
-   - One-click Light / Dark Mode switcher with persistent `localStorage` preference
-   - Fluid typography (`Syne` + `Plus Jakarta Sans` + `Space Grotesk`)
-   - Subtle ambient glows & glassmorphism card surfaces
-
-2. **Selected Case Studies & Real Portfolio Work:**
-   - 9 featured projects directly from your Dribbble showcase (Parseflow, Avrise, PixelCore, Unified Logic, Fexora, Verdevo, SyncCloud, Xylen, Futuristic AI)
-   - Dynamic category filtering (`All`, `Brand Identity`, `Logo Marks`, `AI & Tech SaaS`, `Packaging & Systems`)
-   - Interactive Case Study Modal (`<dialog>`) detailing Challenge, Strategy, Deliverables, Interactive Color Tokens (click to copy HEX), and Direct Dribbble links
-
-3. **Interactive Project Scope & Cost Calculator:**
-   - Allows clients to customize deliverables (Logo, Full Identity, Brand Guidelines, Digital Kit, Packaging)
-   - Select delivery speed (Relaxed, Standard, Rush)
-   - Calculates real-time investment estimate
-   - "Lock In This Scope" button automatically pre-fills the Contact Form with the selected package!
-
-4. **Strategic Capabilities & 4-Step Methodology:**
-   - Complete breakdown of Brand Strategy, Positioning, Logo Marks, Brand Bibles, and Physical Packaging
-   - Step 01 Discovery to Step 04 Delivery timeline
-
-5. **Client Inquiries & Direct Actions:**
-   - One-click copy email button with live toast notification (`alamininovix@gmail.com`)
-   - Pre-filled interactive contact form
-   - Real-time Dhaka (GMT+6) local time clock in the header
+Crafting distinctive brand identities, design systems, and vector marks for high-growth tech, AI, SaaS, and fintech companies worldwide.
 
 ---
 
-## 📂 File Structure
+## 🌟 Key Capabilities & Features
+
+1. **Strategic Brand Architecture:**
+   - Visual Identity & Design Systems
+   - Logo Design & Monograms
+   - Comprehensive Brand Guidelines (Bibles)
+   - Product Packaging & Physical Collateral
+
+2. **Selected Case Studies (12 Projects):**
+   - **Behance Deep-Dive Case Studies (4):**
+     - **Datarion:** Futuristic Tech Brand Identity | AI & SaaS Logo Design
+     - **Xylen:** AI SaaS Brand Identity & Visual Design System
+     - **Flexentials:** Fintech Banking App - Logo & Brand Identity Design
+     - **Valina Mart Ltd:** Modern E-commerce Brand Identity | Minimal Logo
+   - **Dribbble Curated Showcase (8):**
+     - Avrise (Fintech), SyncCloud (Cloud Tech), Verdevo (Organic Food & Packaging), Fexora (Tech Identity), ZYOREX (E-Commerce Startup), StrataCode (Developer Software), FIKRA AI (Saudi AI Chatbot), PixelCore (SaaS Architecture)
+
+3. **Interactive Project Estimator:**
+   - Real-time investment & timeline calculator based on deliverables and delivery pace.
+   - Pre-fills the contact form for rapid client onboarding.
+
+4. **Security & Performance:**
+   - Hardened Content Security Policy (CSP) & Security Headers (A+ grade).
+   - Netlify Forms integration with anti-spam honeypot.
+   - 100% self-hosted, WebP-optimized assets with zero external CDN dependency.
+   - Structured Data (Schema.org JSON-LD), Open Graph, and Twitter Cards for rich SEO previews.
+
+---
+
+## 📂 Project Structure
 
 ```text
 alamin-portfolio/
-├── index.html        # Main HTML5 markup with accessible semantic tags
-├── style.css         # Modern CSS with design tokens, glassmorphism, responsive grid
-├── script.js         # Interactive case study database, calculator, theme toggle, filters
-└── README.md         # Documentation & deployment guide
+├── _headers          # Netlify security headers (CSP, HSTS, X-Frame, Cache-Control)
+├── robots.txt        # Search engine crawler instructions
+├── sitemap.xml       # XML Sitemap for search indexing
+├── index.html        # Semantic HTML5 markup
+├── style.css         # Modern CSS3 with custom properties and responsive layout
+├── script.js         # Interactive filtering, calculator, modal, and Netlify Forms AJAX
+├── images/           # Optimized local project assets (WebP / JPG)
+└── README.md         # Project documentation
 ```
 
 ---
 
-## 🌐 How to Preview
+## 🚀 Local Development
 
-You can open the website directly in any browser:
-- Double click `index.html` in Finder, or
-- Run in terminal:
-  ```bash
-  open /Users/mdalamin/.gemini/antigravity/scratch/alamin-portfolio/index.html
-  ```
+To run the portfolio locally on any machine:
+
+### Option A: Using Python (Recommended)
+```bash
+python3 -m http.server 3000
+```
+Open [http://localhost:3000](http://localhost:3000) in your browser.
+
+### Option B: Using Node.js (npx)
+```bash
+npx serve .
+```
+
+### Option C: Direct Browser Open
+Simply double-click `index.html` to open it in any modern web browser.
 
 ---
 
-## 🚢 Free 1-Click Deployment Options
+## 🌐 Production Deployment
 
-### Option 1: GitHub Pages (Free)
-1. Push this folder to a GitHub repository (e.g. `alamin-portfolio`).
-2. Go to repository **Settings** → **Pages** → Source: `main` branch → Save.
-3. Your site is live at `https://yourusername.github.io/alamin-portfolio`!
+This portfolio is optimized for zero-configuration deployment on **Netlify** or **GitHub Pages**:
 
-### Option 2: Vercel / Netlify (Free)
-1. Drag and drop the `alamin-portfolio` folder into [vercel.com](https://vercel.com) or [netlify.com](https://netlify.com).
-2. Connect your custom domain (e.g. `alamininovix.com`).
+1. Push this repository to GitHub (`main` branch).
+2. Connect the repository to Netlify (Build command: *None*, Publish directory: `.`).
+3. Netlify automatically parses `_headers`, sets up Netlify Forms, and serves the site with global edge CDN caching.
+
+---
+
+## 📬 Contact & Connect
+
+- **Dribbble:** [dribbble.com/alamininovix](https://dribbble.com/alamininovix)
+- **Behance:** [behance.net/alamininovix](https://www.behance.net/alamininovix)
+- **LinkedIn:** [linkedin.com/in/alamininovix](https://www.linkedin.com/in/alamininovix/)
+- **WhatsApp:** [+880 1758-261160](https://wa.me/8801758261160)
+- **Email:** [infomdalaminofficial2@gmail.com](mailto:infomdalaminofficial2@gmail.com)
+
+&copy; 2026 MD Al Amin. All Rights Reserved.
