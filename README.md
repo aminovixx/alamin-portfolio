@@ -28,9 +28,9 @@ Crafting distinctive brand identities, design systems, and vector marks for high
    - Pre-fills the contact form for rapid client onboarding.
 
 4. **Security & Performance:**
-   - Hardened Content Security Policy (CSP) & Security Headers (A+ grade).
-   - Netlify Forms integration with anti-spam honeypot.
-   - 100% self-hosted, WebP-optimized assets with zero external CDN dependency.
+   - Hardened Content Security Policy (CSP), strict HSTS, and modern security headers.
+   - Netlify Forms integration with anti-spam honeypot and client-side sanitization.
+   - Self-hosted, highly optimized local project imagery (WebP & JPG) with modern caching headers.
    - Structured Data (Schema.org JSON-LD), Open Graph, and Twitter Cards for rich SEO previews.
 
 ---

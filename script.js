@@ -271,7 +271,8 @@ const PROJECTS_DATA = {
 // -----------------------------------------------------------------------------
 function initTheme() {
   const themeToggle = document.getElementById('themeToggle');
-  const savedTheme = localStorage.getItem('alamin_theme') || 'dark';
+  const safeStorage = (fn) => { try { return fn(); } catch (e) { return null; } };
+  const savedTheme = safeStorage(() => localStorage.getItem('alamin_theme')) || 'dark';
 
   document.documentElement.setAttribute('data-theme', savedTheme);
 
@@ -280,7 +281,7 @@ function initTheme() {
       const currentTheme = document.documentElement.getAttribute('data-theme');
       const nextTheme = currentTheme === 'dark' ? 'light' : 'dark';
       document.documentElement.setAttribute('data-theme', nextTheme);
-      localStorage.setItem('alamin_theme', nextTheme);
+      safeStorage(() => localStorage.setItem('alamin_theme', nextTheme));
       showToast(`Switched to ${nextTheme === 'dark' ? 'Dark Mode' : 'Light Mode'}`);
     });
   }
@@ -571,12 +572,14 @@ function initCalculator() {
 
       // Adjust budget dropdown to match
       if (budgetSelect) {
-        if (finalTotal <= 2500) {
-          budgetSelect.value = '$1,000 - $2,500';
-        } else if (finalTotal <= 5000) {
+        if (finalTotal <= 3500) {
           budgetSelect.value = '$2,500 - $5,000';
+        } else if (finalTotal <= 6500) {
+          budgetSelect.value = '$5,000 - $8,000';
+        } else if (finalTotal <= 12000) {
+          budgetSelect.value = '$8,000 - $15,000';
         } else {
-          budgetSelect.value = '$5,000 - $10,000';
+          budgetSelect.value = '$15,000+';
         }
       }
 

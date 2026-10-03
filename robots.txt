@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://alaminiovix.netlify.app/sitemap.xml
+Sitemap: https://alamininovix.netlify.app/sitemap.xml
