@@ -1884,6 +1884,8 @@ button, input, select, textarea {
   display: flex;
   flex-direction: column;
   gap: 0.45rem;
+  width: 100%;
+  min-width: 0;
 }
 
 .form-field label {
@@ -1895,6 +1897,9 @@ button, input, select, textarea {
 .form-field input,
 .form-field select,
 .form-field textarea {
+  width: 100%;
+  max-width: 100%;
+  box-sizing: border-box;
   background: var(--bg-input);
   border: 1px solid var(--border-color);
   border-radius: var(--radius-sm);
@@ -2307,21 +2312,41 @@ button, input, select, textarea {
   .modal-meta-grid {
     grid-template-columns: repeat(2, 1fr);
   }
+  .contact-section {
+    padding: 3.5rem 0;
+  }
   .contact-card-wrapper {
     padding: 1.5rem 1rem;
     border-radius: var(--radius-md);
-  }
-  .contact-form {
-    padding: 1.5rem 1rem;
+    overflow: hidden;
   }
   .contact-grid {
     gap: 2rem;
+  }
+  .contact-left,
+  .contact-right {
+    min-width: 0;
+    width: 100%;
   }
   .contact-title {
     font-size: 1.85rem;
   }
   .contact-subtitle {
     font-size: 0.95rem;
+  }
+  .contact-methods {
+    width: 100%;
+    margin: 1rem 0;
+    gap: 1rem;
+  }
+  .method-item {
+    width: 100%;
+    min-width: 0;
+    gap: 0.75rem;
+  }
+  .method-item > div:last-child {
+    min-width: 0;
+    flex: 1;
   }
   .contact-social-pills {
     gap: 0.5rem;
