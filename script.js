@@ -305,9 +305,9 @@ function initDhakaClock() {
         hour12: true
       };
       const timeString = new Intl.DateTimeFormat('en-US', options).format(now);
-      clockEl.textContent = `${timeString} BST (UTC+6)`;
+      clockEl.textContent = `Local Time: ${timeString} (UTC+6)`;
     } catch (e) {
-      clockEl.textContent = 'GMT+6 (Dhaka)';
+      clockEl.textContent = 'Local Time (UTC+6)';
     }
   }
 
