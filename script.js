@@ -318,32 +318,13 @@ function initDhakaClock() {
 // -----------------------------------------------------------------------------
 // 4. PORTFOLIO FILTERING
 // -----------------------------------------------------------------------------
+// 4. PORTFOLIO CARDS DISPLAY
+// -----------------------------------------------------------------------------
 function initPortfolioFilters() {
-  const filterBtns = document.querySelectorAll('.filter-btn');
   const projectCards = document.querySelectorAll('.project-card');
-
-  filterBtns.forEach(btn => {
-    btn.addEventListener('click', () => {
-      filterBtns.forEach(b => {
-        b.classList.remove('active');
-        b.setAttribute('aria-selected', 'false');
-      });
-      btn.classList.add('active');
-      btn.setAttribute('aria-selected', 'true');
-
-      const filterVal = btn.dataset.filter;
-
-      projectCards.forEach(card => {
-        const categories = (card.dataset.category || '').split(' ');
-        if (filterVal === 'all' || categories.includes(filterVal)) {
-          card.style.display = 'flex';
-          card.style.opacity = '1';
-          card.style.transform = 'translateY(0)';
-        } else {
-          card.style.display = 'none';
-        }
-      });
-    });
+  projectCards.forEach(card => {
+    card.style.display = 'flex';
+    card.style.opacity = '1';
   });
 }
 
@@ -731,7 +712,7 @@ function initContactForm() {
 
       if (response.ok) {
         statusDiv.className = 'form-status success';
-        statusDiv.innerHTML = '✓ <strong>Thank you!</strong> Your brand inquiry has been received. I will review your requirements and respond within 12–24 hours (Guaranteed).';
+        statusDiv.innerHTML = '✓ <strong>Thank you!</strong> Your brand inquiry has been received. I will review your requirements and respond within 1 hour (Guaranteed).';
         form.reset();
       } else {
         throw new Error('Server returned status: ' + response.status);
