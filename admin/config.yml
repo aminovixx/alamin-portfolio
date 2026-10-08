@@ -66,9 +66,9 @@ collections:
           - { label: "Hero Title Line 1", name: "heroTitle1", widget: "string", default: "Brand Identity Designer" }
           - { label: "Hero Title Line 2", name: "heroTitle2", widget: "string", default: "& Visual Strategist" }
           - { label: "Hero Subtitle Description", name: "heroSubtitle", widget: "text" }
-          - { label: "Direct Email Address", name: "email", widget: "string", default: "alamininovix@gmail.com" }
+          - { label: "Direct Email Address", name: "email", widget: "string", default: "infomdalaminofficial2@gmail.com" }
           - { label: "Telegram Username", name: "telegram", widget: "string", default: "alamininovix" }
-          - { label: "WhatsApp Phone Number", name: "whatsapp", widget: "string", default: "+8801931818270" }
+          - { label: "WhatsApp Phone Number", name: "whatsapp", widget: "string", default: "+8801758261160" }
           - { label: "Behance Profile URL", name: "behanceUrl", widget: "string", default: "https://www.behance.net/alamininovix" }
           - { label: "Dribbble Profile URL", name: "dribbbleUrl", widget: "string", default: "https://dribbble.com/alamininovix" }
-          - { label: "LinkedIn Profile URL", name: "linkedinUrl", widget: "string", default: "https://www.linkedin.com/in/alamin-inovix" }
+          - { label: "LinkedIn Profile URL", name: "linkedinUrl", widget: "string", default: "https://www.linkedin.com/in/alamininovix" }

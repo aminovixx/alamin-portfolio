@@ -1008,7 +1008,17 @@ function updateSiteSettingsFromData(site) {
   if (site.whatsapp) {
     const cleanWa = site.whatsapp.replace(/[^0-9]/g, '');
     document.querySelectorAll('a[href*="wa.me"]').forEach(a => {
-      a.href = `https://wa.me/${cleanWa}`;
+      try {
+        const u = new URL(a.href, window.location.origin);
+        const txt = u.searchParams.get('text');
+        if (txt) {
+          a.href = `https://wa.me/${cleanWa}?text=${encodeURIComponent(txt)}`;
+        } else {
+          a.href = `https://wa.me/${cleanWa}`;
+        }
+      } catch (err) {
+        a.href = `https://wa.me/${cleanWa}`;
+      }
     });
   }
 
