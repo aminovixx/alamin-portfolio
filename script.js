@@ -417,24 +417,31 @@ function initCaseStudyModal() {
     document.body.style.overflow = '';
   }
 
-  // Open modal on click
-  openBtns.forEach(btn => {
-    btn.addEventListener('click', (e) => {
-      e.stopPropagation();
-      const targetId = btn.dataset.target;
-      openProject(targetId);
-    });
-  });
+  // Expose openProject globally for dynamic cards
+  window.openProjectModal = openProject;
 
-  // Clicking anywhere on project card opens modal too
-  document.querySelectorAll('.project-card').forEach(card => {
-    card.addEventListener('click', (e) => {
-      // ignore if clicked direct external dribbble link
-      if (e.target.closest('.dribbble-direct')) return;
-      const targetId = card.dataset.id;
-      if (targetId) openProject(targetId);
+  // Delegated click handler on project grid for both static and dynamic cards
+  const projectGrid = document.getElementById('projectGrid');
+  if (projectGrid) {
+    projectGrid.addEventListener('click', (e) => {
+      // Ignore if user clicked on Behance or Dribbble direct link
+      if (e.target.closest('.dribbble-direct') || e.target.closest('.behance-direct')) return;
+
+      const previewBtn = e.target.closest('.open-modal-btn');
+      if (previewBtn) {
+        e.stopPropagation();
+        const targetId = previewBtn.dataset.target;
+        if (targetId) openProject(targetId);
+        return;
+      }
+
+      const card = e.target.closest('.project-card');
+      if (card) {
+        const targetId = card.dataset.id;
+        if (targetId) openProject(targetId);
+      }
     });
-  });
+  }
 
   // Close triggers
   if (closeBtn) {
@@ -603,6 +610,47 @@ function initCalculator() {
 
   // Run initial calculation
   calculate();
+}
+
+// -----------------------------------------------------------------------------
+// 6B. SERVICE CARD INQUIRY PRE-SELECTION
+// -----------------------------------------------------------------------------
+function initServiceInquiryButtons() {
+  const serviceButtons = document.querySelectorAll('.btn-service-glow');
+  const serviceSelect = document.getElementById('projectServices');
+  const contactSection = document.getElementById('contact');
+  const messageField = document.getElementById('projectMessage');
+
+  serviceButtons.forEach(btn => {
+    btn.addEventListener('click', (e) => {
+      e.preventDefault();
+      const serviceTarget = btn.dataset.service;
+
+      if (serviceSelect && serviceTarget) {
+        for (let i = 0; i < serviceSelect.options.length; i++) {
+          const opt = serviceSelect.options[i];
+          if (opt.value.toLowerCase().includes(serviceTarget.toLowerCase()) || 
+              serviceTarget.toLowerCase().includes(opt.value.toLowerCase())) {
+            serviceSelect.selectedIndex = i;
+            break;
+          }
+        }
+      }
+
+      if (contactSection) {
+        contactSection.scrollIntoView({ behavior: 'smooth' });
+        showToast(`Selected: ${serviceTarget || 'Custom Service Scope'}`);
+        setTimeout(() => {
+          if (messageField) {
+            messageField.focus();
+            if (!messageField.value.trim()) {
+              messageField.placeholder = `Tell me about your vision for ${serviceTarget}...`;
+            }
+          }
+        }, 600);
+      }
+    });
+  });
 }
 
 // -----------------------------------------------------------------------------
@@ -839,6 +887,203 @@ function initBackToTop() {
 }
 
 // -----------------------------------------------------------------------------
+// 12. DYNAMIC CONTENT & CMS LOADER (DECAP CMS / GIT GATEWAY SYNC)
+// -----------------------------------------------------------------------------
+function escapeHtml(str) {
+  if (!str) return '';
+  return String(str)
+    .replace(/&/g, '&amp;')
+    .replace(/</g, '&lt;')
+    .replace(/>/g, '&gt;')
+    .replace(/"/g, '&quot;')
+    .replace(/'/g, '&#39;');
+}
+
+function updateProjectsFromData(projectsList) {
+  if (!Array.isArray(projectsList) || projectsList.length === 0) return;
+
+  const grid = document.getElementById('projectGrid');
+  if (!grid) return;
+
+  // 1. Update PROJECTS_DATA in memory so modals display current info
+  projectsList.forEach(p => {
+    if (!p.id) return;
+    PROJECTS_DATA[p.id] = {
+      title: p.title || '',
+      subtitle: p.subtitle || '',
+      category: p.category || 'Brand Identity',
+      year: p.year || '2025',
+      client: p.client || '',
+      deliverables: p.deliverables || '',
+      industry: p.industry || '',
+      duration: p.duration || '3-4 Weeks',
+      challenge: p.challenge || '',
+      palette: Array.isArray(p.palette) ? p.palette : [],
+      outcome: p.outcome || '',
+      isBehance: !!p.isBehance,
+      behanceUrl: p.behanceUrl || '',
+      dribbbleUrl: p.dribbbleUrl || '',
+      imgUrl: p.imgUrl || ''
+    };
+  });
+
+  // 2. Render cards into project grid
+  const cardsHtml = projectsList.map((p, index) => {
+    const isEager = index < 2;
+    const catFilter = p.categoryFilter || 'identity';
+    const tag = p.tag || p.category || 'Brand Strategy';
+    const year = p.year || '2025';
+    const title = escapeHtml(p.title || '');
+    const snippet = escapeHtml(p.snippet || p.subtitle || '');
+    const imgUrl = escapeHtml(p.imgUrl || 'images/avatar.jpg');
+    const isBehance = !!p.isBehance;
+    const directUrl = isBehance ? (p.behanceUrl || '#') : (p.dribbbleUrl || '#');
+    const directClass = isBehance ? 'behance-direct' : 'dribbble-direct';
+    const directTitle = isBehance ? 'Open Full Case Study on Behance' : 'View Presentation on Dribbble';
+    const directIcon = isBehance
+      ? `<svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor"><path d="M22 7h-7V5h7v2zm-2.8 4.3c-2.4 0-4.2 1.6-4.2 4.2 0 2.8 1.9 4.3 4.4 4.3 1.9 0 3.3-.9 3.8-2.5h-2.1c-.2.5-.9.9-1.7.9-1.2 0-2.1-.8-2.2-2.1h6.1c.1-.4.1-.7.1-1 0-2.2-1.7-3.8-4.2-3.8zm-2 3.2c.2-1 .9-1.7 2-1.7s1.8.7 1.9 1.7h-3.9zm-10-6.5h-5.2v12h5.2c2.7 0 4.4-1.4 4.4-3.5 0-1.4-.8-2.4-2.1-2.8 1-.5 1.7-1.3 1.7-2.6 0-1.9-1.6-3.1-4-3.1zm-3 4.7v-2.7h2.9c1.1 0 1.8.5 1.8 1.4 0 .9-.7 1.3-1.8 1.3h-2.9zm0 5.3v-3.3h3.2c1.2 0 2 .5 2 1.6 0 1.2-.8 1.7-2 1.7h-3.2z"/></svg>`
+      : `<svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"></circle><path d="M19.13 5.09C15.22 9.14 10 10.44 2.25 10.94"></path><path d="M21.75 12.84c-6.62-1.41-12.14 1-16.38 6.32"></path><path d="M8.56 2.75c4.37 6 6 9.42 8 17.72"></path></svg>`;
+
+    return `
+      <article class="project-card" data-category="${escapeHtml(catFilter)}" data-id="${escapeHtml(p.id)}">
+        <div class="project-media">
+          <img src="${imgUrl}" alt="${title}" width="800" height="600" ${isEager ? 'loading="eager" fetchpriority="high"' : 'loading="lazy"'} decoding="async">
+          <div class="project-overlay">
+            <button class="btn-preview open-modal-btn" data-target="${escapeHtml(p.id)}">
+              <span>View Case Breakdown</span>
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"></path><circle cx="12" cy="12" r="3"></circle></svg>
+            </button>
+          </div>
+        </div>
+        <div class="project-info">
+          <div class="project-meta-top">
+            <span class="project-tag">${escapeHtml(tag)}</span>
+            <span class="project-year">${escapeHtml(year)}</span>
+          </div>
+          <h3 class="project-title">${title}</h3>
+          <p class="project-snippet">${snippet}</p>
+          <div class="project-links">
+            <button class="text-link open-modal-btn" data-target="${escapeHtml(p.id)}">Case Details →</button>
+            <a href="${escapeHtml(directUrl)}" target="_blank" rel="noopener" class="${directClass}" title="${directTitle}">
+              ${directIcon}
+            </a>
+          </div>
+        </div>
+      </article>
+    `;
+  }).join('');
+
+  grid.innerHTML = cardsHtml;
+
+  // 3. Re-apply active category filter
+  const activeFilterBtn = document.querySelector('.filter-btn.active');
+  const currentFilter = activeFilterBtn ? activeFilterBtn.dataset.filter : 'all';
+  const cards = grid.querySelectorAll('.project-card');
+  cards.forEach(card => {
+    const cats = (card.dataset.category || '').split(' ');
+    if (currentFilter === 'all' || cats.includes(currentFilter)) {
+      card.style.display = 'flex';
+      card.style.opacity = '1';
+      card.style.transform = 'translateY(0)';
+    } else {
+      card.style.display = 'none';
+    }
+  });
+}
+
+function updateSiteSettingsFromData(site) {
+  if (!site) return;
+
+  // Availability status badge
+  if (site.statusText) {
+    const statusEl = document.querySelector('.status-text');
+    if (statusEl) statusEl.textContent = site.statusText;
+  }
+
+  // Hero title line 1 & line 2
+  if (site.heroTitle1 || site.heroTitle2) {
+    const titleLines = document.querySelectorAll('.hero-title .title-line');
+    if (titleLines[0] && site.heroTitle1) titleLines[0].textContent = site.heroTitle1;
+    if (titleLines[1] && site.heroTitle2) titleLines[1].textContent = site.heroTitle2;
+  }
+
+  // Hero subtitle
+  if (site.heroSubtitle) {
+    const heroSub = document.querySelector('.hero-subtitle');
+    if (heroSub) heroSub.textContent = site.heroSubtitle;
+  }
+
+  // Direct Inquiry channels
+  if (site.email) {
+    document.querySelectorAll('a[href^="mailto:"]').forEach(a => {
+      a.href = `mailto:${site.email}`;
+    });
+    const emailValues = document.querySelectorAll('.contact-item-value');
+    emailValues.forEach(el => {
+      if (el.textContent.includes('@')) {
+        el.textContent = site.email;
+      }
+    });
+  }
+
+  if (site.telegram) {
+    const cleanTele = site.telegram.replace('@', '');
+    document.querySelectorAll('a[href*="t.me"]').forEach(a => {
+      a.href = `https://t.me/${cleanTele}`;
+    });
+  }
+
+  if (site.whatsapp) {
+    const cleanWa = site.whatsapp.replace(/[^0-9]/g, '');
+    document.querySelectorAll('a[href*="wa.me"]').forEach(a => {
+      a.href = `https://wa.me/${cleanWa}`;
+    });
+  }
+
+  if (site.behanceUrl) {
+    document.querySelectorAll('a[href*="behance.net/"]').forEach(a => {
+      if (!a.classList.contains('behance-direct')) {
+        a.href = site.behanceUrl;
+      }
+    });
+  }
+
+  if (site.dribbbleUrl) {
+    document.querySelectorAll('a[href*="dribbble.com/"]').forEach(a => {
+      if (!a.classList.contains('dribbble-direct')) {
+        a.href = site.dribbbleUrl;
+      }
+    });
+  }
+}
+
+async function loadDynamicContent() {
+  try {
+    const pRes = await fetch('data/projects.json?t=' + Date.now());
+    if (pRes.ok) {
+      const pData = await pRes.json();
+      if (pData && Array.isArray(pData.projects) && pData.projects.length > 0) {
+        updateProjectsFromData(pData.projects);
+      }
+    }
+  } catch (e) {
+    // Graceful fallback to static cache
+  }
+
+  try {
+    const sRes = await fetch('data/site.json?t=' + Date.now());
+    if (sRes.ok) {
+      const sData = await sRes.json();
+      if (sData) {
+        updateSiteSettingsFromData(sData);
+      }
+    }
+  } catch (e) {
+    // Graceful fallback to static cache
+  }
+}
+
+// -----------------------------------------------------------------------------
 // INITIALIZE EVERYTHING ON DOM CONTENT LOADED
 // -----------------------------------------------------------------------------
 document.addEventListener('DOMContentLoaded', () => {
@@ -847,9 +1092,11 @@ document.addEventListener('DOMContentLoaded', () => {
   initPortfolioFilters();
   initCaseStudyModal();
   initCalculator();
+  initServiceInquiryButtons();
   initCopyButtons();
   initContactForm();
   initMobileNav();
   initQuickConnectModal();
   initBackToTop();
+  loadDynamicContent();
 });

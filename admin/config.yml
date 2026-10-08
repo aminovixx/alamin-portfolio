@@ -1,0 +1,74 @@
+backend:
+  name: git-gateway
+  branch: main
+
+media_folder: "images"
+public_folder: "images"
+
+site_url: "https://alamininovix.netlify.app"
+display_url: "https://alamininovix.netlify.app"
+logo_url: "images/avatar.jpg"
+
+collections:
+  - name: "content_management"
+    label: "Portfolio & Site Management"
+    delete: false
+    editor:
+      preview: false
+    files:
+      - name: "projects_database"
+        label: "Projects & Case Studies"
+        file: "data/projects.json"
+        description: "Add, edit, reorder or delete project case studies shown on your portfolio."
+        fields:
+          - label: "Projects"
+            name: "projects"
+            widget: "list"
+            summary: "{{fields.title}} ({{fields.year}}) — {{fields.category}}"
+            fields:
+              - { label: "Project ID / Slug", name: "id", widget: "string", hint: "Short unique identifier (e.g. datarion, xylen, my-project)" }
+              - { label: "Project Title", name: "title", widget: "string" }
+              - { label: "Subtitle", name: "subtitle", widget: "string" }
+              - { label: "Category Label", name: "category", widget: "string", default: "Brand Identity", hint: "Shown on case study modal (e.g. Brand Identity, AI & SaaS, Fintech & App Icon)" }
+              - { label: "Filter Category", name: "categoryFilter", widget: "select", options: [
+                  { label: "Brand Identity (identity)", value: "identity" },
+                  { label: "Brand Identity + AI & SaaS (identity tech)", value: "identity tech" },
+                  { label: "AI & SaaS Only (tech)", value: "tech" },
+                  { label: "Organic Food & Packaging (packaging)", value: "packaging" }
+                ], default: "identity" }
+              - { label: "Card Badge Tag", name: "tag", widget: "string", default: "Brand Strategy & Visual Design", hint: "Small tag on the card (e.g. AI & SaaS Enterprise, Cloud & DevOps)" }
+              - { label: "Year", name: "year", widget: "string", default: "2025" }
+              - { label: "Client", name: "client", widget: "string" }
+              - { label: "Deliverables", name: "deliverables", widget: "string" }
+              - { label: "Industry", name: "industry", widget: "string" }
+              - { label: "Duration", name: "duration", widget: "string", default: "3-4 Weeks" }
+              - { label: "Card Snippet (Short summary for the card)", name: "snippet", widget: "text" }
+              - { label: "Challenge Details", name: "challenge", widget: "text" }
+              - { label: "Outcome Details", name: "outcome", widget: "text" }
+              - { label: "Project Image", name: "imgUrl", widget: "image" }
+              - { label: "Is Behance Case Study?", name: "isBehance", widget: "boolean", default: false }
+              - { label: "Behance URL", name: "behanceUrl", widget: "string", required: false }
+              - { label: "Dribbble URL", name: "dribbbleUrl", widget: "string", required: false }
+              - label: "Color Palette Tokens"
+                name: "palette"
+                widget: "list"
+                summary: "{{fields.label}}: {{fields.hex}}"
+                fields:
+                  - { label: "Hex Color (e.g. #FF4D26)", name: "hex", widget: "string" }
+                  - { label: "Color Name / Label", name: "label", widget: "string" }
+
+      - name: "site_meta"
+        label: "Site Settings & Contact Handles"
+        file: "data/site.json"
+        description: "Edit availability status, hero text, and direct inquiry contact channels."
+        fields:
+          - { label: "Availability Status Badge", name: "statusText", widget: "string", default: "AVAILABLE FOR SELECT Q2 COMMISSIONS" }
+          - { label: "Hero Title Line 1", name: "heroTitle1", widget: "string", default: "Brand Identity Designer" }
+          - { label: "Hero Title Line 2", name: "heroTitle2", widget: "string", default: "& Visual Strategist" }
+          - { label: "Hero Subtitle Description", name: "heroSubtitle", widget: "text" }
+          - { label: "Direct Email Address", name: "email", widget: "string", default: "alamininovix@gmail.com" }
+          - { label: "Telegram Username", name: "telegram", widget: "string", default: "alamininovix" }
+          - { label: "WhatsApp Phone Number", name: "whatsapp", widget: "string", default: "+8801931818270" }
+          - { label: "Behance Profile URL", name: "behanceUrl", widget: "string", default: "https://www.behance.net/alamininovix" }
+          - { label: "Dribbble Profile URL", name: "dribbbleUrl", widget: "string", default: "https://dribbble.com/alamininovix" }
+          - { label: "LinkedIn Profile URL", name: "linkedinUrl", widget: "string", default: "https://www.linkedin.com/in/alamin-inovix" }
