@@ -62,7 +62,7 @@
   <!-- Netlify Identity Widget for Decap CMS Authentication -->
   <script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
 
-  <link rel="stylesheet" href="style.css?v=5">
+  <link rel="stylesheet" href="style.css?v=7">
 </head>
 <body>
   <!-- Ambient background glow elements -->
@@ -99,7 +99,7 @@
           <li><a href="#work" class="nav-link">Selected Work</a></li>
           <li><a href="#services" class="nav-link">Services</a></li>
           <li><a href="#process" class="nav-link">Process</a></li>
-          <li><a href="#calculator" class="nav-link">Scope Calculator</a></li>
+          <li><a href="#calculator" class="nav-link">Project Scope</a></li>
           <li><a href="#about" class="nav-link">About</a></li>
           <li><a href="#contact" class="nav-link">Contact</a></li>
         </ul>
@@ -145,7 +145,7 @@
           <li><a href="#work" class="mobile-nav-link">Selected Work</a></li>
           <li><a href="#services" class="mobile-nav-link">Services</a></li>
           <li><a href="#process" class="mobile-nav-link">Process</a></li>
-          <li><a href="#calculator" class="mobile-nav-link">Scope Calculator</a></li>
+          <li><a href="#calculator" class="mobile-nav-link">Project Scope</a></li>
           <li><a href="#about" class="mobile-nav-link">About</a></li>
           <li><a href="#contact" class="mobile-nav-link">Contact</a></li>
         </ul>
@@ -987,151 +987,144 @@
       </div>
     </section>
 
-    <!-- INTERACTIVE PROJECT SCOPE & COST CALCULATOR -->
+    <!-- INTERACTIVE PROJECT SCOPE & PROPOSAL BUILDER (DRAPZ & DESIGN MONKS HIGH-TICKET FLOW) -->
     <section class="calculator-section" id="calculator">
       <div class="container">
         <div class="calculator-wrapper">
           <div class="calc-header text-center">
-            <span class="section-badge">Interactive Estimator</span>
-            <h2 class="section-title">Calculate Your Project Investment</h2>
-            <p class="section-subtitle max-w-xl mx-auto">Select your desired scope and timeline to get an instant transparent estimate. You can submit this scope directly for priority onboarding.</p>
+            <span class="section-badge">// Tailored Strategic Scope</span>
+            <h2 class="section-title">Configure Your Project Scope.</h2>
+            <p class="section-subtitle max-w-xl mx-auto">No off-the-shelf packages or rigid price tags. Select the exact creative capabilities your brand requires, and receive a customized strategic proposal, timeline, and roadmap tailored to your business goals.</p>
           </div>
 
           <div class="calculator-body">
             <div class="calc-options">
-              <h4 class="calc-group-title">1. Select Required Services:</h4>
+              <h4 class="calc-group-title">Select Deliverables Your Brand Needs:</h4>
               
               <div class="service-checkboxes">
-                <label class="calc-check-card active" data-price="1200">
+                <!-- 1. Logo Design -->
+                <label class="calc-check-card active" data-scope="Core Logo Design & Iconic Marks">
                   <input type="checkbox" name="calc-service" value="logo" checked>
                   <div class="calc-check-content">
                     <div class="check-title-row">
-                      <span class="check-title">Core Logo Design & Marks</span>
-                      <span class="check-price">+$1,200</span>
+                      <span class="check-title">Core Logo Design & Iconic Marks</span>
+                      <span class="check-badge-pill">Core Flagship</span>
                     </div>
-                    <span class="check-desc">Primary logo, secondary lockups, icon & responsive vector marks.</span>
+                    <span class="check-desc">Primary mark, secondary lockups, favicon suite & responsive vector monograms.</span>
                   </div>
                 </label>
 
-                <label class="calc-check-card active" data-price="1800">
+                <!-- 2. Full Brand Identity -->
+                <label class="calc-check-card active" data-scope="Full Brand Identity & Guidelines">
                   <input type="checkbox" name="calc-service" value="identity" checked>
                   <div class="calc-check-content">
                     <div class="check-title-row">
-                      <span class="check-title">Full Visual Identity & Color System</span>
-                      <span class="check-price">+$1,800</span>
+                      <span class="check-title">Full Brand Identity & Guidelines</span>
+                      <span class="check-badge-pill">Visual OS</span>
                     </div>
-                    <span class="check-desc">Curated color hierarchy, typography rules, brand imagery rules.</span>
+                    <span class="check-desc">Curated color hierarchy, WCAG contrast tokens, typography rules & 50+ page Brand Bible.</span>
                   </div>
                 </label>
 
-                <label class="calc-check-card" data-price="900">
-                  <input type="checkbox" name="calc-service" value="guidelines">
-                  <div class="calc-check-content">
-                    <div class="check-title-row">
-                      <span class="check-title">Comprehensive Brand Guidelines Book</span>
-                      <span class="check-price">+$900</span>
-                    </div>
-                    <span class="check-desc">40-60 page Brand Bible with usage rules, grids, and clearspace rules.</span>
-                  </div>
-                </label>
-
-                <label class="calc-check-card" data-price="750">
-                  <input type="checkbox" name="calc-service" value="digital">
-                  <div class="calc-check-content">
-                    <div class="check-title-row">
-                      <span class="check-title">Digital & Social Media Kit</span>
-                      <span class="check-price">+$750</span>
-                    </div>
-                    <span class="check-desc">Figma social templates, banners, app icons & pitch deck template.</span>
-                  </div>
-                </label>
-
-                <label class="calc-check-card" data-price="1100">
-                  <input type="checkbox" name="calc-service" value="packaging">
-                  <div class="calc-check-content">
-                    <div class="check-title-row">
-                      <span class="check-title">Packaging & Print Collateral</span>
-                      <span class="check-price">+$1,100</span>
-                    </div>
-                    <span class="check-desc">Production dielines, stationery, business cards & merch graphics.</span>
-                  </div>
-                </label>
-
-                <label class="calc-check-card" data-price="1500">
+                <!-- 3. Web Design -->
+                <label class="calc-check-card" data-scope="Web Design & Digital UI/UX">
                   <input type="checkbox" name="calc-service" value="web">
                   <div class="calc-check-content">
                     <div class="check-title-row">
-                      <span class="check-title">Web Design & Landing Page UI/UX</span>
-                      <span class="check-price">+$1,500</span>
+                      <span class="check-title">Web Design & Digital UI/UX</span>
+                      <span class="check-badge-pill">High Converting</span>
                     </div>
-                    <span class="check-desc">Responsive desktop & mobile Figma UI layouts ready for Framer or Webflow.</span>
+                    <span class="check-desc">Responsive desktop, tablet & mobile Figma layouts structured for Framer or Webflow.</span>
                   </div>
                 </label>
 
-                <label class="calc-check-card" data-price="850">
+                <!-- 4. Motion & Video Editing -->
+                <label class="calc-check-card" data-scope="Motion Graphics & Commercial Video Editing">
                   <input type="checkbox" name="calc-service" value="video">
                   <div class="calc-check-content">
                     <div class="check-title-row">
-                      <span class="check-title">Kinetic Motion & Commercial Video Editing</span>
-                      <span class="check-price">+$850</span>
+                      <span class="check-title">Motion Graphics & Commercial Video Editing</span>
+                      <span class="check-badge-pill">Kinetic Motion</span>
                     </div>
-                    <span class="check-desc">3D/2D logo reveal stingers, commercial video edits & social hype reels.</span>
+                    <span class="check-desc">3D/2D logo reveals, commercial video edits, sound design sync & social hype reels.</span>
                   </div>
                 </label>
-              </div>
 
-              <h4 class="calc-group-title mt-6">2. Select Desired Delivery Pace:</h4>
-              <div class="pace-options">
-                <label class="pace-card" data-multiplier="0.95" data-weeks="4-6">
-                  <input type="radio" name="calc-pace" value="relaxed">
-                  <span class="pace-title">Relaxed Pace</span>
-                  <span class="pace-subtitle">4 – 6 Weeks</span>
-                  <span class="pace-discount">5% Saver</span>
+                <!-- 5. Social Media Design -->
+                <label class="calc-check-card" data-scope="Social Media Design & Growth Kits">
+                  <input type="checkbox" name="calc-service" value="social">
+                  <div class="calc-check-content">
+                    <div class="check-title-row">
+                      <span class="check-title">Social Media Design & Growth Kits</span>
+                      <span class="check-badge-pill">High Engagement</span>
+                    </div>
+                    <span class="check-desc">Instagram/LinkedIn carousel systems, banner suites, story templates & branded assets.</span>
+                  </div>
                 </label>
 
-                <label class="pace-card active" data-multiplier="1.0" data-weeks="3-4">
-                  <input type="radio" name="calc-pace" value="standard" checked>
-                  <span class="pace-title">Standard Timeline</span>
-                  <span class="pace-subtitle">3 – 4 Weeks</span>
-                  <span class="pace-discount">Recommended</span>
+                <!-- 6. UGC Video Ads -->
+                <label class="calc-check-card" data-scope="UGC Video Ads & Performance Creatives">
+                  <input type="checkbox" name="calc-service" value="ugc">
+                  <div class="calc-check-content">
+                    <div class="check-title-row">
+                      <span class="check-title">UGC Video Ads & Performance Creatives</span>
+                      <span class="check-badge-pill">High ROAS / Viral</span>
+                    </div>
+                    <span class="check-desc">Hook-focused vertical video edits, TikTok/Reels performance creatives & dynamic ad pacing.</span>
+                  </div>
                 </label>
 
-                <label class="pace-card" data-multiplier="1.3" data-weeks="1-2">
-                  <input type="radio" name="calc-pace" value="rush">
-                  <span class="pace-title">Priority Sprint</span>
-                  <span class="pace-subtitle">10 – 14 Days</span>
-                  <span class="pace-discount">+30% Rush</span>
+                <!-- 7. Pitch Decks -->
+                <label class="calc-check-card" data-scope="Investor Pitch Decks & Marketing Kits">
+                  <input type="checkbox" name="calc-service" value="decks">
+                  <div class="calc-check-content">
+                    <div class="check-title-row">
+                      <span class="check-title">Investor Pitch Decks & Marketing Kits</span>
+                      <span class="check-badge-pill">Founder Ready</span>
+                    </div>
+                    <span class="check-desc">Keynote & Figma pitch deck slides, executive one-pagers & B2B sales collateral.</span>
+                  </div>
+                </label>
+
+                <!-- 8. Packaging -->
+                <label class="calc-check-card" data-scope="Packaging & Unboxing Experience">
+                  <input type="checkbox" name="calc-service" value="packaging">
+                  <div class="calc-check-content">
+                    <div class="check-title-row">
+                      <span class="check-title">Packaging & Unboxing Experience</span>
+                      <span class="check-badge-pill">Print Mastery</span>
+                    </div>
+                    <span class="check-desc">Custom dielines, print-ready CMYK/Pantone, luxury foil/emboss specs & 3D mockups.</span>
+                  </div>
                 </label>
               </div>
             </div>
 
-            <!-- Real-time Cost Summary Column -->
+            <!-- Tailored Proposal Summary Panel -->
             <div class="calc-summary-panel">
               <div class="summary-card">
-                <span class="summary-badge">Live Estimate</span>
-                <div class="summary-price-box">
-                  <span class="currency">$</span>
-                  <span class="total-amount" id="calcTotal">3,000</span>
-                  <span class="currency-tag">USD</span>
+                <span class="summary-badge">Tailored Engagement</span>
+                <div class="summary-price-box custom-quote-box">
+                  <span class="proposal-type-label">INVESTMENT MODEL</span>
+                  <div class="proposal-highlight-title">Custom Tailored Proposal</div>
+                  <span class="proposal-sub">Engineered around your commercial goals, market scale, and exact deliverables.</span>
                 </div>
+                
                 <div class="summary-timeline">
-                  <span class="timeline-label">Estimated Delivery:</span>
-                  <strong id="calcTimeline">3 – 4 Weeks</strong>
+                  <span class="timeline-label">Project Timeline:</span>
+                  <strong id="calcTimeline">Project-Based &amp; Tailored</strong>
                 </div>
 
                 <div class="summary-features" id="calcFeaturesList">
-                  <div class="summary-feature-item">✓ Core Logo Design & Responsive Marks</div>
-                  <div class="summary-feature-item">✓ Full Visual Identity & Color System</div>
-                  <div class="summary-feature-item">✓ 100% Vector Master Source Files</div>
-                  <div class="summary-feature-item">✓ Full Commercial Rights & Ownership</div>
+                  <!-- Populated dynamically by JS -->
                 </div>
 
                 <div class="summary-actions">
-                  <button class="btn btn-primary btn-block" id="calcApplyBtn">
-                    <span>Lock In This Scope</span>
+                  <button class="btn btn-primary btn-block btn-lg" id="calcApplyBtn">
+                    <span>Request Tailored Proposal</span>
                     <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
                   </button>
-                  <p class="summary-note">No upfront commitment. We confirm all deliverables during our initial briefing call.</p>
+                  <p class="summary-note">🔒 100% Confidential. You'll receive a detailed scope breakdown, moodboard direction, and transparent investment within 24 hours.</p>
                 </div>
               </div>
             </div>
@@ -1422,6 +1415,8 @@
                     <option value="Complete Brand Identity & Guidelines" selected>Complete Brand Identity & Guidelines</option>
                     <option value="Web Design & Digital UI/UX (Landing Pages / Webflow)">Web Design & Digital UI/UX (Landing Pages / Webflow)</option>
                     <option value="Motion Graphics & Commercial Video Editing">Motion Graphics & Commercial Video Editing</option>
+                    <option value="Social Media Design & Growth Kits">Social Media Design & Growth Kits</option>
+                    <option value="UGC Video Ads & Performance Creatives">UGC Video Ads & Performance Creatives</option>
                     <option value="Pitch Decks & Marketing Kits">Pitch Decks & Marketing Kits</option>
                     <option value="Packaging & Physical Assets">Packaging & Physical Assets</option>
                     <option value="Brand Redesign / Modernization">Brand Redesign / Modernization</option>
@@ -1462,7 +1457,7 @@
           <a href="#work">Work</a>
           <a href="#services">Services</a>
           <a href="#process">Process</a>
-          <a href="#calculator">Calculator</a>
+          <a href="#calculator">Project Scope</a>
           <a href="#about">About</a>
           <a href="#contact">Contact</a>
           <a href="https://www.linkedin.com/in/alamininovix/" target="_blank" rel="noopener">LinkedIn</a>
@@ -1671,7 +1666,7 @@
     <span class="toast-message" id="toastMessage">Action completed!</span>
   </div>
 
-  <script src="script.js?v=5" defer></script>
+  <script src="script.js?v=7" defer></script>
   <!-- Netlify Identity redirect on login -->
   <script>
     if (window.netlifyIdentity) {

@@ -1712,6 +1712,20 @@ button, input, select, textarea {
   font-size: 0.92rem;
 }
 
+.check-badge-pill {
+  font-family: var(--font-mono);
+  font-size: 0.72rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  padding: 0.2rem 0.55rem;
+  border-radius: var(--radius-full);
+  background: rgba(139, 92, 246, 0.15);
+  border: 1px solid rgba(139, 92, 246, 0.35);
+  color: var(--accent-light);
+  letter-spacing: 0.03em;
+  white-space: nowrap;
+}
+
 .check-desc {
   font-size: 0.825rem;
   color: var(--text-muted);
@@ -1800,25 +1814,33 @@ button, input, select, textarea {
   gap: 0.35rem;
 }
 
-.summary-price-box .currency {
-  font-size: 2rem;
-  font-weight: 800;
-  color: var(--accent-light);
+.custom-quote-box {
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
 }
 
-.summary-price-box .total-amount {
-  font-family: var(--font-heading);
-  font-size: 3.5rem;
+.proposal-type-label {
+  font-family: var(--font-mono);
+  font-size: 0.72rem;
   font-weight: 800;
-  line-height: 1;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: #38bdf8;
+}
+
+.proposal-highlight-title {
+  font-family: var(--font-heading);
+  font-size: 1.65rem;
+  font-weight: 800;
+  line-height: 1.2;
   color: var(--text-primary);
 }
 
-.summary-price-box .currency-tag {
-  font-family: var(--font-mono);
-  font-size: 0.9rem;
+.proposal-sub {
+  font-size: 0.82rem;
   color: var(--text-muted);
-  font-weight: 600;
+  line-height: 1.45;
 }
 
 .summary-timeline {

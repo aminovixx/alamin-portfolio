@@ -484,123 +484,100 @@ function initCaseStudyModal() {
 }
 
 // -----------------------------------------------------------------------------
-// 6. SCOPE & INVESTMENT CALCULATOR
+// 6. SCOPE & PROPOSAL BUILDER (HIGH-TICKET CUSTOM PROPOSAL FLOW)
 // -----------------------------------------------------------------------------
 function initCalculator() {
   const serviceCards = document.querySelectorAll('.calc-check-card');
-  const paceCards = document.querySelectorAll('.pace-card');
-  const totalAmountEl = document.getElementById('calcTotal');
-  const timelineEl = document.getElementById('calcTimeline');
   const featuresListEl = document.getElementById('calcFeaturesList');
   const applyBtn = document.getElementById('calcApplyBtn');
 
-  if (!totalAmountEl) return;
+  if (!serviceCards.length) return;
 
-  function calculate() {
-    let basePrice = 0;
+  function updateScope() {
     let selectedServices = [];
 
     // Tally selected services
     serviceCards.forEach(card => {
       const checkbox = card.querySelector('input[type="checkbox"]');
-      const price = parseInt(card.dataset.price, 10);
-      const title = card.querySelector('.check-title').textContent.trim();
+      const title = card.querySelector('.check-title') ? card.querySelector('.check-title').textContent.trim() : card.dataset.scope;
 
-      if (checkbox.checked) {
+      if (checkbox && checkbox.checked) {
         card.classList.add('active');
-        basePrice += price;
         selectedServices.push(title);
       } else {
         card.classList.remove('active');
       }
     });
 
-    // Pace selection
-    let multiplier = 1.0;
-    let weeksText = '3 – 4 Weeks';
-
-    paceCards.forEach(card => {
-      const radio = card.querySelector('input[type="radio"]');
-      if (radio.checked) {
-        card.classList.add('active');
-        multiplier = parseFloat(card.dataset.multiplier);
-        weeksText = card.dataset.weeks + ' Weeks';
-      } else {
-        card.classList.remove('active');
-      }
-    });
-
-    const finalTotal = Math.round(basePrice * multiplier);
-    totalAmountEl.textContent = finalTotal.toLocaleString();
-    timelineEl.textContent = weeksText;
-
     // Update feature summary list
     if (featuresListEl) {
       if (selectedServices.length === 0) {
-        featuresListEl.innerHTML = `<div class="summary-feature-item" style="color: var(--text-muted)">Please select at least 1 service item.</div>`;
+        featuresListEl.innerHTML = `<div class="summary-feature-item" style="color: var(--text-muted)">Please select at least 1 deliverable for your scope.</div>`;
       } else {
         featuresListEl.innerHTML = selectedServices.map(s => 
           `<div class="summary-feature-item">✓ ${s}</div>`
         ).join('') + `
-          <div class="summary-feature-item">✓ 100% Vector Master Source Files</div>
-          <div class="summary-feature-item">✓ Full Commercial Rights & Ownership</div>
+          <div class="summary-feature-item">✓ 100% Vector Source Files & Master Handoff</div>
+          <div class="summary-feature-item">✓ Full Commercial Copyright Transfer</div>
+          <div class="summary-feature-item">✓ Milestone Roadmap & 24h Custom Proposal</div>
         `;
       }
     }
 
-    return { finalTotal, selectedServices, weeksText };
+    return { selectedServices };
   }
 
-  // Bind change events
+  // Bind click events on cards
   serviceCards.forEach(card => {
     card.addEventListener('click', (e) => {
       const checkbox = card.querySelector('input[type="checkbox"]');
-      if (e.target !== checkbox) {
+      if (checkbox && e.target !== checkbox) {
         checkbox.checked = !checkbox.checked;
       }
-      calculate();
-    });
-  });
-
-  paceCards.forEach(card => {
-    card.addEventListener('click', () => {
-      const radio = card.querySelector('input[type="radio"]');
-      radio.checked = true;
-      calculate();
+      updateScope();
     });
   });
 
   // Apply scope to Contact Form
   if (applyBtn) {
     applyBtn.addEventListener('click', () => {
-      const { finalTotal, selectedServices, weeksText } = calculate();
-      const budgetSelect = document.getElementById('projectBudget');
+      const { selectedServices } = updateScope();
       const messageField = document.getElementById('projectMessage');
+      const serviceSelect = document.getElementById('projectServices');
 
-      // Adjust budget dropdown to match
-      if (budgetSelect) {
-        if (finalTotal <= 3500) {
-          budgetSelect.value = '$2,500 - $5,000';
-        } else if (finalTotal <= 6500) {
-          budgetSelect.value = '$5,000 - $8,000';
-        } else if (finalTotal <= 12000) {
-          budgetSelect.value = '$8,000 - $15,000';
-        } else {
-          budgetSelect.value = '$15,000+';
+      if (selectedServices.length === 0) {
+        showToast('Please select at least one deliverable to continue.');
+        return;
+      }
+
+      // Automatically sync primary service dropdown if possible
+      if (serviceSelect) {
+        if (selectedServices.includes('Full Brand Identity & Guidelines')) {
+          serviceSelect.value = 'Complete Brand Identity & Guidelines';
+        } else if (selectedServices.includes('Core Logo Design & Iconic Marks')) {
+          serviceSelect.value = 'Logo Design & Iconic Marks (Core Specialty)';
+        } else if (selectedServices.includes('Web Design & Digital UI/UX')) {
+          serviceSelect.value = 'Web Design & Digital UI/UX (Landing Pages / Webflow)';
+        } else if (selectedServices.includes('Motion Graphics & Commercial Video Editing')) {
+          serviceSelect.value = 'Motion Graphics & Commercial Video Editing';
+        } else if (selectedServices.includes('Social Media Design & Growth Kits')) {
+          serviceSelect.value = 'Social Media Design & Growth Kits';
+        } else if (selectedServices.includes('UGC Video Ads & Performance Creatives')) {
+          serviceSelect.value = 'UGC Video Ads & Performance Creatives';
         }
       }
 
-      // Pre-fill message
+      // Pre-fill message field with structured brief
       if (messageField) {
-        const servicesList = selectedServices.join(', ');
-        messageField.value = `Estimated Scope: ${servicesList}\nTimeline: ${weeksText}\nTarget Investment: ~$${finalTotal.toLocaleString()} USD\n\nAdditional Notes: `;
+        const servicesList = selectedServices.map(s => `  • ${s}`).join('\n');
+        messageField.value = `Hi Al Amin,\n\nI would like to request a tailored proposal and strategic roadmap for my brand with the following scope:\n\nSelected Deliverables:\n${servicesList}\n\nEstimated Launch Target: [e.g. In 2-3 weeks / Next month / Flexible]\n\nAbout My Project / Vision: `;
       }
 
       // Scroll smoothly to contact
       const contactSection = document.getElementById('contact');
       if (contactSection) {
         contactSection.scrollIntoView({ behavior: 'smooth' });
-        showToast('Scope locked! Please add your project contact details below.');
+        showToast('Scope configured! Share a few details below to receive your proposal.');
         setTimeout(() => {
           document.getElementById('userName')?.focus();
         }, 600);
@@ -608,8 +585,8 @@ function initCalculator() {
     });
   }
 
-  // Run initial calculation
-  calculate();
+  // Run initial update
+  updateScope();
 }
 
 // -----------------------------------------------------------------------------
