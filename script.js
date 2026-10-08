@@ -704,15 +704,29 @@ function initContactForm() {
 
     try {
       const formData = new FormData(form);
-      const response = await fetch('/', {
+      const data = {};
+      formData.forEach((value, key) => {
+        if (key !== 'bot-field' && key !== 'form-name' && key !== '_honey') {
+          data[key] = value;
+        }
+      });
+      data['_subject'] = `New Brand Inquiry from ${data.name || 'Client'} (${data.company || 'alamininovix.vercel.app'})`;
+      data['_template'] = 'table';
+      data['_captcha'] = 'false';
+
+      const response = await fetch('https://formsubmit.co/ajax/infomdalaminofficial2@gmail.com', {
         method: 'POST',
-        headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
-        body: new URLSearchParams(formData).toString()
+        headers: {
+          'Content-Type': 'application/json',
+          'Accept': 'application/json'
+        },
+        body: JSON.stringify(data)
       });
 
       if (response.ok) {
+        const clientName = data.name ? ` ${data.name}` : '';
         statusDiv.className = 'form-status success';
-        statusDiv.innerHTML = '✓ <strong>Thank you!</strong> Your brand inquiry has been received. I will review your requirements and respond within 1 hour (Guaranteed).';
+        statusDiv.innerHTML = `✓ <strong>Thank you${clientName}!</strong> Your brand inquiry has been received. I will review your requirements and respond within 1 hour (Guaranteed). You can also reach out on <a href="https://wa.me/8801758261160" target="_blank" rel="noopener" style="color:var(--accent-hover);text-decoration:underline;">WhatsApp</a> for an instant reply.`;
         form.reset();
       } else {
         throw new Error('Server returned status: ' + response.status);

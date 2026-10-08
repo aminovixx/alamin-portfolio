@@ -66,7 +66,7 @@
   <!-- Netlify Identity Widget for Decap CMS Authentication -->
   <script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
 
-  <link rel="stylesheet" href="style.css?v=18">
+  <link rel="stylesheet" href="style.css?v=19">
 </head>
 <body>
   <!-- Ambient background glow elements -->
@@ -1299,9 +1299,12 @@
 
             <!-- Form Column -->
             <div class="contact-right">
-              <form class="contact-form" id="projectInquiryForm" name="contact" method="POST" data-netlify="true" netlify-honeypot="bot-field">
-                <input type="hidden" name="form-name" value="contact">
-                <p style="display:none;"><label>Leave this empty: <input name="bot-field" tabindex="-1" autocomplete="off"></label></p>
+              <form class="contact-form" id="projectInquiryForm" action="https://formsubmit.co/infomdalaminofficial2@gmail.com" method="POST">
+                <input type="hidden" name="_captcha" value="false">
+                <input type="hidden" name="_template" value="table">
+                <input type="hidden" name="_subject" value="New Brand Inquiry from alamininovix.vercel.app">
+                <input type="hidden" name="_next" value="https://alamininovix.vercel.app/#contact">
+                <input type="text" name="_honey" style="display:none" tabindex="-1" autocomplete="off">
                 <div class="form-row">
                   <div class="form-field">
                     <label for="userName">Your Full Name *</label>
@@ -1581,7 +1584,7 @@
     <span class="toast-message" id="toastMessage">Action completed!</span>
   </div>
 
-  <script src="script.js?v=18" defer></script>
+  <script src="script.js?v=19" defer></script>
   <!-- Netlify Identity redirect on login -->
   <script>
     if (window.netlifyIdentity) {

@@ -29,8 +29,8 @@ Crafting distinctive brand identities, design systems, and vector marks for high
 
 4. **Security & Performance:**
    - Hardened Content Security Policy (CSP), strict HSTS, and modern security headers.
-   - Netlify Forms integration with anti-spam honeypot and client-side sanitization.
-   - Self-hosted, highly optimized local project imagery (WebP & JPG) with modern caching headers.
+   - Production contact form with anti-spam honeypot and client-side sanitization.
+   - Self-hosted, highly optimized local project imagery (WebP, JPG, SVG) with modern caching headers.
    - Structured Data (Schema.org JSON-LD), Open Graph, and Twitter Cards for rich SEO previews.
 
 ---
@@ -39,13 +39,13 @@ Crafting distinctive brand identities, design systems, and vector marks for high
 
 ```text
 alamin-portfolio/
-├── _headers          # Netlify security headers (CSP, HSTS, X-Frame, Cache-Control)
+├── _headers          # Edge security headers & caching policies
 ├── robots.txt        # Search engine crawler instructions
 ├── sitemap.xml       # XML Sitemap for search indexing
 ├── index.html        # Semantic HTML5 markup
 ├── style.css         # Modern CSS3 with custom properties and responsive layout
-├── script.js         # Interactive filtering, calculator, modal, and Netlify Forms AJAX
-├── images/           # Optimized local project assets (WebP / JPG)
+├── script.js         # Interactive filtering, calculator, modal, and contact AJAX
+├── images/           # Optimized local project assets (WebP / JPG / SVG)
 └── README.md         # Project documentation
 ```
 
@@ -73,11 +73,15 @@ Simply double-click `index.html` to open it in any modern web browser.
 
 ## 🌐 Production Deployment
 
-This portfolio is optimized for zero-configuration deployment on **Netlify** or **GitHub Pages**:
+This portfolio is optimized for continuous zero-configuration deployment on **Vercel** and **GitHub Pages**:
 
-1. Push this repository to GitHub (`main` branch).
-2. Connect the repository to Netlify (Build command: *None*, Publish directory: `.`).
-3. Netlify automatically parses `_headers`, sets up Netlify Forms, and serves the site with global edge CDN caching.
+- **Production Live URL:** [https://alamininovix.vercel.app](https://alamininovix.vercel.app)
+- **Backup Mirror:** [https://aminovixx.github.io/alamin-portfolio](https://aminovixx.github.io/alamin-portfolio)
+
+### Automatic Deployment Workflow:
+1. Push any updates to GitHub (`main` branch).
+2. **Vercel** automatically syncs and deploys the updates across global edge CDN locations in seconds.
+3. Zero build configuration required (Build command: *None*, Output directory: `.`).
 
 ---
 
